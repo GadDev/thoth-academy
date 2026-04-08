@@ -1,0 +1,468 @@
+<div class="min-h-screen bg-bg text-white">
+  <div class="max-w-4xl mx-auto px-6 pt-16 pb-24">
+    <!-- Page Header -->
+    <div class="mb-14">
+      <p class="text-xs font-semibold uppercase tracking-widest text-primary mb-3">User Guide</p>
+      <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-4">
+        Angular Senior Certification<br class="hidden md:block" />
+        <span class="text-white/50">5-Week Intensive Prep</span>
+      </h1>
+      <p class="text-white/60 leading-relaxed max-w-2xl">
+        Claude project instructions to get the most out of each session — how to work together,
+        session formats, and the full day-by-day schedule.
+      </p>
+      <!-- Jump links -->
+      <nav aria-label="Page sections" class="mt-8 flex flex-wrap gap-2">
+        @for (link of jumpLinks; track link.id) {
+          <a
+            routerLink="."
+            [fragment]="link.id"
+            class="text-xs px-3 py-1.5 rounded-full border border-white/10 bg-surface text-white/50 hover:text-primary hover:border-primary/30 transition-colors"
+            >{{ link.label }}</a
+          >
+        }
+      </nav>
+    </div>
+
+    <!-- What This Course Is -->
+    <section id="overview" class="mb-10">
+      <h2 class="text-xs font-semibold uppercase tracking-widest text-primary mb-4">
+        What This Course Is
+      </h2>
+      <div class="bg-surface border border-white/10 rounded-2xl p-6 mb-6">
+        <p class="text-sm text-white/70 leading-relaxed mb-3">
+          This is a structured 5-week intensive self-study course using Claude as your personal
+          Angular instructor. You have a Claude Project set up with custom instructions that give
+          Claude your full context — React background, timeline, target certification, and
+          day-by-day schedule.
+        </p>
+        <p class="text-sm text-white/70 leading-relaxed">
+          Every session picks up exactly where you left off. No re-explaining. No lost context.
+        </p>
+      </div>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="border-b border-white/10">
+              <th
+                class="text-left text-xs font-semibold uppercase tracking-widest text-white/40 pb-3 pr-6"
+              >
+                Week
+              </th>
+              <th
+                class="text-left text-xs font-semibold uppercase tracking-widest text-white/40 pb-3 pr-6"
+              >
+                Theme
+              </th>
+              <th
+                class="text-left text-xs font-semibold uppercase tracking-widest text-white/40 pb-3 pr-6 hidden md:table-cell"
+              >
+                Lane Mix
+              </th>
+              <th
+                class="text-left text-xs font-semibold uppercase tracking-widest text-white/40 pb-3"
+              >
+                Friday
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (w of courseOverview; track w.number) {
+              <tr class="border-b border-white/5">
+                <td class="py-3 pr-6">
+                  <span
+                    class="flex items-center justify-center w-7 h-7 rounded-md text-xs font-bold"
+                    [style.background]="'rgba(212,175,55,0.12)'"
+                    [style.color]="'#D4AF37'"
+                    >{{ w.number }}</span
+                  >
+                </td>
+                <td class="py-3 pr-6 text-white/70">{{ w.theme }}</td>
+                <td class="py-3 pr-6 text-white/50 hidden md:table-cell">{{ w.laneMix }}</td>
+                <td class="py-3">
+                  <span
+                    class="text-xs text-accent bg-accent/5 border border-accent/15 px-2 py-0.5 rounded-full"
+                    >{{ w.friday }}</span
+                  >
+                </td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- My Profile -->
+    <section id="profile" class="mb-10">
+      <h2 class="text-xs font-semibold uppercase tracking-widest text-primary mb-4">My Profile</h2>
+      <div class="bg-surface border border-white/10 rounded-2xl p-6 space-y-3">
+        <div class="flex gap-3">
+          <span class="text-white/40 text-sm w-28 shrink-0">Background</span>
+          <span class="text-sm text-white/80"
+            >Seasoned React engineer — hooks, context, component patterns, React Router,
+            react-hook-form, Redux/Zustand, React Testing Library, TypeScript, JS ecosystem</span
+          >
+        </div>
+        <div class="flex gap-3">
+          <span class="text-white/40 text-sm w-28 shrink-0">Target</span>
+          <span class="text-sm text-white/80"
+            >Senior Angular Developer certification at
+            <a
+              href="https://certificates.dev/angular"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-accent hover:text-primary transition-colors"
+              >certificates.dev/angular</a
+            ></span
+          >
+        </div>
+        <div class="flex gap-3">
+          <span class="text-white/40 text-sm w-28 shrink-0">Timeline</span>
+          <span class="text-sm text-white/80">5 weeks · 4+ hours/day · ~140 total hours</span>
+        </div>
+        <div class="flex gap-3">
+          <span class="text-white/40 text-sm w-28 shrink-0">Exam Format</span>
+          <span class="text-sm text-white/80">40 MCQ (90 min) + coding challenge (105 min)</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Setting Up Your Claude Project -->
+    <section id="setup" class="mb-10">
+      <h2 class="text-xs font-semibold uppercase tracking-widest text-primary mb-4">
+        Setting Up Your Claude Project
+      </h2>
+      <p class="text-sm text-white/60 mb-5 leading-relaxed">
+        A Claude Project stores your instructions and reference files persistently. Every
+        conversation you start inside the project loads your context automatically — you never have
+        to re-explain your background or timeline.
+      </p>
+      <div class="space-y-3">
+        @for (step of setupSteps; track step.number) {
+          <div class="bg-surface border border-white/10 rounded-2xl p-6 flex gap-5">
+            <span
+              class="flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-bold shrink-0"
+              >{{ step.number }}</span
+            >
+            <div>
+              <h3 class="font-semibold mb-1 text-sm">{{ step.title }}</h3>
+              <p class="text-sm text-white/60 leading-relaxed">{{ step.description }}</p>
+            </div>
+          </div>
+        }
+      </div>
+    </section>
+
+    <!-- How to Work With Me -->
+    <section id="working-rules" class="mb-10">
+      <h2 class="text-xs font-semibold uppercase tracking-widest text-primary mb-4">
+        How to Work With Me — Always
+      </h2>
+      <div class="bg-surface border border-white/10 rounded-2xl divide-y divide-white/5">
+        @for (rule of workingRules; track rule.text) {
+          <div class="flex items-start gap-4 px-6 py-4">
+            <span class="text-lg shrink-0" aria-hidden="true">{{ rule.icon }}</span>
+            <p class="text-sm text-white/70 leading-relaxed" [innerHTML]="rule.text"></p>
+          </div>
+        }
+      </div>
+    </section>
+
+    <!-- Session Formats -->
+    <section id="sessions" class="mb-10">
+      <h2 class="text-xs font-semibold uppercase tracking-widest text-primary mb-4">
+        Session Formats
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        @for (session of sessionFormats; track session.title) {
+          <div class="bg-surface border border-white/10 rounded-2xl p-6">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="text-xl" aria-hidden="true">{{ session.icon }}</span>
+              <h3 class="font-semibold text-sm">{{ session.title }}</h3>
+            </div>
+            <code
+              class="block text-xs text-accent bg-accent/5 border border-accent/15 rounded-lg px-3 py-2 mb-4 font-mono"
+              >{{ session.trigger }}</code
+            >
+            <ul class="space-y-1.5">
+              @for (step of session.steps; track step) {
+                <li class="flex items-start gap-2 text-sm text-white/60">
+                  <span class="text-primary mt-0.5 shrink-0">›</span>
+                  {{ step }}
+                </li>
+              }
+            </ul>
+          </div>
+        }
+      </div>
+    </section>
+
+    <!-- Daily Study Routine -->
+    <section id="routine" class="mb-10">
+      <h2 class="text-xs font-semibold uppercase tracking-widest text-primary mb-4">
+        Your Daily Study Routine
+      </h2>
+      <p class="text-sm text-white/60 mb-5 leading-relaxed">
+        Following this routine every day keeps Claude calibrated to where you are and maximises the
+        value of each session.
+      </p>
+      <div class="space-y-3">
+        @for (block of dailyRoutine; track block.time) {
+          <div class="bg-surface border border-white/10 rounded-2xl p-6">
+            <div class="flex items-center gap-3 mb-4">
+              <span class="text-xl" aria-hidden="true">{{ block.icon }}</span>
+              <div>
+                <p class="font-semibold text-sm">{{ block.title }}</p>
+                <p class="text-xs text-white/40 mt-0.5">{{ block.time }}</p>
+              </div>
+            </div>
+            <ul class="space-y-1.5">
+              @for (step of block.steps; track step) {
+                <li class="flex items-start gap-2 text-sm text-white/60">
+                  <span class="text-primary mt-0.5 shrink-0">›</span>
+                  {{ step }}
+                </li>
+              }
+            </ul>
+          </div>
+        }
+      </div>
+    </section>
+
+    <!-- Week Schedule -->
+    <section id="schedule" class="mb-10">
+      <h2 class="text-xs font-semibold uppercase tracking-widest text-primary mb-4">
+        5-Week Day-by-Day Schedule
+      </h2>
+      <div class="space-y-4">
+        @for (week of weeks; track week.number) {
+          <details class="group bg-surface border border-white/10 rounded-2xl overflow-hidden">
+            <summary
+              class="flex items-center justify-between px-6 py-5 cursor-pointer list-none select-none hover:bg-white/[0.02] transition-colors"
+            >
+              <div class="flex items-center gap-4">
+                <span
+                  class="flex items-center justify-center w-8 h-8 rounded-lg text-xs font-bold shrink-0"
+                  [style.background]="'rgba(212,175,55,0.12)'"
+                  [style.color]="'#D4AF37'"
+                  >W{{ week.number }}</span
+                >
+                <div>
+                  <p class="font-semibold">{{ week.title }}</p>
+                  <p class="text-xs text-white/40 mt-0.5">{{ week.theme }}</p>
+                </div>
+              </div>
+              <svg
+                class="w-4 h-4 text-white/30 transition-transform group-open:rotate-180 shrink-0"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                aria-hidden="true"
+              >
+                <path d="M6 9l6 6 6-6" />
+              </svg>
+            </summary>
+            <div class="px-6 pb-6 space-y-4 border-t border-white/5 pt-5">
+              @for (day of week.days; track day.name) {
+                <div>
+                  <div class="flex items-center gap-2 mb-2">
+                    <span class="text-xs font-semibold uppercase tracking-widest text-white/40">{{
+                      day.name
+                    }}</span>
+                    @if (day.hard) {
+                      <span
+                        class="text-xs bg-amber-400/10 border border-amber-400/20 text-amber-400 px-2 py-0.5 rounded-full"
+                        >{{ day.hard }}</span
+                      >
+                    }
+                  </div>
+                  <ul class="space-y-1.5 pl-1">
+                    @for (point of day.points; track point) {
+                      <li class="flex items-start gap-2 text-sm text-white/60">
+                        <span class="text-primary mt-1 shrink-0 text-xs">▸</span>
+                        {{ point }}
+                      </li>
+                    }
+                  </ul>
+                </div>
+              }
+            </div>
+          </details>
+        }
+      </div>
+    </section>
+
+    <!-- Focus Topics -->
+    <section id="focus" class="mb-10">
+      <h2 class="text-xs font-semibold uppercase tracking-widest text-primary mb-4">
+        Topics Requiring Extra Time
+      </h2>
+      <div class="bg-surface border border-white/10 rounded-2xl p-6">
+        <ul class="space-y-3">
+          @for (topic of focusTopics; track topic) {
+            <li class="flex items-start gap-3 text-sm text-white/70">
+              <span class="text-white/20 mt-0.5">☐</span>
+              {{ topic }}
+            </li>
+          }
+        </ul>
+      </div>
+    </section>
+
+    <!-- Power Tips -->
+    <section id="tips" class="mb-10">
+      <h2 class="text-xs font-semibold uppercase tracking-widest text-primary mb-4">
+        Power Tips for Claude Sessions
+      </h2>
+      <div class="bg-surface border border-white/10 rounded-2xl divide-y divide-white/5">
+        @for (tip of powerTips; track tip.title) {
+          <div class="flex items-start gap-4 px-6 py-4">
+            <span class="text-lg shrink-0" aria-hidden="true">{{ tip.icon }}</span>
+            <div>
+              <p class="text-sm font-semibold mb-1">{{ tip.title }}</p>
+              <p class="text-sm text-white/55 leading-relaxed">{{ tip.description }}</p>
+            </div>
+          </div>
+        }
+      </div>
+    </section>
+
+    <!-- Keeping Instructions Fresh -->
+    <section id="instructions" class="mb-10">
+      <h2 class="text-xs font-semibold uppercase tracking-widest text-primary mb-4">
+        Keeping Your Project Instructions Fresh
+      </h2>
+      <div class="bg-surface border border-white/10 rounded-2xl p-6 mb-4">
+        <p class="text-sm text-white/70 leading-relaxed">
+          The project instructions have a
+          <strong class="text-white">Current Progress</strong> section at the bottom. Update it at
+          the start or end of each week — this is how Claude tracks where you are without you
+          explaining it every session.
+        </p>
+      </div>
+      <pre
+        class="bg-surface-light border border-white/10 rounded-2xl px-6 py-5 text-xs text-white/60 font-mono leading-relaxed overflow-x-auto whitespace-pre-wrap"
+        >{{ instructionsSample }}</pre
+      >
+    </section>
+
+    <!-- PDF Library -->
+    <section id="pdfs" class="mb-10">
+      <h2 class="text-xs font-semibold uppercase tracking-widest text-primary mb-4">
+        Your Reference PDF Library
+      </h2>
+      <p class="text-sm text-white/60 mb-5 leading-relaxed">
+        Upload all files below to your Claude project for in-session reference.
+      </p>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="border-b border-white/10">
+              <th
+                class="text-left text-xs font-semibold uppercase tracking-widest text-white/40 pb-3 pr-6"
+              >
+                File
+              </th>
+              <th
+                class="text-left text-xs font-semibold uppercase tracking-widest text-white/40 pb-3 pr-4"
+              >
+                Upload?
+              </th>
+              <th
+                class="text-left text-xs font-semibold uppercase tracking-widest text-white/40 pb-3"
+              >
+                Notes
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (entry of pdfLibrary; track entry.file) {
+              <tr class="border-b border-white/5">
+                <td class="py-3 pr-6 font-mono text-xs text-accent">{{ entry.file }}</td>
+                <td class="py-3 pr-4">
+                  @if (entry.upload) {
+                    <span
+                      class="text-xs bg-primary/10 border border-primary/20 text-primary px-2 py-0.5 rounded-full"
+                      >Yes</span
+                    >
+                  } @else {
+                    <span
+                      class="text-xs bg-white/5 border border-white/10 text-white/40 px-2 py-0.5 rounded-full"
+                      >Paste</span
+                    >
+                  }
+                </td>
+                <td class="py-3 text-xs text-white/50">{{ entry.note }}</td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- You Are Ready -->
+    <section id="start" class="mb-10">
+      <div
+        class="bg-gradient-to-br from-primary/10 to-accent/5 border border-primary/20 rounded-2xl p-8 text-center"
+      >
+        <p class="text-xs font-semibold uppercase tracking-widest text-primary mb-3">
+          You Are Ready
+        </p>
+        <h2 class="text-2xl font-bold mb-4">Start Week 1, Day 1</h2>
+        <p class="text-sm text-white/60 mb-6 max-w-md mx-auto leading-relaxed">
+          Open claude.ai, go inside your Angular Senior Cert Prep project, click New chat, and paste
+          this:
+        </p>
+        <code
+          class="block text-sm text-accent bg-accent/5 border border-accent/15 rounded-xl px-5 py-4 font-mono max-w-xl mx-auto text-left"
+        >
+          Week 1, Day 1 — teach me Angular standalone components and modern template syntax
+        </code>
+      </div>
+    </section>
+
+    <!-- Current Progress -->
+    <section id="progress">
+      <h2 class="text-xs font-semibold uppercase tracking-widest text-primary mb-4">
+        Current Progress
+      </h2>
+      <div
+        class="bg-surface border border-primary/20 rounded-2xl p-6 grid grid-cols-2 md:grid-cols-4 gap-6"
+      >
+        @for (stat of progress; track stat.label) {
+          <div>
+            <p class="text-xs text-white/40 mb-1">{{ stat.label }}</p>
+            <p
+              class="font-semibold text-sm"
+              [class]="stat.highlight ? 'text-primary' : 'text-white'"
+            >
+              {{ stat.value }}
+            </p>
+          </div>
+        }
+      </div>
+    </section>
+  </div>
+</div>
+
+@if (showBackToTop()) {
+  <button
+    (click)="scrollToTop()"
+    type="button"
+    aria-label="Back to top"
+    class="fixed bottom-8 right-8 z-50 flex items-center justify-center w-10 h-10 rounded-full bg-surface border border-primary/30 text-primary shadow-lg hover:bg-surface-light hover:border-primary/60 transition-all duration-200"
+  >
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      width="16"
+      height="16"
+      aria-hidden="true"
+    >
+      <path d="M18 15l-6-6-6 6" />
+    </svg>
+  </button>
+}

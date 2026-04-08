@@ -1,0 +1,219 @@
+<div class="min-h-screen bg-bg text-white">
+  <div class="max-w-6xl mx-auto px-6 pt-16 pb-20">
+    <!-- Breadcrumb -->
+    <nav class="flex items-center gap-2 text-sm text-white/40 mb-8" aria-label="Breadcrumb">
+      <a routerLink="/" class="hover:text-white transition-colors">Dashboard</a>
+      <span>/</span>
+      <span class="text-white/70">Week {{ weekId() }}</span>
+    </nav>
+
+    <!-- Header -->
+    <div class="mb-10">
+      <p class="text-xs font-semibold uppercase tracking-widest text-primary mb-2">
+        Week {{ weekId() }}
+      </p>
+      <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-2">{{ week().title }}</h1>
+      <p class="text-white/50">{{ week().theme }}</p>
+    </div>
+
+    <div class="flex flex-col lg:flex-row gap-6">
+      <!-- Day Sidebar -->
+      <aside class="lg:w-56 shrink-0">
+        <p class="text-xs font-semibold uppercase tracking-widest text-white/40 mb-3">Days</p>
+        <ul class="flex flex-row lg:flex-col gap-2" role="list">
+          @for (day of week().days; track day.number) {
+            <li class="flex-1 lg:flex-none">
+              <button
+                type="button"
+                (click)="activeDay.set(day.number); activeTab.set('lesson')"
+                class="w-full text-left px-3 py-2.5 rounded-lg text-sm transition-colors"
+                [class]="
+                  activeDay() === day.number
+                    ? 'bg-primary/10 border border-primary/30 text-white'
+                    : 'text-white/50 hover:text-white hover:bg-white/5 border border-transparent'
+                "
+              >
+                <span class="font-semibold flex items-center gap-1.5">
+                  Day {{ day.number }}
+                  @if (isDayComplete(day.number)) {
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      width="12"
+                      height="12"
+                      class="text-emerald-400 shrink-0"
+                      aria-label="Complete"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  }
+                </span>
+                <span class="hidden lg:block text-xs opacity-70 mt-0.5">{{ day.title }}</span>
+              </button>
+            </li>
+          }
+        </ul>
+      </aside>
+
+      <!-- Main Content -->
+      <div class="flex-1 min-w-0">
+        @let day = week().days[activeDay() - 1];
+
+        <!-- Tabs -->
+        <div class="flex gap-1 mb-6 border-b border-white/10 pb-0">
+          @for (tab of tabs; track tab) {
+            <button
+              type="button"
+              (click)="setTab(tab)"
+              class="px-4 py-2 text-sm font-medium capitalize rounded-t-lg transition-colors -mb-px border-b-2"
+              [class]="
+                activeTab() === tab
+                  ? 'text-primary border-primary'
+                  : 'text-white/40 hover:text-white/70 border-transparent'
+              "
+            >
+              {{ tab }}
+            </button>
+          }
+        </div>
+
+        <!-- Lesson Tab -->
+        @if (activeTab() === 'lesson') {
+          <div class="space-y-6">
+            <div class="bg-white/[0.03] border border-white/10 rounded-2xl p-6">
+              <h2 class="text-xl font-semibold mb-2">{{ day.title }}</h2>
+              <p class="text-white/60 mb-6">{{ day.summary }}</p>
+              <div class="flex flex-wrap items-center justify-between gap-3 mt-2">
+                <div class="flex gap-3">
+                  @if (day.pdfUrl) {
+                    <a
+                      [href]="'/' + day.pdfUrl"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium bg-white/5 border border-white/10 hover:bg-white/10 text-white transition-colors"
+                    >
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        width="16"
+                        height="16"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m.75 12l3 3m0 0l3-3m-3 3v-6m-1.5-9H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"
+                        />
+                      </svg>
+                      View PDF
+                    </a>
+                  }
+                </div>
+                <button
+                  type="button"
+                  (click)="toggleDay(activeDay())"
+                  class="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium border transition-colors"
+                  [class]="
+                    isDayComplete(activeDay())
+                      ? 'bg-emerald-500/15 border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/25'
+                      : 'bg-white/5 border-white/10 text-white/60 hover:bg-white/10 hover:text-white'
+                  "
+                  [attr.aria-pressed]="isDayComplete(activeDay())"
+                >
+                  @if (isDayComplete(activeDay())) {
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      width="16"
+                      height="16"
+                      aria-hidden="true"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                    Completed
+                  } @else {
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      width="16"
+                      height="16"
+                      aria-hidden="true"
+                    >
+                      <circle cx="12" cy="12" r="9" />
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="m8.5 12 2.5 2.5 4.5-4.5"
+                      />
+                    </svg>
+                    Mark as complete
+                  }
+                </button>
+              </div>
+            </div>
+          </div>
+        }
+
+        <!-- Challenge Tab -->
+        @if (activeTab() === 'challenge') {
+          <div class="bg-white/[0.03] border border-white/10 rounded-2xl p-6">
+            <p class="text-xs font-semibold uppercase tracking-widest text-amber-400 mb-3">
+              Challenge
+            </p>
+            <h2 class="text-xl font-semibold mb-4">{{ day.title }} — Practice</h2>
+            @if (activeChallenge(); as challenge) {
+              <p class="text-white/60 text-sm leading-relaxed mb-6">{{ challenge.description }}</p>
+              <ngx-monaco-editor
+                class="block w-full rounded-xl overflow-hidden"
+                style="height: 360px"
+                [options]="challengeEditorOptions"
+                [model]="challengeModel()"
+              />
+            } @else {
+              <div
+                class="rounded-xl border border-white/5 bg-white/[0.02] min-h-72 flex items-center justify-center"
+              >
+                <p class="text-white/20 text-sm">No challenge for this day</p>
+              </div>
+            }
+          </div>
+        }
+
+        <!-- Solution Tab -->
+        @if (activeTab() === 'solution') {
+          <div class="bg-white/[0.03] border border-white/10 rounded-2xl p-6">
+            <p class="text-xs font-semibold uppercase tracking-widest text-emerald-400 mb-3">
+              Solution
+            </p>
+            <h2 class="text-xl font-semibold mb-4">{{ day.title }} — Reference Solution</h2>
+            @if (activeChallenge()) {
+              <p class="text-white/60 text-sm leading-relaxed mb-6">
+                Study the reference solution below. Try the challenge first!
+              </p>
+              <ngx-monaco-editor
+                class="block w-full rounded-xl overflow-hidden"
+                style="height: 360px"
+                [options]="solutionEditorOptions"
+                [model]="solutionModel()"
+              />
+            } @else {
+              <div
+                class="rounded-xl border border-white/5 bg-white/[0.02] min-h-72 flex items-center justify-center"
+              >
+                <p class="text-white/20 text-sm">No solution for this day</p>
+              </div>
+            }
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</div>

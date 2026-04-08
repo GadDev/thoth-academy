@@ -1,0 +1,164 @@
+<div class="min-h-screen bg-bg text-white">
+  <div class="max-w-4xl mx-auto px-6 pt-16 pb-24">
+    <!-- Page Header -->
+    <div class="mb-14">
+      <p class="text-xs font-semibold uppercase tracking-widest text-primary mb-3">Cheat Sheet</p>
+      <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-4">
+        Interview<br class="hidden md:block" />
+        <span class="text-white/50">Cheat Sheet</span>
+      </h1>
+      <p class="text-white/60 leading-relaxed max-w-2xl">
+        High-impact answers for React → Angular interview questions. Each question includes a strong
+        answer you can say out loud.
+      </p>
+
+      <!-- Tag legend -->
+      <div class="flex flex-wrap gap-2 mt-6" role="list" aria-label="Question tags">
+        @for (entry of tagLegend; track entry.tag) {
+          <span
+            role="listitem"
+            class="text-xs px-2.5 py-1 rounded-full border font-medium"
+            [class]="tagColors[entry.tag]"
+            >{{ entry.label }}</span
+          >
+        }
+      </div>
+
+      <!-- Jump links -->
+      <nav aria-label="Question sections" class="mt-8 flex flex-wrap gap-2">
+        @for (link of jumpLinks; track link.id) {
+          <a
+            routerLink="."
+            [fragment]="link.id"
+            class="text-xs px-3 py-1.5 rounded-full border border-white/10 bg-surface text-white/50 hover:text-primary hover:border-primary/30 transition-colors focus-visible:outline-2 focus-visible:outline-primary focus-visible:outline-offset-2"
+            >{{ link.label }}</a
+          >
+        }
+      </nav>
+    </div>
+
+    <!-- Questions -->
+    @for (q of questions; track q.id) {
+      <section
+        [id]="q.id"
+        class="mb-10 bg-surface border border-white/10 rounded-2xl overflow-hidden"
+        [attr.aria-labelledby]="q.id + '-heading'"
+      >
+        <!-- Question header -->
+        <div class="flex items-start justify-between gap-4 px-6 py-5 border-b border-white/10">
+          <div class="flex items-center gap-3">
+            <span class="text-xl" aria-hidden="true">{{ q.icon }}</span>
+            <div>
+              <p class="text-xs text-white/30 mb-0.5">Question {{ q.number }}</p>
+              <h2 [id]="q.id + '-heading'" class="text-base font-semibold text-white">
+                {{ q.title }}
+              </h2>
+            </div>
+          </div>
+          <span
+            class="shrink-0 text-xs px-2.5 py-1 rounded-full border font-medium"
+            [class]="tagColors[q.tag]"
+            >{{ tagLabels[q.tag] }}</span
+          >
+        </div>
+
+        <!-- Blocks -->
+        <div class="px-6 py-5 space-y-5">
+          @for (block of q.body; track $index) {
+            @if (block.type === 'paragraph') {
+              <p class="text-sm text-white/70 leading-relaxed">{{ block.text }}</p>
+            }
+
+            @if (block.type === 'comparison') {
+              <div class="overflow-x-auto rounded-xl border border-white/10">
+                <table class="w-full text-xs">
+                  <thead>
+                    <tr class="border-b border-white/10 bg-white/[0.02]">
+                      <th
+                        scope="col"
+                        class="text-left px-4 py-2.5 font-semibold uppercase tracking-widest text-white/30"
+                      >
+                        ⚛️ React
+                      </th>
+                      <th
+                        scope="col"
+                        class="text-left px-4 py-2.5 font-semibold uppercase tracking-widest text-white/30"
+                      >
+                        🅰️ Angular
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    @for (row of block.rows; track row.react) {
+                      <tr class="border-b border-white/5 last:border-b-0">
+                        <td class="px-4 py-2.5 font-mono text-accent/70">{{ row.react }}</td>
+                        <td class="px-4 py-2.5 font-mono text-primary/90">{{ row.angular }}</td>
+                      </tr>
+                    }
+                  </tbody>
+                </table>
+              </div>
+            }
+
+            @if (block.type === 'bullets') {
+              <div>
+                @if (block.label) {
+                  <p class="text-xs font-semibold uppercase tracking-widest text-white/40 mb-2">
+                    {{ block.label }}
+                  </p>
+                }
+                <ul class="space-y-1.5" role="list">
+                  @for (item of block.items; track item) {
+                    <li class="flex items-start gap-2 text-sm text-white/70">
+                      <span class="text-primary mt-0.5 shrink-0" aria-hidden="true">•</span>
+                      {{ item }}
+                    </li>
+                  }
+                </ul>
+              </div>
+            }
+
+            @if (block.type === 'answer') {
+              <div class="flex gap-3 bg-primary/5 border border-primary/20 rounded-xl px-4 py-3">
+                <span class="text-primary shrink-0 mt-0.5" aria-hidden="true">👉</span>
+                <p class="text-sm text-white/80 leading-relaxed italic">{{ block.text }}</p>
+              </div>
+            }
+
+            @if (block.type === 'quote') {
+              <blockquote class="border-l-2 border-primary pl-4">
+                <p class="text-sm text-white/80 leading-relaxed italic">"{{ block.text }}"</p>
+              </blockquote>
+            }
+
+            @if (block.type === 'tip') {
+              <div class="flex gap-2.5 bg-accent/5 border border-accent/20 rounded-xl px-4 py-3">
+                <span class="text-accent shrink-0 mt-0.5" aria-hidden="true">💡</span>
+                <p class="text-xs text-white/60 leading-relaxed">{{ block.text }}</p>
+              </div>
+            }
+          }
+        </div>
+      </section>
+    }
+
+    <!-- Final takeaway -->
+    <div class="bg-primary/5 border border-primary/20 rounded-2xl p-8 text-center">
+      <p class="text-xs font-semibold uppercase tracking-widest text-primary mb-6">
+        🏁 Final Takeaway
+      </p>
+      <div class="grid md:grid-cols-2 gap-4 max-w-lg mx-auto">
+        <div class="bg-bg/60 rounded-xl p-4">
+          <p class="text-2xl mb-2">⚛️</p>
+          <p class="text-sm font-semibold text-white mb-1">React</p>
+          <p class="text-xs text-white/50">Flexibility + composition</p>
+        </div>
+        <div class="bg-bg/60 rounded-xl p-4">
+          <p class="text-2xl mb-2">🅰️</p>
+          <p class="text-sm font-semibold text-primary mb-1">Angular</p>
+          <p class="text-xs text-white/50">Structure + scalability</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

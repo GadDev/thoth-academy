@@ -1,0 +1,161 @@
+<div class="min-h-screen bg-bg text-white">
+  <!-- Hero -->
+  <section class="max-w-6xl mx-auto px-6 pt-16 pb-10">
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-widest text-primary mb-2">
+          Angular Learning Path
+        </p>
+        <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-3">
+          5-Week Angular<br class="hidden md:block" />
+          <span class="bg-gradient-to-r from-primary to-primary-hover bg-clip-text text-transparent"
+            >Mastery Course</span
+          >
+        </h1>
+        <p class="text-white/50 max-w-lg">
+          25 lessons across 5 weeks. Build real-world Angular applications with guided exercises,
+          challenges, and Claude-powered assistance.
+        </p>
+      </div>
+      <div class="flex flex-col sm:flex-row md:flex-col gap-3 shrink-0">
+        <!-- Continue Learning CTA -->
+        @if (nextLesson(); as lesson) {
+          <a
+            [routerLink]="['/week', lesson.weekId]"
+            class="shrink-0 flex flex-col gap-1 bg-primary/10 hover:bg-primary/20 border border-primary/30 rounded-2xl px-6 py-4 transition-colors no-underline"
+          >
+            <p class="text-xs font-semibold uppercase tracking-widest text-primary">
+              Continue Learning
+            </p>
+            <p class="text-sm font-semibold text-white">
+              Week {{ lesson.weekId }}: {{ lesson.weekTitle }}
+            </p>
+            <p class="text-xs text-white/50">Day {{ lesson.dayNumber }} — {{ lesson.dayTitle }}</p>
+          </a>
+        } @else {
+          <div
+            class="shrink-0 flex items-center gap-3 bg-emerald-500/10 border border-emerald-500/30 rounded-2xl px-6 py-4"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              width="24"
+              height="24"
+              class="text-emerald-400 shrink-0"
+              aria-hidden="true"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z"
+                clip-rule="evenodd"
+              />
+            </svg>
+            <div>
+              <p class="text-sm font-semibold text-emerald-400">Course complete!</p>
+              <p class="text-xs text-white/50">All 25 lessons done</p>
+            </div>
+          </div>
+        }
+
+        <!-- Overall progress -->
+        <div
+          class="flex items-center gap-4 shrink-0 bg-surface-light border border-white/10 rounded-2xl px-6 py-4"
+        >
+          <svg viewBox="0 0 48 48" width="56" height="56" class="-rotate-90">
+            <circle
+              cx="24"
+              cy="24"
+              r="20"
+              fill="none"
+              stroke="rgba(255,255,255,0.08)"
+              stroke-width="4"
+            />
+            <circle
+              cx="24"
+              cy="24"
+              r="20"
+              fill="none"
+              stroke="url(#prog)"
+              stroke-width="4"
+              stroke-linecap="round"
+              [attr.stroke-dasharray]="circumference"
+              [attr.stroke-dashoffset]="overallStrokeDashoffset()"
+            />
+            <defs>
+              <linearGradient id="prog" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="#D4AF37" />
+                <stop offset="100%" stop-color="#3ABEFF" />
+              </linearGradient>
+            </defs>
+          </svg>
+          <div>
+            <p class="text-2xl font-bold">{{ overallProgress() }}%</p>
+            <p class="text-xs text-white/50">
+              {{ completedLessons() }} / {{ totalLessons }} lessons
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Week Cards -->
+  <section class="max-w-6xl mx-auto px-6 pb-20">
+    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
+      @for (week of weekData(); track week.id) {
+        <a
+          [routerLink]="['/week', week.id]"
+          class="group relative flex flex-col gap-4 bg-surface hover:bg-surface-light border border-white/10 hover:border-primary/30 rounded-2xl p-6 transition-all duration-200 cursor-pointer no-underline"
+        >
+          <!-- Week badge + ring -->
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-semibold uppercase tracking-widest text-white/40"
+              >Week {{ week.id }}</span
+            >
+            <svg viewBox="0 0 48 48" width="40" height="40" class="-rotate-90 shrink-0">
+              <circle
+                cx="24"
+                cy="24"
+                r="20"
+                fill="none"
+                stroke="rgba(255,255,255,0.08)"
+                stroke-width="4"
+              />
+              <circle
+                cx="24"
+                cy="24"
+                r="20"
+                fill="none"
+                stroke="#3ABEFF"
+                stroke-width="4"
+                stroke-linecap="round"
+                [attr.stroke-dasharray]="circumference"
+                [attr.stroke-dashoffset]="week.strokeDashoffset"
+              />
+            </svg>
+          </div>
+
+          <div>
+            <h2 class="text-lg font-semibold mb-1 group-hover:text-primary transition-colors">
+              {{ week.title }}
+            </h2>
+            <p class="text-sm text-white/50">{{ week.theme }}</p>
+          </div>
+
+          <!-- Days progress -->
+          <div class="flex gap-1.5 mt-auto">
+            @for (dayItem of week.dayCompletion; track dayItem.n) {
+              <div
+                class="h-1.5 flex-1 rounded-full"
+                [class]="dayItem.complete ? 'bg-primary' : 'bg-white/10'"
+              ></div>
+            }
+          </div>
+          <p class="text-xs text-white/40">
+            {{ week.completedCount }}/{{ week.days.length }} days complete
+          </p>
+        </a>
+      }
+    </div>
+  </section>
+</div>
