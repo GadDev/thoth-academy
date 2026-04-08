@@ -2,14 +2,15 @@
   <div class="max-w-5xl mx-auto px-6 pt-16 pb-24">
     <!-- Page Header -->
     <div class="mb-14">
-      <p class="text-xs font-semibold uppercase tracking-widest text-primary mb-3">Cheat Sheet</p>
+      <p class="text-xs font-semibold uppercase tracking-widest text-primary mb-3">
+        {{ 'reactAngular.tag' | transloco }}
+      </p>
       <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-4">
-        React → Angular<br class="hidden md:block" />
-        <span class="text-white/50">Mapping Guide</span>
+        {{ 'reactAngular.title' | transloco }}<br class="hidden md:block" />
+        <span class="text-white/50">{{ 'reactAngular.titleSub' | transloco }}</span>
       </h1>
       <p class="text-white/60 leading-relaxed max-w-2xl">
-        A mental translation layer for React developers learning Angular. Every concept you already
-        know has a direct Angular equivalent.
+        {{ 'reactAngular.subtitle' | transloco }}
       </p>
       <nav aria-label="Page sections" class="mt-8 flex flex-wrap gap-2">
         @for (link of jumpLinks; track link.id) {

@@ -2,14 +2,15 @@
   <div class="max-w-4xl mx-auto px-6 pt-16 pb-24">
     <!-- Page Header -->
     <div class="mb-14">
-      <p class="text-xs font-semibold uppercase tracking-widest text-primary mb-3">User Guide</p>
+      <p class="text-xs font-semibold uppercase tracking-widest text-primary mb-3">
+        {{ 'guide.tag' | transloco }}
+      </p>
       <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-4">
-        Angular Senior Certification<br class="hidden md:block" />
-        <span class="text-white/50">5-Week Intensive Prep</span>
+        {{ 'guide.title' | transloco }}<br class="hidden md:block" />
+        <span class="text-white/50">{{ 'guide.titleSub' | transloco }}</span>
       </h1>
       <p class="text-white/60 leading-relaxed max-w-2xl">
-        Claude project instructions to get the most out of each session — how to work together,
-        session formats, and the full day-by-day schedule.
+        {{ 'guide.subtitle' | transloco }}
       </p>
       <!-- Jump links -->
       <nav aria-label="Page sections" class="mt-8 flex flex-wrap gap-2">
@@ -18,7 +19,7 @@
             routerLink="."
             [fragment]="link.id"
             class="text-xs px-3 py-1.5 rounded-full border border-white/10 bg-surface text-white/50 hover:text-primary hover:border-primary/30 transition-colors"
-            >{{ link.label }}</a
+            >{{ link.labelKey | transloco }}</a
           >
         }
       </nav>
@@ -27,17 +28,14 @@
     <!-- What This Course Is -->
     <section id="overview" class="mb-10">
       <h2 class="text-xs font-semibold uppercase tracking-widest text-primary mb-4">
-        What This Course Is
+        {{ 'guide.overview.heading' | transloco }}
       </h2>
       <div class="bg-surface border border-white/10 rounded-2xl p-6 mb-6">
         <p class="text-sm text-white/70 leading-relaxed mb-3">
-          This is a structured 5-week intensive self-study course using Claude as your personal
-          Angular instructor. You have a Claude Project set up with custom instructions that give
-          Claude your full context — React background, timeline, target certification, and
-          day-by-day schedule.
+          {{ 'guide.overview.desc1' | transloco }}
         </p>
         <p class="text-sm text-white/70 leading-relaxed">
-          Every session picks up exactly where you left off. No re-explaining. No lost context.
+          {{ 'guide.overview.desc2' | transloco }}
         </p>
       </div>
       <div class="overflow-x-auto">
@@ -47,22 +45,22 @@
               <th
                 class="text-left text-xs font-semibold uppercase tracking-widest text-white/40 pb-3 pr-6"
               >
-                Week
+                {{ 'guide.overview.colWeek' | transloco }}
               </th>
               <th
                 class="text-left text-xs font-semibold uppercase tracking-widest text-white/40 pb-3 pr-6"
               >
-                Theme
+                {{ 'guide.overview.colTheme' | transloco }}
               </th>
               <th
                 class="text-left text-xs font-semibold uppercase tracking-widest text-white/40 pb-3 pr-6 hidden md:table-cell"
               >
-                Lane Mix
+                {{ 'guide.overview.colLaneMix' | transloco }}
               </th>
               <th
                 class="text-left text-xs font-semibold uppercase tracking-widest text-white/40 pb-3"
               >
-                Friday
+                {{ 'guide.overview.colFriday' | transloco }}
               </th>
             </tr>
           </thead>
@@ -77,12 +75,14 @@
                     >{{ w.number }}</span
                   >
                 </td>
-                <td class="py-3 pr-6 text-white/70">{{ w.theme }}</td>
-                <td class="py-3 pr-6 text-white/50 hidden md:table-cell">{{ w.laneMix }}</td>
+                <td class="py-3 pr-6 text-white/70">{{ w.theme | transloco }}</td>
+                <td class="py-3 pr-6 text-white/50 hidden md:table-cell">
+                  {{ w.laneMix | transloco }}
+                </td>
                 <td class="py-3">
                   <span
                     class="text-xs text-accent bg-accent/5 border border-accent/15 px-2 py-0.5 rounded-full"
-                    >{{ w.friday }}</span
+                    >{{ w.friday | transloco }}</span
                   >
                 </td>
               </tr>
@@ -94,19 +94,24 @@
 
     <!-- My Profile -->
     <section id="profile" class="mb-10">
-      <h2 class="text-xs font-semibold uppercase tracking-widest text-primary mb-4">My Profile</h2>
+      <h2 class="text-xs font-semibold uppercase tracking-widest text-primary mb-4">
+        {{ 'guide.profile.heading' | transloco }}
+      </h2>
       <div class="bg-surface border border-white/10 rounded-2xl p-6 space-y-3">
         <div class="flex gap-3">
-          <span class="text-white/40 text-sm w-28 shrink-0">Background</span>
-          <span class="text-sm text-white/80"
-            >Seasoned React engineer — hooks, context, component patterns, React Router,
-            react-hook-form, Redux/Zustand, React Testing Library, TypeScript, JS ecosystem</span
-          >
+          <span class="text-white/40 text-sm w-28 shrink-0">{{
+            'guide.profile.backgroundLabel' | transloco
+          }}</span>
+          <span class="text-sm text-white/80">{{
+            'guide.profile.backgroundValue' | transloco
+          }}</span>
         </div>
         <div class="flex gap-3">
-          <span class="text-white/40 text-sm w-28 shrink-0">Target</span>
+          <span class="text-white/40 text-sm w-28 shrink-0">{{
+            'guide.profile.targetLabel' | transloco
+          }}</span>
           <span class="text-sm text-white/80"
-            >Senior Angular Developer certification at
+            >{{ 'guide.profile.targetValue' | transloco }}
             <a
               href="https://certificates.dev/angular"
               target="_blank"
@@ -117,12 +122,18 @@
           >
         </div>
         <div class="flex gap-3">
-          <span class="text-white/40 text-sm w-28 shrink-0">Timeline</span>
-          <span class="text-sm text-white/80">5 weeks · 4+ hours/day · ~140 total hours</span>
+          <span class="text-white/40 text-sm w-28 shrink-0">{{
+            'guide.profile.timelineLabel' | transloco
+          }}</span>
+          <span class="text-sm text-white/80">{{ 'guide.profile.timelineValue' | transloco }}</span>
         </div>
         <div class="flex gap-3">
-          <span class="text-white/40 text-sm w-28 shrink-0">Exam Format</span>
-          <span class="text-sm text-white/80">40 MCQ (90 min) + coding challenge (105 min)</span>
+          <span class="text-white/40 text-sm w-28 shrink-0">{{
+            'guide.profile.examFormatLabel' | transloco
+          }}</span>
+          <span class="text-sm text-white/80">{{
+            'guide.profile.examFormatValue' | transloco
+          }}</span>
         </div>
       </div>
     </section>
@@ -130,12 +141,10 @@
     <!-- Setting Up Your Claude Project -->
     <section id="setup" class="mb-10">
       <h2 class="text-xs font-semibold uppercase tracking-widest text-primary mb-4">
-        Setting Up Your Claude Project
+        {{ 'guide.setup.heading' | transloco }}
       </h2>
       <p class="text-sm text-white/60 mb-5 leading-relaxed">
-        A Claude Project stores your instructions and reference files persistently. Every
-        conversation you start inside the project loads your context automatically — you never have
-        to re-explain your background or timeline.
+        {{ 'guide.setup.intro' | transloco }}
       </p>
       <div class="space-y-3">
         @for (step of setupSteps; track step.number) {
@@ -145,8 +154,10 @@
               >{{ step.number }}</span
             >
             <div>
-              <h3 class="font-semibold mb-1 text-sm">{{ step.title }}</h3>
-              <p class="text-sm text-white/60 leading-relaxed">{{ step.description }}</p>
+              <h3 class="font-semibold mb-1 text-sm">{{ step.title | transloco }}</h3>
+              <p class="text-sm text-white/60 leading-relaxed">
+                {{ step.description | transloco }}
+              </p>
             </div>
           </div>
         }
@@ -156,13 +167,16 @@
     <!-- How to Work With Me -->
     <section id="working-rules" class="mb-10">
       <h2 class="text-xs font-semibold uppercase tracking-widest text-primary mb-4">
-        How to Work With Me — Always
+        {{ 'guide.workingRules.heading' | transloco }}
       </h2>
       <div class="bg-surface border border-white/10 rounded-2xl divide-y divide-white/5">
         @for (rule of workingRules; track rule.text) {
           <div class="flex items-start gap-4 px-6 py-4">
             <span class="text-lg shrink-0" aria-hidden="true">{{ rule.icon }}</span>
-            <p class="text-sm text-white/70 leading-relaxed" [innerHTML]="rule.text"></p>
+            <p
+              class="text-sm text-white/70 leading-relaxed"
+              [innerHTML]="rule.text | transloco"
+            ></p>
           </div>
         }
       </div>
@@ -171,24 +185,24 @@
     <!-- Session Formats -->
     <section id="sessions" class="mb-10">
       <h2 class="text-xs font-semibold uppercase tracking-widest text-primary mb-4">
-        Session Formats
+        {{ 'guide.sessions.heading' | transloco }}
       </h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
         @for (session of sessionFormats; track session.title) {
           <div class="bg-surface border border-white/10 rounded-2xl p-6">
             <div class="flex items-center gap-2 mb-3">
               <span class="text-xl" aria-hidden="true">{{ session.icon }}</span>
-              <h3 class="font-semibold text-sm">{{ session.title }}</h3>
+              <h3 class="font-semibold text-sm">{{ session.title | transloco }}</h3>
             </div>
             <code
               class="block text-xs text-accent bg-accent/5 border border-accent/15 rounded-lg px-3 py-2 mb-4 font-mono"
-              >{{ session.trigger }}</code
+              >{{ session.trigger | transloco }}</code
             >
             <ul class="space-y-1.5">
               @for (step of session.steps; track step) {
                 <li class="flex items-start gap-2 text-sm text-white/60">
                   <span class="text-primary mt-0.5 shrink-0">›</span>
-                  {{ step }}
+                  {{ step | transloco }}
                 </li>
               }
             </ul>
@@ -200,11 +214,10 @@
     <!-- Daily Study Routine -->
     <section id="routine" class="mb-10">
       <h2 class="text-xs font-semibold uppercase tracking-widest text-primary mb-4">
-        Your Daily Study Routine
+        {{ 'guide.routine.heading' | transloco }}
       </h2>
       <p class="text-sm text-white/60 mb-5 leading-relaxed">
-        Following this routine every day keeps Claude calibrated to where you are and maximises the
-        value of each session.
+        {{ 'guide.routine.intro' | transloco }}
       </p>
       <div class="space-y-3">
         @for (block of dailyRoutine; track block.time) {
@@ -212,15 +225,15 @@
             <div class="flex items-center gap-3 mb-4">
               <span class="text-xl" aria-hidden="true">{{ block.icon }}</span>
               <div>
-                <p class="font-semibold text-sm">{{ block.title }}</p>
-                <p class="text-xs text-white/40 mt-0.5">{{ block.time }}</p>
+                <p class="font-semibold text-sm">{{ block.title | transloco }}</p>
+                <p class="text-xs text-white/40 mt-0.5">{{ block.time | transloco }}</p>
               </div>
             </div>
             <ul class="space-y-1.5">
               @for (step of block.steps; track step) {
                 <li class="flex items-start gap-2 text-sm text-white/60">
                   <span class="text-primary mt-0.5 shrink-0">›</span>
-                  {{ step }}
+                  {{ step | transloco }}
                 </li>
               }
             </ul>
@@ -232,7 +245,7 @@
     <!-- Week Schedule -->
     <section id="schedule" class="mb-10">
       <h2 class="text-xs font-semibold uppercase tracking-widest text-primary mb-4">
-        5-Week Day-by-Day Schedule
+        {{ 'guide.schedule.heading' | transloco }}
       </h2>
       <div class="space-y-4">
         @for (week of weeks; track week.number) {
@@ -248,8 +261,8 @@
                   >W{{ week.number }}</span
                 >
                 <div>
-                  <p class="font-semibold">{{ week.title }}</p>
-                  <p class="text-xs text-white/40 mt-0.5">{{ week.theme }}</p>
+                  <p class="font-semibold">{{ week.title | transloco }}</p>
+                  <p class="text-xs text-white/40 mt-0.5">{{ week.theme | transloco }}</p>
                 </div>
               </div>
               <svg
@@ -268,12 +281,12 @@
                 <div>
                   <div class="flex items-center gap-2 mb-2">
                     <span class="text-xs font-semibold uppercase tracking-widest text-white/40">{{
-                      day.name
+                      day.name | transloco
                     }}</span>
                     @if (day.hard) {
                       <span
                         class="text-xs bg-amber-400/10 border border-amber-400/20 text-amber-400 px-2 py-0.5 rounded-full"
-                        >{{ day.hard }}</span
+                        >{{ day.hard | transloco }}</span
                       >
                     }
                   </div>
@@ -281,7 +294,7 @@
                     @for (point of day.points; track point) {
                       <li class="flex items-start gap-2 text-sm text-white/60">
                         <span class="text-primary mt-1 shrink-0 text-xs">▸</span>
-                        {{ point }}
+                        {{ point | transloco }}
                       </li>
                     }
                   </ul>
@@ -296,14 +309,14 @@
     <!-- Focus Topics -->
     <section id="focus" class="mb-10">
       <h2 class="text-xs font-semibold uppercase tracking-widest text-primary mb-4">
-        Topics Requiring Extra Time
+        {{ 'guide.focusTopics.heading' | transloco }}
       </h2>
       <div class="bg-surface border border-white/10 rounded-2xl p-6">
         <ul class="space-y-3">
           @for (topic of focusTopics; track topic) {
             <li class="flex items-start gap-3 text-sm text-white/70">
               <span class="text-white/20 mt-0.5">☐</span>
-              {{ topic }}
+              {{ topic | transloco }}
             </li>
           }
         </ul>
@@ -313,15 +326,15 @@
     <!-- Power Tips -->
     <section id="tips" class="mb-10">
       <h2 class="text-xs font-semibold uppercase tracking-widest text-primary mb-4">
-        Power Tips for Claude Sessions
+        {{ 'guide.tips.heading' | transloco }}
       </h2>
       <div class="bg-surface border border-white/10 rounded-2xl divide-y divide-white/5">
         @for (tip of powerTips; track tip.title) {
           <div class="flex items-start gap-4 px-6 py-4">
             <span class="text-lg shrink-0" aria-hidden="true">{{ tip.icon }}</span>
             <div>
-              <p class="text-sm font-semibold mb-1">{{ tip.title }}</p>
-              <p class="text-sm text-white/55 leading-relaxed">{{ tip.description }}</p>
+              <p class="text-sm font-semibold mb-1">{{ tip.title | transloco }}</p>
+              <p class="text-sm text-white/55 leading-relaxed">{{ tip.description | transloco }}</p>
             </div>
           </div>
         }
@@ -331,15 +344,13 @@
     <!-- Keeping Instructions Fresh -->
     <section id="instructions" class="mb-10">
       <h2 class="text-xs font-semibold uppercase tracking-widest text-primary mb-4">
-        Keeping Your Project Instructions Fresh
+        {{ 'guide.instructions.heading' | transloco }}
       </h2>
       <div class="bg-surface border border-white/10 rounded-2xl p-6 mb-4">
-        <p class="text-sm text-white/70 leading-relaxed">
-          The project instructions have a
-          <strong class="text-white">Current Progress</strong> section at the bottom. Update it at
-          the start or end of each week — this is how Claude tracks where you are without you
-          explaining it every session.
-        </p>
+        <p
+          class="text-sm text-white/70 leading-relaxed"
+          [innerHTML]="'guide.instructions.desc' | transloco"
+        ></p>
       </div>
       <pre
         class="bg-surface-light border border-white/10 rounded-2xl px-6 py-5 text-xs text-white/60 font-mono leading-relaxed overflow-x-auto whitespace-pre-wrap"
@@ -350,10 +361,10 @@
     <!-- PDF Library -->
     <section id="pdfs" class="mb-10">
       <h2 class="text-xs font-semibold uppercase tracking-widest text-primary mb-4">
-        Your Reference PDF Library
+        {{ 'guide.pdfs.heading' | transloco }}
       </h2>
       <p class="text-sm text-white/60 mb-5 leading-relaxed">
-        Upload all files below to your Claude project for in-session reference.
+        {{ 'guide.pdfs.intro' | transloco }}
       </p>
       <div class="overflow-x-auto">
         <table class="w-full text-sm">
@@ -362,17 +373,17 @@
               <th
                 class="text-left text-xs font-semibold uppercase tracking-widest text-white/40 pb-3 pr-6"
               >
-                File
+                {{ 'guide.pdfs.colFile' | transloco }}
               </th>
               <th
                 class="text-left text-xs font-semibold uppercase tracking-widest text-white/40 pb-3 pr-4"
               >
-                Upload?
+                {{ 'guide.pdfs.colUpload' | transloco }}
               </th>
               <th
                 class="text-left text-xs font-semibold uppercase tracking-widest text-white/40 pb-3"
               >
-                Notes
+                {{ 'guide.pdfs.colNotes' | transloco }}
               </th>
             </tr>
           </thead>
@@ -384,16 +395,16 @@
                   @if (entry.upload) {
                     <span
                       class="text-xs bg-primary/10 border border-primary/20 text-primary px-2 py-0.5 rounded-full"
-                      >Yes</span
+                      >{{ 'guide.pdfs.uploadYes' | transloco }}</span
                     >
                   } @else {
                     <span
                       class="text-xs bg-white/5 border border-white/10 text-white/40 px-2 py-0.5 rounded-full"
-                      >Paste</span
+                      >{{ 'guide.pdfs.uploadPaste' | transloco }}</span
                     >
                   }
                 </td>
-                <td class="py-3 text-xs text-white/50">{{ entry.note }}</td>
+                <td class="py-3 text-xs text-white/50">{{ entry.note | transloco }}</td>
               </tr>
             }
           </tbody>
@@ -407,17 +418,16 @@
         class="bg-gradient-to-br from-primary/10 to-accent/5 border border-primary/20 rounded-2xl p-8 text-center"
       >
         <p class="text-xs font-semibold uppercase tracking-widest text-primary mb-3">
-          You Are Ready
+          {{ 'guide.start.tag' | transloco }}
         </p>
-        <h2 class="text-2xl font-bold mb-4">Start Week 1, Day 1</h2>
+        <h2 class="text-2xl font-bold mb-4">{{ 'guide.start.title' | transloco }}</h2>
         <p class="text-sm text-white/60 mb-6 max-w-md mx-auto leading-relaxed">
-          Open claude.ai, go inside your Angular Senior Cert Prep project, click New chat, and paste
-          this:
+          {{ 'guide.start.desc' | transloco }}
         </p>
         <code
           class="block text-sm text-accent bg-accent/5 border border-accent/15 rounded-xl px-5 py-4 font-mono max-w-xl mx-auto text-left"
         >
-          Week 1, Day 1 — teach me Angular standalone components and modern template syntax
+          {{ 'guide.start.prompt' | transloco }}
         </code>
       </div>
     </section>
@@ -425,19 +435,19 @@
     <!-- Current Progress -->
     <section id="progress">
       <h2 class="text-xs font-semibold uppercase tracking-widest text-primary mb-4">
-        Current Progress
+        {{ 'guide.progress.heading' | transloco }}
       </h2>
       <div
         class="bg-surface border border-primary/20 rounded-2xl p-6 grid grid-cols-2 md:grid-cols-4 gap-6"
       >
-        @for (stat of progress; track stat.label) {
+        @for (stat of progress; track stat.labelKey) {
           <div>
-            <p class="text-xs text-white/40 mb-1">{{ stat.label }}</p>
+            <p class="text-xs text-white/40 mb-1">{{ stat.labelKey | transloco }}</p>
             <p
               class="font-semibold text-sm"
               [class]="stat.highlight ? 'text-primary' : 'text-white'"
             >
-              {{ stat.value }}
+              {{ stat.valueKey | transloco }}
             </p>
           </div>
         }

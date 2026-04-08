@@ -1,10 +1,11 @@
 <div class="min-h-screen bg-bg text-white">
   <div class="max-w-4xl mx-auto px-6 pt-16 pb-20">
-    <p class="text-xs font-semibold uppercase tracking-widest text-primary mb-2">Resources</p>
-    <h1 class="text-4xl font-bold tracking-tight mb-4">Course Materials</h1>
+    <p class="text-xs font-semibold uppercase tracking-widest text-primary mb-2">
+      {{ 'resources.tag' | transloco }}
+    </p>
+    <h1 class="text-4xl font-bold tracking-tight mb-4">{{ 'resources.title' | transloco }}</h1>
     <p class="text-white/50 mb-12 max-w-xl">
-      Every PDF for this course — cheat sheets, day-by-day lesson notes, coding drills, and timed
-      challenges.
+      {{ 'resources.subtitle' | transloco }}
     </p>
 
     <div class="space-y-10">
@@ -18,16 +19,17 @@
             🤖
           </div>
           <div>
-            <h2 class="text-lg font-semibold mb-1">Setting Up Your Course on Claude</h2>
+            <h2 class="text-lg font-semibold mb-1">
+              {{ 'resources.claudeSetupTitle' | transloco }}
+            </h2>
             <p class="text-white/50 text-sm mb-4">
-              A step-by-step guide to configuring Claude as your learning assistant for this Angular
-              course.
+              {{ 'resources.claudeSetupDesc' | transloco }}
             </p>
             <a
               routerLink="/guide"
               class="inline-flex items-center gap-2 text-sm font-medium text-accent hover:text-primary transition-colors"
             >
-              Read guide
+              {{ 'resources.readGuide' | transloco }}
               <svg
                 viewBox="0 0 24 24"
                 fill="none"
@@ -47,7 +49,7 @@
       <!-- Cheat Sheets -->
       <section>
         <h2 class="text-xs font-semibold uppercase tracking-widest text-primary mb-4">
-          Cheat Sheets
+          {{ 'resources.cheatSheets' | transloco }}
         </h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
           @for (sheet of cheatSheets; track sheet.url) {

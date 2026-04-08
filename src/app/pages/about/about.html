@@ -2,14 +2,15 @@
   <div class="max-w-3xl mx-auto px-6 pt-16 pb-24">
     <!-- Header -->
     <div class="mb-14">
-      <p class="text-xs font-semibold uppercase tracking-widest text-primary mb-3">About</p>
+      <p class="text-xs font-semibold uppercase tracking-widest text-primary mb-3">
+        {{ 'about.tag' | transloco }}
+      </p>
       <div class="flex items-center gap-4 mb-6">
         <img src="/logo.svg" alt="Thoth Academy logo" width="56" height="56" class="shrink-0" />
         <h1 class="text-4xl md:text-5xl font-bold tracking-tight">Thoth Academy</h1>
       </div>
       <p class="text-lg text-white/60 leading-relaxed">
-        A modern learning platform built around the ancient philosophy of organized, purposeful
-        knowledge.
+        {{ 'about.subtitle' | transloco }}
       </p>
     </div>
 
@@ -18,7 +19,7 @@
       <div class="bg-surface border border-white/10 rounded-2xl p-8">
         <h2 class="text-2xl font-semibold mb-6 flex items-center gap-3">
           <span class="text-2xl" aria-hidden="true">🐫</span>
-          Why "Thoth Academy"?
+          {{ 'about.whyThoth' | transloco }}
         </h2>
         <div class="flex flex-col md:flex-row gap-8 mb-6">
           <figure class="shrink-0 mx-auto md:mx-0">
@@ -30,22 +31,18 @@
               class="rounded-xl border border-white/10 object-contain bg-white/5"
             />
             <figcaption class="text-xs text-white/30 text-center mt-2">
-              Thoth · Wikimedia Commons
+              {{ 'about.thothCaption' | transloco }}
             </figcaption>
           </figure>
           <div class="flex flex-col justify-center space-y-4">
             <p class="text-white/70 leading-relaxed">
-              <strong class="text-white">Thoth Academy</strong> is named after Thoth, one of the
-              most important deities in ancient Egyptian mythology.
+              <strong class="text-white">Thoth Academy</strong> {{ 'about.thothNamed' | transloco }}
             </p>
             <p class="text-white/70 leading-relaxed">
-              Thoth was known as the
-              <strong class="text-primary">god of wisdom, knowledge, writing, and learning</strong>.
-              He was believed to be the inventor of hieroglyphs and the divine scribe who recorded
-              knowledge, maintained balance, and guided understanding.
-            </p>
-            <p class="text-white/70 leading-relaxed">
-              This symbolism aligns closely with the purpose of this platform.
+              {{ 'about.thothDesc' | transloco }}
+              <strong class="text-primary">{{ 'about.thothWisdom' | transloco }}</strong
+              >.
+              {{ 'about.thothAligns' | transloco }}
             </p>
           </div>
         </div>
@@ -55,28 +52,28 @@
     <!-- Pillars -->
     <section class="mb-12">
       <h2 class="text-lg font-semibold text-white/40 uppercase tracking-widest text-xs mb-5">
-        Core Philosophy
+        {{ 'about.corePhilosophy' | transloco }}
       </h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
         <div class="bg-surface border border-white/10 rounded-2xl p-6">
           <div class="text-2xl mb-3" aria-hidden="true">📚</div>
-          <h3 class="font-semibold mb-2">Structured Learning</h3>
+          <h3 class="font-semibold mb-2">{{ 'about.structuredTitle' | transloco }}</h3>
           <p class="text-sm text-white/55 leading-relaxed">
-            Knowledge organized into a clear, progressive path — 5 weeks, 25 lessons.
+            {{ 'about.structuredDesc' | transloco }}
           </p>
         </div>
         <div class="bg-surface border border-white/10 rounded-2xl p-6">
           <div class="text-2xl mb-3" aria-hidden="true">🧠</div>
-          <h3 class="font-semibold mb-2">Deep Understanding</h3>
+          <h3 class="font-semibold mb-2">{{ 'about.deepTitle' | transloco }}</h3>
           <p class="text-sm text-white/55 leading-relaxed">
-            Encouraging real comprehension over passive consumption — think, then build.
+            {{ 'about.deepDesc' | transloco }}
           </p>
         </div>
         <div class="bg-surface border border-white/10 rounded-2xl p-6">
           <div class="text-2xl mb-3" aria-hidden="true">✍️</div>
-          <h3 class="font-semibold mb-2">Practice & Reflection</h3>
+          <h3 class="font-semibold mb-2">{{ 'about.practiceTitle' | transloco }}</h3>
           <p class="text-sm text-white/55 leading-relaxed">
-            Each lesson paired with hands-on challenges and guided solutions.
+            {{ 'about.practiceDesc' | transloco }}
           </p>
         </div>
       </div>
@@ -88,8 +85,7 @@
         class="relative bg-surface-light border-l-4 border-primary rounded-r-2xl px-8 py-6"
       >
         <p class="text-white/80 leading-relaxed italic">
-          "Thoth Academy is designed as a modern interpretation of this philosophy — a place where
-          knowledge is organized, explored, and applied through hands-on experience."
+          {{ 'about.mission' | transloco }}
         </p>
       </blockquote>
     </section>
@@ -104,9 +100,9 @@
           🔗
         </div>
         <div>
-          <h2 class="text-lg font-semibold mb-1">Learn more about Thoth</h2>
+          <h2 class="text-lg font-semibold mb-1">{{ 'about.learnMoreTitle' | transloco }}</h2>
           <p class="text-sm text-white/50 mb-4">
-            Read about the ancient Egyptian god of wisdom on Wikipedia.
+            {{ 'about.learnMoreDesc' | transloco }}
           </p>
           <a
             href="https://en.wikipedia.org/wiki/Thoth"

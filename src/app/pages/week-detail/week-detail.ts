@@ -1,5 +1,6 @@
 import { Component, ChangeDetectionStrategy, computed, inject, signal } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
+import { TranslocoPipe } from '@jsverse/transloco';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { map } from 'rxjs';
 import { MonacoEditorModule, NgxEditorModel } from 'ngx-monaco-editor-v2';
@@ -10,7 +11,7 @@ type Tab = 'lesson' | 'challenge' | 'solution';
 
 @Component({
   selector: 'app-week-detail',
-  imports: [RouterLink, MonacoEditorModule],
+  imports: [RouterLink, MonacoEditorModule, TranslocoPipe],
   templateUrl: './week-detail.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

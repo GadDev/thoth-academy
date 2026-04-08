@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { TranslocoPipe } from '@jsverse/transloco';
 import { RouterLink } from '@angular/router';
 
 interface CodeExample {
@@ -21,7 +22,7 @@ interface Section {
 
 @Component({
   selector: 'app-angular-cheatsheet',
-  imports: [RouterLink],
+  imports: [RouterLink, TranslocoPipe],
   templateUrl: './angular-cheatsheet.html',
   styleUrl: './angular-cheatsheet.css',
   changeDetection: ChangeDetectionStrategy.OnPush,

@@ -2,15 +2,17 @@
   <div class="max-w-6xl mx-auto px-6 pt-16 pb-20">
     <!-- Breadcrumb -->
     <nav class="flex items-center gap-2 text-sm text-white/40 mb-8" aria-label="Breadcrumb">
-      <a routerLink="/" class="hover:text-white transition-colors">Dashboard</a>
+      <a routerLink="/" class="hover:text-white transition-colors">{{
+        'weekDetail.breadcrumbHome' | transloco
+      }}</a>
       <span>/</span>
-      <span class="text-white/70">Week {{ weekId() }}</span>
+      <span class="text-white/70">{{ 'weekDetail.week' | transloco: { id: weekId() } }}</span>
     </nav>
 
     <!-- Header -->
     <div class="mb-10">
       <p class="text-xs font-semibold uppercase tracking-widest text-primary mb-2">
-        Week {{ weekId() }}
+        {{ 'weekDetail.week' | transloco: { id: weekId() } }}
       </p>
       <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-2">{{ week().title }}</h1>
       <p class="text-white/50">{{ week().theme }}</p>
@@ -19,7 +21,9 @@
     <div class="flex flex-col lg:flex-row gap-6">
       <!-- Day Sidebar -->
       <aside class="lg:w-56 shrink-0">
-        <p class="text-xs font-semibold uppercase tracking-widest text-white/40 mb-3">Days</p>
+        <p class="text-xs font-semibold uppercase tracking-widest text-white/40 mb-3">
+          {{ 'weekDetail.days' | transloco }}
+        </p>
         <ul class="flex flex-row lg:flex-col gap-2" role="list">
           @for (day of week().days; track day.number) {
             <li class="flex-1 lg:flex-none">
@@ -34,7 +38,7 @@
                 "
               >
                 <span class="font-semibold flex items-center gap-1.5">
-                  Day {{ day.number }}
+                  {{ 'weekDetail.day' | transloco: { n: day.number } }}
                   @if (isDayComplete(day.number)) {
                     <svg
                       viewBox="0 0 24 24"
@@ -76,7 +80,7 @@
                   : 'text-white/40 hover:text-white/70 border-transparent'
               "
             >
-              {{ tab }}
+              {{ 'weekDetail.tab.' + tab | transloco }}
             </button>
           }
         </div>
@@ -107,7 +111,7 @@
                           d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m.75 12l3 3m0 0l3-3m-3 3v-6m-1.5-9H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"
                         />
                       </svg>
-                      View PDF
+                      {{ 'weekDetail.viewPdf' | transloco }}
                     </a>
                   }
                 </div>
@@ -136,7 +140,7 @@
                         clip-rule="evenodd"
                       />
                     </svg>
-                    Completed
+                    {{ 'weekDetail.completed' | transloco }}
                   } @else {
                     <svg
                       viewBox="0 0 24 24"
@@ -154,7 +158,7 @@
                         d="m8.5 12 2.5 2.5 4.5-4.5"
                       />
                     </svg>
-                    Mark as complete
+                    {{ 'weekDetail.markComplete' | transloco }}
                   }
                 </button>
               </div>
@@ -181,7 +185,7 @@
               <div
                 class="rounded-xl border border-white/5 bg-white/[0.02] min-h-72 flex items-center justify-center"
               >
-                <p class="text-white/20 text-sm">No challenge for this day</p>
+                <p class="text-white/20 text-sm">{{ 'weekDetail.noChallenge' | transloco }}</p>
               </div>
             }
           </div>
@@ -196,7 +200,7 @@
             <h2 class="text-xl font-semibold mb-4">{{ day.title }} — Reference Solution</h2>
             @if (activeChallenge()) {
               <p class="text-white/60 text-sm leading-relaxed mb-6">
-                Study the reference solution below. Try the challenge first!
+                {{ 'weekDetail.studySolution' | transloco }}
               </p>
               <ngx-monaco-editor
                 class="block w-full rounded-xl overflow-hidden"
@@ -208,7 +212,7 @@
               <div
                 class="rounded-xl border border-white/5 bg-white/[0.02] min-h-72 flex items-center justify-center"
               >
-                <p class="text-white/20 text-sm">No solution for this day</p>
+                <p class="text-white/20 text-sm">{{ 'weekDetail.noSolution' | transloco }}</p>
               </div>
             }
           </div>

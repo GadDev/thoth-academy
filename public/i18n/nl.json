@@ -1,0 +1,621 @@
+{
+  "nav": {
+    "mainNav": "Hoofdnavigatie",
+    "toggleNav": "Navigatie wisselen",
+    "thothHome": "Thoth Academy startpagina",
+    "home": "Dashboard",
+    "weeks": "Weken",
+    "week": "Week {{ n }}",
+    "resources": "Bronnen",
+    "about": "Over ons",
+    "guide": "Gids",
+    "cheatSheet": "Spiekbriefje",
+    "coursera": "Coursera"
+  },
+  "lang": {
+    "switcher": "Taal",
+    "en": "EN",
+    "fr": "FR",
+    "nl": "NL"
+  },
+  "footer": {
+    "tagline": "Een 5-weken Angular leertraject gebouwd met Claude. 25 lessen, praktijkoefeningen en referentieoplossingen.",
+    "course": "Cursus",
+    "resources": "Bronnen",
+    "learnMore": "Meer leren",
+    "dashboard": "Dashboard",
+    "week": "Week {{ n }}",
+    "allMaterials": "Alle materialen",
+    "userGuide": "Gebruikershandleiding",
+    "interviewSheet": "Interview spiekbriefje",
+    "reactAngularSheet": "React naar Angular spiekbriefje",
+    "angularSheet": "Angular beginners spiekbriefje",
+    "courseraTracker": "Coursera tracker",
+    "angularDocs": "Angular documentatie",
+    "angularTutorials": "Angular tutorials",
+    "claudeAI": "Claude AI",
+    "certificatesDev": "Certificates.dev",
+    "coursera": "Coursera",
+    "copyright": "© {{ year }} Thoth Academy. Gemaakt met liefde ❤️ in Luxemburg 🇱🇺 & Angular."
+  },
+  "dashboard": {
+    "tag": "Angular leertraject",
+    "title": "5-weken Angular",
+    "titleHighlight": "Beheerschingscursus",
+    "description": "25 lessen over 5 weken. Bouw echte Angular-applicaties met begeleide oefeningen, uitdagingen en Claude-hulp.",
+    "continueLearning": "Verder leren",
+    "weekTitle": "Week {{ id }}: {{ title }}",
+    "dayInfo": "Dag {{ number }} — {{ title }}",
+    "courseComplete": "Cursus voltooid!",
+    "allLessonsDone": "Alle 25 lessen klaar",
+    "week": "Week {{ id }}",
+    "daysComplete": "{{ completed }}/{{ total }} dagen voltooid"
+  },
+  "about": {
+    "tag": "Over ons",
+    "subtitle": "Een modern leerplatform gebaseerd op de oude Egyptische filosofie van georganiseerde, doelgerichte kennis.",
+    "whyThoth": "Waarom \"Thoth Academy\"?",
+    "thothCaption": "Thoth · Wikimedia Commons",
+    "thothNamed": "is vernoemd naar Thoth, een van de belangrijkste goden in de oude Egyptische mythologie.",
+    "thothWisdom": "god van wijsheid, kennis, schrijven en leren",
+    "thothDesc": "Thoth stond bekend als de",
+    "thothAligns": "Dit symbolisme sluit nauw aan bij het doel van dit platform.",
+    "corePhilosophy": "Kernfilosofie",
+    "structuredTitle": "Gestructureerd leren",
+    "structuredDesc": "Kennis georganiseerd in een duidelijk, progressief pad — 5 weken, 25 lessen.",
+    "deepTitle": "Diepgaand begrip",
+    "deepDesc": "Echte begripsvorming aanmoedigen in plaats van passief consumeren — denk, dan bouw.",
+    "practiceTitle": "Oefening & Reflectie",
+    "practiceDesc": "Elke les gekoppeld aan praktijkoefeningen en begeleide oplossingen.",
+    "mission": "\"Thoth Academy is ontworpen als een moderne interpretatie van deze filosofie — een plek waar kennis georganiseerd, verkend en toegepast wordt door praktische ervaring.\"",
+    "learnMoreTitle": "Meer over Thoth",
+    "learnMoreDesc": "Lees over de oude Egyptische god van wijsheid op Wikipedia."
+  },
+  "guide": {
+    "tag": "Gebruikershandleiding",
+    "title": "Angular Senior Certificering",
+    "titleSub": "5-weken intensieve voorbereiding",
+    "subtitle": "Claude-projectinstructies om het meeste uit elke sessie te halen — hoe samenwerken, sessieformaten en het dag-voor-dag schema.",
+    "jump": {
+      "overview": "Wat deze cursus is",
+      "profile": "Mijn profiel",
+      "setup": "Claude-instelling",
+      "workingRules": "Werkregels",
+      "sessions": "Sessieformaten",
+      "routine": "Dagelijkse routine",
+      "schedule": "5-weken schema",
+      "tips": "Praktische tips",
+      "instructions": "Instructies",
+      "pdfs": "PDF-bibliotheek",
+      "start": "Starten",
+      "progress": "Voortgang"
+    },
+    "overview": {
+      "heading": "Wat deze cursus is",
+      "desc1": "Dit is een gestructureerde intensieve zelfstudie van 5 weken waarbij Claude als persoonlijke Angular-instructeur wordt gebruikt. U heeft een Claude-project ingesteld met aangepaste instructies die Claude uw volledige context geven — React-achtergrond, tijdlijn, doelcertificering en dag-voor-dag schema.",
+      "desc2": "Elke sessie begint precies waar u gebleven was. Geen heruitleg. Geen verloren context.",
+      "colWeek": "Week",
+      "colTheme": "Thema",
+      "colLaneMix": "Ritme",
+      "colFriday": "Vrijdag",
+      "w1": {
+        "theme": "Angular-kern — componenten, DI, signalen, wijzigingsdetectie",
+        "laneMix": "3 moeilijk · 1 snel · 1 oefening",
+        "friday": "4u code-oefening"
+      },
+      "w2": {
+        "theme": "Routing, RxJS, HttpClient",
+        "laneMix": "2 moeilijk · 2 snel · 1 uitdaging",
+        "friday": "60 min getimede uitdaging"
+      },
+      "w3": {
+        "theme": "Formulieren, pipes, directives",
+        "laneMix": "2 moeilijk · 2 snel · 1 uitdaging",
+        "friday": "90 min getimede uitdaging"
+      },
+      "w4": {
+        "theme": "Architectuur, staat, SSR, prestaties",
+        "laneMix": "4 moeilijk · 1 snel · 1 uitdaging",
+        "friday": "90 min architectuuruitdaging"
+      },
+      "w5": {
+        "theme": "Testen, proefexamens, herstel zwakke punten",
+        "laneMix": "Alles examensimulatie",
+        "friday": "Examendag"
+      }
+    },
+    "profile": {
+      "heading": "Mijn profiel",
+      "backgroundLabel": "Achtergrond",
+      "backgroundValue": "Ervaren React-ingenieur — hooks, context, componentpatronen, React Router, react-hook-form, Redux/Zustand, React Testing Library, TypeScript, JS-ecosysteem",
+      "targetLabel": "Doel",
+      "targetValue": "Senior Angular Developer-certificering op",
+      "timelineLabel": "Tijdlijn",
+      "timelineValue": "5 weken · 4+ uur/dag · ~140 uur totaal",
+      "examFormatLabel": "Examenformaat",
+      "examFormatValue": "40 meerkeuzevragen (90 min) + code-uitdaging (105 min)"
+    },
+    "setup": {
+      "heading": "Uw Claude-project instellen",
+      "intro": "Een Claude-project slaat uw instructies en referentiebestanden persistent op. Elke gesprek dat u binnen het project start, laadt uw context automatisch — u hoeft uw achtergrond of tijdlijn nooit opnieuw uit te leggen.",
+      "step1": {
+        "title": "Maak het project aan",
+        "description": "Klik op claude.ai op Projecten in de zijbalk → Nieuw project. Noem het 'Angular Senior Cert Prep'. Dit is uw permanente studieruimte."
+      },
+      "step2": {
+        "title": "Voeg projectinstructies toe",
+        "description": "Klik op het potlood/bewerkpictogram in het project. Plak de inhoud van angular-cert-project-instructions.md. Dit vertelt Claude uw achtergrond, schema en sessieformaatvoorkeuren."
+      },
+      "step3": {
+        "title": "Upload referentie-PDF's",
+        "description": "Klik op 'Inhoud toevoegen' of het uploadpictogram in uw project. Upload alle PDF-bestanden van deze cursus — één per dag, per week. Claude kan ze raadplegen bij het beoordelen van uw code."
+      },
+      "step4": {
+        "title": "Start sessies altijd vanuit het project",
+        "description": "Klik op 'Nieuw gesprek' VANUIT de projectweergave — niet van de startpagina. Als u vanuit de startpagina start, worden uw instructies niet geladen."
+      }
+    },
+    "workingRules": {
+      "heading": "Hoe met mij te werken — Altijd",
+      "rule1": "Gebruik React-analogieën bij het introduceren van Angular-concepten",
+      "rule2": "Geef expliciet aan wanneer een concept <strong class=\"text-white\">GEEN React-equivalent</strong> heeft — besteed extra tijd hieraan: DI, structurele directives, wijzigingsdetectie / Zone.js / OnPush / zoneless, RxJS Observables",
+      "rule3": "Wanneer ik code deel, beoordeel die dan als een <strong class=\"text-white\">senior Angular-certificeringsbeoordelaar</strong> — markeer slechte patronen, niet alleen bugs",
+      "rule4": "Wijs op React-gewoonten die punten kosten (arrays muteren met OnPush, methoden in templates, ontbrekende track, inject() buiten injectiecontext)",
+      "rule5": "Verwijs naar de PDF-inhoud van de dag wanneer relevant"
+    },
+    "sessions": {
+      "heading": "Sessieformaten",
+      "teaching": {
+        "title": "Leersessie",
+        "trigger": "\"Week X, Dag Y — leer me [onderwerp]\"",
+        "step1": "Conceptuitleg met React-analogie (of GEEN EQUIVALENT-vlag)",
+        "step2": "Minimaal werkend codevoorbeeld",
+        "step3": "Zij-aan-zij React vs Angular vergelijking",
+        "step4": "3 strikvragen om begrip te controleren"
+      },
+      "quiz": {
+        "title": "Quizsessie",
+        "trigger": "\"Quiz me over [onderwerp] — 10 vragen\"",
+        "step1": "Geef eerst alle 10 meerkeuze (A/B/C/D) — ik beantwoord alle, dan beoordeelt u",
+        "step2": "Voor elk fout antwoord: uitleggen waarom, juiste code tonen, 1 vervolgvraag geven"
+      },
+      "coding": {
+        "title": "Codesessie",
+        "trigger": "\"[Week X code-uitdaging] — hier is mijn oplossing: [plakken]\"",
+        "step1": "Beoordelen als senior beoordelaar: correctheid, patronen, prestaties",
+        "step2": "Wat een senior anders zou doen",
+        "step3": "Wijs op React-gewoonten die erin geslopen zijn"
+      },
+      "weakSpot": {
+        "title": "Zwak-puntssessie",
+        "trigger": "\"Oefen me op [onderwerp] — 3-op-rij-regel\"",
+        "step1": "Blijf gerichte vragen stellen totdat ik 3 opeenvolgende goede antwoorden heb",
+        "step2": "Geef dan een micro code-oefening over dat onderwerp"
+      },
+      "mockExam": {
+        "title": "Proefexamen",
+        "trigger": "\"Geef me een volledig senior proefexamen — 40 vragen\"",
+        "step1": "Alle 40 tegelijk, ik beantwoord alles voor u beoordeelt",
+        "step2": "Beoordeel per categorie, leg elk fout antwoord uit",
+        "step3": "Maak een lijst van mijn 3 zwakste gebieden"
+      }
+    },
+    "routine": {
+      "heading": "Uw dagelijkse studieroutine",
+      "intro": "Deze routine elke dag volgen houdt Claude gekalibreerd op uw voortgang en maximaliseert de waarde van elke sessie.",
+      "block1": {
+        "time": "Eerste 5 min",
+        "title": "Open een nieuw gesprek in het project en stel de context in",
+        "step1": "Begin met: \"Ik ben bij Week X, Dag Y — [onderwerp]. Laten we beginnen.\"",
+        "step2": "Claude laadt uw instructies en weet precies waar u bent."
+      },
+      "block2": {
+        "time": "Hoofdblok · 2–3u",
+        "title": "Leer- of codesessie over het onderwerp van vandaag",
+        "step1": "Volg de PDF van de dag.",
+        "step2": "Voor leerdagen: vraag Claude te onderwijzen, doe dan de mini-uitdaging.",
+        "step3": "Voor codedagen: lees de specificaties, stel de timer in, bouw het, plak voor beoordeling."
+      },
+      "block3": {
+        "time": "Tweede blok · 1–2u",
+        "title": "Quizsessie of oefening van zwakke punten",
+        "step1": "Beëindig de sessie met: \"Quiz me over het onderwerp van vandaag — 10 vragen.\"",
+        "step2": "Beoordeel uzelf. Elk onderwerp waarop u minder dan 7/10 scoort, gaat op uw lijst met zwakke punten."
+      },
+      "block4": {
+        "time": "Laatste 5 min",
+        "title": "Update uw projectinstructies",
+        "step1": "Bewerk de sectie 'Huidige voortgang': update week/dag, vink beheerste onderwerpen af, voeg nieuwe zwakke punten toe.",
+        "step2": "Dit houdt Claude perfect gekalibreerd voor morgen."
+      }
+    },
+    "schedule": {
+      "heading": "5-weken dag-voor-dag schema"
+    },
+    "weeks": {
+      "w1": {
+        "title": "Angular-kern + Signalen",
+        "theme": "Het Angular-mentale model opbouwen vanuit een React-basis",
+        "d1": {
+          "name": "Maandag — Componenten & Moderne templatesyntaxis",
+          "hard": "Snelle baan · 4u",
+          "p1": "Standalone @Component, selector, template, imports-array",
+          "p2": "Templatebindingen: {{ }} interpolatie, [prop] eigenschap, (event) gebeurtenis, [(ngModel)] tweerichtingsverbinding",
+          "p3": "Moderne controlestructuur: @if / @else if / @else, @for met verplichte track, @switch",
+          "p4": "@defer met alle triggers: on idle, on viewport, on interaction, on hover, on timer(ms), when condition",
+          "p5": "@placeholder, @loading (minimum Xms), @error blokken binnen @defer"
+        },
+        "d2": {
+          "name": "Dinsdag — Afhankelijkheidsinjectie",
+          "hard": "Moeilijk · GEEN React-equivalent · 4–5u",
+          "p1": "@Injectable({ providedIn: 'root' }) — singleton service",
+          "p2": "inject()-functie (modern) vs constructorinjectie (legacy)",
+          "p3": "Injectorboom: root → component → kind — bereik bepaalt het aantal instanties",
+          "p4": "Provider-recepten: useClass, useValue, useFactory, useExisting",
+          "p5": "InjectionToken<T> voor niet-klasse-waarden (strings, configuratieobjecten, primitieven)"
+        },
+        "d3": {
+          "name": "Woensdag — Signalen & Reactiviteit",
+          "hard": "Moeilijk · 4–5u",
+          "p1": "signal<T>(init) — lezen met signal(), schrijven met .set(), .update()",
+          "p2": "computed(() => expr) — luie, gememoïseerde, automatisch bijgehouden afgeleide waarde",
+          "p3": "effect(() => sideEffect) — heruitgevoerd wanneer interne signalen veranderen, geen afhankelijkheidsarray",
+          "p4": "input(), input.required<T>(), output<T>(), model<T>() — op signalen gebaseerde I/O",
+          "p5": "toSignal(obs$, { initialValue }), toObservable(signal) — brugfuncties"
+        },
+        "d4": {
+          "name": "Donderdag — Wijzigingsdetectie & OnPush",
+          "hard": "Moeilijk · GEEN React-equivalent · 4–5u",
+          "p1": "Zone.js: monkey-patcht async API's → brengt Angular op de hoogte na elke voltooiing → volledige boom-CD",
+          "p2": "Standaard CD: controleert ELKE component na elke async-gebeurtenis",
+          "p3": "OnPush — 4 triggers: @Input()-referentiewijziging, gebeurtenis van component, async pipe, handmatige markForCheck()",
+          "p4": "ChangeDetectorRef: markForCheck(), detectChanges(), detach(), reattach()",
+          "p5": "Zoneless: provideZonelessChangeDetection() — geen Zone.js, alleen signalen/markForCheck sturen CD"
+        },
+        "d5": {
+          "name": "Vrijdag — Code-oefening",
+          "hard": "4u getimed",
+          "p1": "ProductService (DI, providedIn: root, signaal voor productenlijst)",
+          "p2": "ProductListComponent (standalone, OnPush): service injecteren, @for track, computed filter, @if/@empty, @defer",
+          "p3": "ProductCardComponent (dom, OnPush): input.required<Product>(), output<string>()",
+          "p4": "Geen any-types, volledige TypeScript-generics"
+        }
+      },
+      "w2": {
+        "title": "Routing + RxJS + HttpClient",
+        "theme": "De async-laag. RxJS is de moeilijkste React→Angular verschuiving",
+        "d1": {
+          "name": "Maandag — Router & Lazy loading",
+          "hard": "Snelle baan · 4u",
+          "p1": "provideRouter(routes, withComponentInputBinding(), withPreloading(...))",
+          "p2": "loadComponent en loadChildren voor lazy loading",
+          "p3": "withComponentInputBinding() — routeparameters binden automatisch aan input()-signalen",
+          "p4": "Functionele guards: CanActivateFn, CanDeactivateFn, CanMatchFn",
+          "p5": "ResolveFn<T> — data vooraf ophalen vóór component laadt"
+        },
+        "d2": {
+          "name": "Dinsdag — RxJS-fundamenten",
+          "hard": "Moeilijk · GEEN React-equivalent · 5u",
+          "p1": "Observable<T> — standaard koud (nieuwe producent per abonnee)",
+          "p2": "Subject<T>, BehaviorSubject<T> (heeft huidige waarde), ReplaySubject<T>(n)",
+          "p3": "Koud vs warm: HTTP = koud (2 subscribes = 2 verzoeken); Subject = warm",
+          "p4": "takeUntilDestroyed() — automatisch uitschrijven bij vernietiging van component",
+          "p5": "async pipe — schrijft in, geeft laatste waarde terug, schrijft automatisch uit, triggert OnPush CD"
+        },
+        "d3": {
+          "name": "Woensdag — RxJS-operators verdieping",
+          "hard": "Moeilijk · 5u",
+          "p1": "switchMap — annuleert vorige; gebruik voor zoeken/autoaanvulling",
+          "p2": "mergeMap — runt gelijktijdig; gebruik voor parallelle HTTP-verzoeken",
+          "p3": "concatMap — wachtrij in volgorde; gebruik voor opeenvolgende opslaan",
+          "p4": "exhaustMap — negeert nieuw terwijl intern actief; gebruik voor login/submit-knoppen",
+          "p5": "combineLatest, forkJoin, catchError, debounceTime, distinctUntilChanged, shareReplay(1)"
+        },
+        "d4": {
+          "name": "Donderdag — HttpClient & Interceptors",
+          "hard": "Snelle baan · 4u",
+          "p1": "provideHttpClient(withInterceptors([fn1, fn2])) — functionele interceptors",
+          "p2": "http.get<T>(url, { params, headers }) — altijd het generieke type opgeven",
+          "p3": "HttpRequest is onveranderlijk — altijd req.clone({ setHeaders: {...} })",
+          "p4": "HttpInterceptorFn = (req, next) => next(clonedReq) — inject() werkt erbinnen",
+          "p5": "withFetch() vereist voor SSR (XHR werkt niet in Node.js)"
+        },
+        "d5": {
+          "name": "Vrijdag — Getimede uitdaging",
+          "hard": "60 min",
+          "p1": "Filmzoekopdracht: HttpClient + debounceTime(300) + distinctUntilChanged + filter + switchMap",
+          "p2": "isLoading-signaal (true in tap, false in finalize), errorMessage-signaal (catchError)",
+          "p3": "toSignal() of async pipe — niet beide; OnPush overal; track in @for"
+        }
+      },
+      "w3": {
+        "title": "Formulieren + Pipes + Directives",
+        "theme": "De declaratieve laag. Formulieren zijn een groot examenonderwerp",
+        "d1": {
+          "name": "Maandag — Reactieve formulieren & Getypeerde FormControl",
+          "hard": "Snelle baan · 4u",
+          "p1": "FormBuilder.nonNullable.group({field: ['init', [Validators.required]]}) — altijd nonNullable",
+          "p2": "FormArray voor dynamische lijsten",
+          "p3": "Aangepaste ValidatorFn: (ctrl: AbstractControl) => ValidationErrors | null",
+          "p4": "Veldoverschrijdende validator op FormGroup — bijv. wachtwoordmatch",
+          "p5": "AsyncValidatorFn: (ctrl) => Observable<ValidationErrors | null> — debounce met timer()",
+          "p6": "Altijd form.getRawValue() bij verzenden — nooit form.value"
+        },
+        "d2": {
+          "name": "Dinsdag — Templategestuurde formulieren & ngModel",
+          "hard": "Moeilijk · 4u",
+          "p1": "Import FormsModule in de imports-array van standalone component — makkelijk te vergeten",
+          "p2": "[(ngModel)]='prop' — tweerichtingsverbinding (banaan in een doos)",
+          "p3": "name='fieldName'-attribuut — VEREIST voor ngForm om de besturing bij te houden",
+          "p4": "#ref='ngModel' — templatereferentie; .valid, .touched, .errors",
+          "p5": "Wanneer gebruiken: template voor eenvoudige formulieren; reactief voor complexe validatie + testen"
+        },
+        "d3": {
+          "name": "Woensdag — Pipes",
+          "hard": "Snelle baan · 3u",
+          "p1": "Ingebouwd: currency, date, number, percent, uppercase, lowercase, titlecase, json, async, slice, keyvalue",
+          "p2": "@if (obs$ | async; as val) — alias vermijdt dubbele abonnering",
+          "p3": "Pure pipe (standaard): wordt opnieuw uitgevoerd alleen bij invoereferentiewijziging — zoals useMemo",
+          "p4": "Impure pipe (pure: false): wordt elke CD-cyclus opnieuw uitgevoerd — duur; prefereer computed()",
+          "p5": "@Pipe({ name: 'x', standalone: true, pure: true }) + implements PipeTransform"
+        },
+        "d4": {
+          "name": "Donderdag — Aangepaste directives",
+          "hard": "Moeilijk · GEEN React-equivalent · 4–5u",
+          "p1": "@Directive({ selector: '[appName]', standalone: true })",
+          "p2": "inject(ElementRef), inject(Renderer2) — altijd Renderer2 (SSR-veilig)",
+          "p3": "@HostListener('event'), @HostBinding('class.active') op hostelement",
+          "p4": "Structurele directive: inject(TemplateRef) + inject(ViewContainerRef)",
+          "p5": "vcr.createEmbeddedView(tmpl) om te renderen, vcr.clear() om te verwijderen",
+          "p6": "* desugaring: *appUnless='cond' → <ng-template [appUnless]='cond'>"
+        },
+        "d5": {
+          "name": "Vrijdag — Getimede uitdaging",
+          "hard": "90 min",
+          "p1": "Meerstaps registratieformulier: firstName, lastName, email (async uniek), password, confirmPassword",
+          "p2": "Veldoverschrijdende wachtwoordmatch-validator op FormGroup",
+          "p3": "PasswordStrengthPipe (puur) — zwak/gemiddeld/sterk",
+          "p4": "appFocusHighlight attribuut directive — CSS-klasse bij focus/blur via Renderer2"
+        }
+      },
+      "w4": {
+        "title": "Architectuur + Prestaties + SSR",
+        "theme": "Senior-niveau denken. Niet alleen 'werkt het' maar 'is het goed ontworpen'",
+        "d1": {
+          "name": "Maandag — Grootschalige app-architectuur",
+          "hard": "Moeilijk · 5u",
+          "p1": "Op functionaliteit gebaseerde mappenstructuur: core/ shared/ features/[feature]/",
+          "p2": "Smart component: injecteert façade, OnPush, beheert paginastatus",
+          "p3": "Dom component: alleen input() / output(), OnPush, geen service-injectie, makkelijk testbaar",
+          "p4": "Façadepatroon: omhult store + service; componenten praten ALLEEN met façade; geeft alleen-lezen signalen bloot",
+          "p5": "APP_INITIALIZER — blokkeert app-opstart; ENVIRONMENT_INITIALIZER — bootstrap op functionaliteitsniveau"
+        },
+        "d2": {
+          "name": "Dinsdag — Staatsbeheer",
+          "hard": "Moeilijk · 5u",
+          "p1": "Signalen service store: private _x = signal<T>(init) + readonly x = this._x.asReadonly()",
+          "p2": "NgRx: createAction → createReducer(on(...)) → createSelector → createEffect",
+          "p3": "@ngrx/signals: signalStore(withState, withComputed, withMethods) — moderne NgRx",
+          "p4": "Wanneer gebruiken: signalen service (klein team, eenvoudig); NgRx (groot team, DevTools nodig)"
+        },
+        "d3": {
+          "name": "Woensdag — SSR, SSG & Hydratatie",
+          "hard": "Snelle baan · 4u",
+          "p1": "ng add @angular/ssr — maakt server.ts + app.config.server.ts aan",
+          "p2": "provideClientHydration(withEventReplay()) — schakelt hydratatie + evenementsafspelen in",
+          "p3": "provideHttpClient(withFetch()) — vereist voor SSR",
+          "p4": "isPlatformBrowser(inject(PLATFORM_ID)) — beveiligt localStorage/window/document",
+          "p5": "TransferState + makeStateKey<T>('key') — vermijdt dubbel HTTP-ophalen server→browser"
+        },
+        "d4": {
+          "name": "Donderdag — Prestatieoptimalisatie",
+          "hard": "Moeilijk · 5u",
+          "p1": "@defer triggers: on idle|viewport|interaction|hover|timer(ms), when condition, prefetch on idle",
+          "p2": "@for (x of arr(); track x.id) — altijd tracken; $index, $first, $last, $even, $odd",
+          "p3": "CDK virtueel scrollen: <cdk-virtual-scroll-viewport itemSize='72'> + *cdkVirtualFor",
+          "p4": "Pure pipe > methode in template — methoden lopen elke CD-cyclus, pipes zijn gememoïseerd",
+          "p5": "NgOptimizedImage: [ngSrc], width, height (vereist), priority voor LCP-afbeelding"
+        },
+        "d5": {
+          "name": "Vrijdag — Architectuuruitdaging",
+          "hard": "90 min",
+          "p1": "Volledige e-commerce functionaliteit: mappenstructuur, signalen store, façade, smart/dom splitsing",
+          "p2": "Lazy route, guard, resolver, @defer, SSR guards, NgOptimizedImage, pure pipe",
+          "p3": "Schrijf architectuurbeslissingscommentaar door de hele code"
+        }
+      },
+      "w5": {
+        "title": "Testen + Proefexamens + Herstel zwakke punten",
+        "theme": "Consolideren, hiaten vinden, het echte examen simuleren",
+        "d1": {
+          "name": "Maandag — Testen met TestBed",
+          "hard": "Moeilijk · 5u",
+          "p1": "TestBed.configureTestingModule({ imports: [StandaloneComp], providers: [...] })",
+          "p2": "fixture.detectChanges() — verplicht na elke statuswijziging (TestBed schakelt auto-CD uit)",
+          "p3": "fixture.componentRef.setInput('propName', value) — juiste manier om signaalinputs in tests in te stellen",
+          "p4": "fakeAsync(() => { tick(300); }) — tijd beheersen voor debounce/interval-tests",
+          "p5": "provideHttpClientTesting() + HttpTestingController: expectOne(url), req.flush(data), verify()"
+        },
+        "d2": {
+          "name": "Dinsdag — Volledig senior proefexamen",
+          "hard": "90 min getimed",
+          "p1": "40 meerkeuzevragen over alle onderwerpen van weken 1–4",
+          "p2": "Beantwoord alle 40 voordat u voor beoordeling plakt",
+          "p3": "Beoordeling per categorie → identificeer de 3 zwakste gebieden → die sturen woensdag"
+        },
+        "d3": {
+          "name": "Woensdag — Herstel zwakke punten",
+          "hard": "5u",
+          "p1": "Per onderwerp: heruitleggen vanuit nieuw perspectief → 5 gerichte vragen → 3-op-rij-regel → micro code-oefening",
+          "p2": "Hertest aan het einde van de dag — bevestig dat hiaten zijn gedicht"
+        },
+        "d4": {
+          "name": "Donderdag — Volledige codesimulatie",
+          "hard": "105 min getimed",
+          "p1": "Echt examenformaat: specificaties gegeven, bouwen vanaf nul, geen opzoekwerk",
+          "p2": "Indienen voor beoordeling door beoordelaar met 5 specifieke vragen"
+        },
+        "d5": {
+          "name": "Vrijdag — Eindrevisie & Examendag",
+          "hard": "🎓 Examen",
+          "p1": "Ochtend: 20 concepten in snelronde + 10 valkuilen voor React-ontwikkelaars + 5 opwarmvragen",
+          "p2": "Examen: certificates.dev/angular — 40 meerkeuzevragen (90 min) + code-uitdaging (105 min)"
+        }
+      }
+    },
+    "focusTopics": {
+      "heading": "Onderwerpen die extra tijd vereisen",
+      "t1": "Afhankelijkheidsinjectie — inject(), provider-recepten, bereikinstanties",
+      "t2": "RxJS-operators — vooral switchMap vs mergeMap vs exhaustMap",
+      "t3": "Wijzigingsdetectie — OnPush, markForCheck, zoneless",
+      "t4": "Structurele directives — TemplateRef, ViewContainerRef, *-syntaxis",
+      "t5": "Templategestuurde formulieren — ngModel, ngForm, tweerichtingsverbinding",
+      "t6": "NgRx — acties, reducers, selectors, effecten",
+      "t7": "OnPush-componenten testen — setInput(), timing van detectChanges()"
+    },
+    "tips": {
+      "heading": "Praktische tips voor Claude-sessies",
+      "tip1": {
+        "title": "Upload de spiekbriefjes",
+        "description": "Download de gratis Angular Signals en Modern Template Syntax spiekbriefjes van certificates.dev/cheat-sheets en upload ze naar uw project. Claude kan ze raadplegen bij het quizzen."
+      },
+      "tip2": {
+        "title": "Gebruik de exacte openingszin",
+        "description": "De sessieformaatfrases ('leer me', 'quiz me', 'oefen me') staan in uw projectinstructies. Claude schakelt van modus op basis hiervan — gebruik ze consistent."
+      },
+      "tip3": {
+        "title": "Plak code als tekst, niet als afbeelding",
+        "description": "Bij het indienen van code-uitdagingen, plak gewone TypeScript — geen schermafbeeldingen. Claude kan echte code veel beter lezen, uitvoeren en bekritiseren dan afbeeldingen."
+      },
+      "tip4": {
+        "title": "Vraag expliciet om analogieën",
+        "description": "Als een React-analogie niet duidelijk is, zeg: 'Geef me een concretere React-vergelijking hiervoor.' Claude probeert verschillende invalshoeken totdat het duidelijk is."
+      },
+      "tip5": {
+        "title": "Proefexamens in één bericht",
+        "description": "Voor quizsessies: laat Claude eerst alle 10 vragen stellen, plak dan alle 10 antwoorden tegelijk. Beantwoord ze niet één voor één — het breekt de examenflow."
+      },
+      "tip6": {
+        "title": "De 3-op-rij-regel",
+        "description": "Zeg in zwak-punt-sessies tegen Claude: 'Blijf me oefenen totdat ik 3 op rij goed heb, dan stop.' Dit voorkomt dat u doorgaat voordat u solide bent."
+      },
+      "tip7": {
+        "title": "Voor de examendag",
+        "description": "Vraag Claude: 'Geef me de 10 meest gemaakte fouten van React-ontwikkelaars in het Angular senior examen.' Dit is een waardevolle sessie van 30 minuten."
+      }
+    },
+    "instructions": {
+      "heading": "Uw projectinstructies actueel houden",
+      "desc": "De projectinstructies hebben onderaan een sectie <strong class=\"text-white\">Huidige voortgang</strong>. Update deze aan het begin of einde van elke week — zo weet Claude waar u staat zonder dat u het elke sessie opnieuw hoeft uit te leggen."
+    },
+    "pdfs": {
+      "heading": "Uw referentie-PDF-bibliotheek",
+      "intro": "Upload alle onderstaande bestanden naar uw Claude-project voor referentie tijdens sessies.",
+      "colFile": "Bestand",
+      "colUpload": "Uploaden?",
+      "colNotes": "Notities",
+      "uploadYes": "Ja",
+      "uploadPaste": "Plakken",
+      "entry1": {
+        "note": "Kerncontext — plak in het instructieveld van het project. Claude leest dit elke sessie."
+      },
+      "entry2": { "note": "Referentie voor studieroutine en sessieformaten." },
+      "entry3": { "note": "Referentie tijdens en na maandag week 1." },
+      "entry4": { "note": "Referentie tijdens en na dinsdag week 1." },
+      "entry5": { "note": "Referentie tijdens en na woensdag week 1." },
+      "entry6": { "note": "Referentie tijdens en na donderdag week 1." },
+      "entry7": { "note": "Code-uitdagingsspecificaties voor vrijdag week 1." },
+      "entry8": { "note": "Week 2 — Router, RxJS, HttpClient." },
+      "entry9": { "note": "Week 3 — Formulieren, Pipes, Directives." }
+    },
+    "start": {
+      "tag": "U bent klaar",
+      "title": "Begin Week 1, Dag 1",
+      "desc": "Open claude.ai, ga naar uw Angular Senior Cert Prep project, klik op Nieuw gesprek en plak dit:",
+      "prompt": "Week 1, Dag 1 — leer me Angular standalone componenten en moderne templatesyntaxis"
+    },
+    "progress": {
+      "heading": "Huidige voortgang",
+      "currentWeekLabel": "Huidige week",
+      "currentWeekValue": "Week 1",
+      "currentDayLabel": "Huidige dag",
+      "currentDayValue": "Maandag",
+      "mockExamLabel": "Proefexamenscore",
+      "mockExamValue": "Nog niet gemaakt",
+      "examDateLabel": "Examendatum",
+      "examDateValue": "Nog niet geboekt"
+    }
+  },
+  "resources": {
+    "tag": "Bronnen",
+    "title": "Cursusmateriaal",
+    "subtitle": "Alle PDF's voor deze cursus — spiekbriefjes, dagelijkse lesnoten, codingoefeningen en tijdgebonden uitdagingen.",
+    "claudeSetupTitle": "Uw cursus instellen op Claude",
+    "claudeSetupDesc": "Een stapsgewijze handleiding voor het configureren van Claude als leerassistent voor deze Angular-cursus.",
+    "readGuide": "Gids lezen",
+    "cheatSheets": "Spiekbriefjes",
+    "weeklyMaterials": "Wekelijks materiaal",
+    "viewPdf": "PDF bekijken"
+  },
+  "notFound": {
+    "title": "Verdwaald in de archieven",
+    "description1": "U heeft zich begeven buiten de bekende kennisrollen.",
+    "description2": "Het pad dat u zoekt bestaat niet… of misschien moet het nog ontdekt worden.",
+    "riddleLabel": "𓆃 Oud raadsel 𓆃",
+    "answerLabel": "Uw antwoord",
+    "answerPlaceholder": "Spreek uw antwoord…",
+    "wrongFeedback": "Niet helemaal… de oude teksten suggereren iets anders.",
+    "consultScrolls": "Raadpleeg de rollen",
+    "revealTruth": "Onthul de waarheid",
+    "theAnswer": "Het antwoord",
+    "correctFeedback": "✦ De rollen bevestigen uw wijsheid ✦",
+    "returnTemple": "Terug naar de tempel",
+    "anotherRiddle": "Nog een raadsel →",
+    "error404": "Fout 404 • Verdwaald in de tijd"
+  },
+  "weekDetail": {
+    "breadcrumbHome": "Dashboard",
+    "week": "Week {{ id }}",
+    "days": "Dagen",
+    "day": "Dag {{ n }}",
+    "viewPdf": "PDF bekijken",
+    "completed": "Voltooid",
+    "markComplete": "Markeren als voltooid",
+    "noChallenge": "Geen uitdaging voor deze dag",
+    "noSolution": "Geen oplossing voor deze dag",
+    "studySolution": "Bestudeer de referentieoplossing hieronder. Probeer eerst de uitdaging!",
+    "tab": {
+      "lesson": "Les",
+      "challenge": "Uitdaging",
+      "solution": "Oplossing"
+    }
+  },
+  "cheatsheet": {
+    "tag": "Spiekbriefje",
+    "title": "🐫 Angular",
+    "titleSub": "Beginnersvriendelijke gids",
+    "subtitle": "Van Angular 16/17 naar Angular 21. Een duidelijke, gestructureerde referentie voor beginners over evolutie, signalen, templates, routing en migratiestrategie.",
+    "analogy": "🧠 Analogie",
+    "keyTakeaway": "💡 Kernpunt",
+    "finalTakeaway": "🎯 Eindconclusie voor beginners",
+    "finalDesc": "Angular wordt eenvoudiger en reactiever. U hoeft niet alles tegelijk te leren. Begin met componenten, in- en uitvoer, en basisignalen."
+  },
+  "reactAngular": {
+    "tag": "Spiekbriefje",
+    "title": "React → Angular",
+    "titleSub": "Vertaalgids",
+    "subtitle": "Een mentale vertaallaag voor React-ontwikkelaars die Angular leren. Elk concept dat u al kent heeft een direct Angular-equivalent.",
+    "mentalShortcuts": "🔥 Mentale snelkoppelingen"
+  },
+  "interview": {
+    "tag": "Interview voorbereiding",
+    "title": "Angular interview",
+    "titleSub": "Spiekbriefje"
+  },
+  "coursera": {
+    "myCourses": "Mijn {{ title }} cursussen",
+    "subtitle": "Bijhouden van externe cursussen naast het Angular leertraject. Deze pagina wordt verwijderd zodra het klaar is.",
+    "progress": "Voortgang",
+    "openCourse": "Cursus openen"
+  }
+}

@@ -1,5 +1,6 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { TranslocoPipe } from '@jsverse/transloco';
 
 interface DayPdf {
   day: number;
@@ -23,7 +24,7 @@ interface CheatSheet {
 
 @Component({
   selector: 'app-resources',
-  imports: [RouterLink],
+  imports: [RouterLink, TranslocoPipe],
   templateUrl: './resources.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

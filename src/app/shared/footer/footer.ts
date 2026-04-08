@@ -1,9 +1,10 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { TranslocoPipe } from '@jsverse/transloco';
 
 @Component({
   selector: 'app-footer',
-  imports: [RouterLink],
+  imports: [RouterLink, TranslocoPipe],
   templateUrl: './footer.html',
   styleUrl: './footer.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -21,24 +22,24 @@ export class Footer {
   ];
 
   readonly resourceLinks = [
-    { path: '/resources', label: 'All Materials' },
-    { path: '/about', label: 'About' },
-    { path: '/guide', label: 'User Guide' },
-    { path: '/react-angular', label: 'React to Angular Cheat Sheet' },
-    { path: '/interview', label: 'Interview Cheat Sheet' },
-    { path: '/angular-cheatsheet', label: 'Angular Beginner Cheat Sheet' },
+    { path: '/resources', key: 'footer.allMaterials' },
+    { path: '/about', key: 'nav.about' },
+    { path: '/guide', key: 'footer.userGuide' },
+    { path: '/react-angular', key: 'footer.reactAngularSheet' },
+    { path: '/interview', key: 'footer.interviewSheet' },
+    { path: '/angular-cheatsheet', key: 'footer.angularSheet' },
     {
       path: '/coursera',
-      label: 'Coursera Tracker',
+      key: 'footer.courseraTracker',
       highlightClass: 'text-amber-400/70 hover:text-amber-300',
     },
   ];
 
   readonly externalLinks = [
-    { href: 'https://angular.dev', label: 'Angular Docs' },
-    { href: 'https://angular.dev/tutorials', label: 'Angular Tutorials' },
-    { href: 'https://claude.ai', label: 'Claude AI' },
-    { href: 'https://certificates.dev/angular', label: 'Certificates.dev' },
-    { href: 'https://www.coursera.org', label: 'Coursera' },
+    { href: 'https://angular.dev', key: 'footer.angularDocs' },
+    { href: 'https://angular.dev/tutorials', key: 'footer.angularTutorials' },
+    { href: 'https://claude.ai', key: 'footer.claudeAI' },
+    { href: 'https://certificates.dev/angular', key: 'footer.certificatesDev' },
+    { href: 'https://www.coursera.org', key: 'footer.coursera' },
   ];
 }

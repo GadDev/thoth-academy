@@ -6,14 +6,15 @@
   background-color: var(--color-bg);
 }
 
+/* ── Page entrance ── */
 .fade-in {
-  animation: fadeInPage 0.6s ease-out;
+  animation: fadeInPage 0.7s ease-out both;
 }
 
 @keyframes fadeInPage {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(24px);
   }
   to {
     opacity: 1;
@@ -21,41 +22,95 @@
   }
 }
 
+/* ── Floating Egyptian symbol ── */
 .animate-float {
-  animation: float 4s ease-in-out infinite;
+  animation: float 5s ease-in-out infinite;
 }
 
 @keyframes float {
   0%,
   100% {
-    transform: translateY(0px);
+    transform: translateY(0);
   }
   50% {
-    transform: translateY(-12px);
+    transform: translateY(-14px);
   }
 }
 
+/* ── Riddle card ambient glow ── */
+.riddle-card {
+  box-shadow:
+    0 0 30px rgba(212, 175, 55, 0.06),
+    0 4px 24px rgba(0, 0, 0, 0.4);
+  transition: box-shadow 0.4s ease;
+}
+
+.riddle-card:hover {
+  box-shadow:
+    0 0 40px rgba(212, 175, 55, 0.12),
+    0 4px 32px rgba(0, 0, 0, 0.5);
+}
+
+/* ── Guess input underline style ── */
+.guess-input {
+  letter-spacing: 0.05em;
+  font-size: 1rem;
+}
+
+.guess-input::placeholder {
+  font-style: italic;
+}
+
+/* ── Answer reveal animation ── */
 .animate-reveal {
-  animation: revealAnswer 0.3s ease-out;
+  animation: revealAnswer 0.4s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 @keyframes revealAnswer {
   from {
     opacity: 0;
-    transform: scaleY(0.8);
+    transform: scale(0.92) translateY(6px);
   }
   to {
     opacity: 1;
-    transform: scaleY(1);
+    transform: scale(1) translateY(0);
   }
 }
 
-/* Subtle glow effect on riddle box */
-.bg-surface {
-  box-shadow: 0 0 20px rgba(212, 175, 55, 0.05);
+/* ── Gold glow on answer text ── */
+.glow-answer {
+  text-shadow:
+    0 0 8px rgba(212, 175, 55, 0.7),
+    0 0 20px rgba(212, 175, 55, 0.45),
+    0 0 40px rgba(212, 175, 55, 0.2);
+  animation: glowPulse 2.5s ease-in-out infinite;
 }
 
-/* Smooth transition for button states */
+@keyframes glowPulse {
+  0%,
+  100% {
+    text-shadow:
+      0 0 8px rgba(212, 175, 55, 0.7),
+      0 0 20px rgba(212, 175, 55, 0.45),
+      0 0 40px rgba(212, 175, 55, 0.2);
+  }
+  50% {
+    text-shadow:
+      0 0 14px rgba(212, 175, 55, 0.9),
+      0 0 32px rgba(212, 175, 55, 0.6),
+      0 0 60px rgba(212, 175, 55, 0.3);
+  }
+}
+
+/* ── Answer block ── */
+.answer-reveal {
+  padding: 1rem;
+  border-radius: 0.75rem;
+  background: rgba(212, 175, 55, 0.05);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+/* ── Subtle button hover glow ── */
 button {
   position: relative;
 }
@@ -66,15 +121,15 @@ button::after {
   inset: 0;
   border-radius: inherit;
   pointer-events: none;
-  box-shadow: 0 0 15px rgba(212, 175, 55, 0);
+  box-shadow: 0 0 0 rgba(212, 175, 55, 0);
   transition: box-shadow 0.3s ease;
 }
 
 button:hover::after {
-  box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+  box-shadow: 0 0 16px rgba(212, 175, 55, 0.18);
 }
 
-/* Media query for smaller screens */
+/* ── Responsive ── */
 @media (max-width: 640px) {
   h1 {
     font-size: 1.875rem;

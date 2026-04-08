@@ -1,5 +1,6 @@
 import { Component, ChangeDetectionStrategy, computed, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { TranslocoPipe } from '@jsverse/transloco';
 import { COURSE_WEEKS, TOTAL_LESSONS } from '../../core/course-data';
 import { ProgressService } from '../../core/progress.service';
 
@@ -7,7 +8,7 @@ const CIRCUMFERENCE = 2 * Math.PI * 20;
 
 @Component({
   selector: 'app-dashboard',
-  imports: [RouterLink],
+  imports: [RouterLink, TranslocoPipe],
   templateUrl: './dashboard.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

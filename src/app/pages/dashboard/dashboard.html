@@ -4,17 +4,17 @@
     <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
       <div>
         <p class="text-xs font-semibold uppercase tracking-widest text-primary mb-2">
-          Angular Learning Path
+          {{ 'dashboard.tag' | transloco }}
         </p>
         <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-3">
-          5-Week Angular<br class="hidden md:block" />
-          <span class="bg-gradient-to-r from-primary to-primary-hover bg-clip-text text-transparent"
-            >Mastery Course</span
+          {{ 'dashboard.title' | transloco }}<br class="hidden md:block" />
+          <span
+            class="bg-gradient-to-r from-primary to-primary-hover bg-clip-text text-transparent"
+            >{{ 'dashboard.titleHighlight' | transloco }}</span
           >
         </h1>
         <p class="text-white/50 max-w-lg">
-          25 lessons across 5 weeks. Build real-world Angular applications with guided exercises,
-          challenges, and Claude-powered assistance.
+          {{ 'dashboard.description' | transloco }}
         </p>
       </div>
       <div class="flex flex-col sm:flex-row md:flex-col gap-3 shrink-0">
@@ -25,12 +25,19 @@
             class="shrink-0 flex flex-col gap-1 bg-primary/10 hover:bg-primary/20 border border-primary/30 rounded-2xl px-6 py-4 transition-colors no-underline"
           >
             <p class="text-xs font-semibold uppercase tracking-widest text-primary">
-              Continue Learning
+              {{ 'dashboard.continueLearning' | transloco }}
             </p>
             <p class="text-sm font-semibold text-white">
-              Week {{ lesson.weekId }}: {{ lesson.weekTitle }}
+              {{
+                'dashboard.weekTitle' | transloco: { id: lesson.weekId, title: lesson.weekTitle }
+              }}
             </p>
-            <p class="text-xs text-white/50">Day {{ lesson.dayNumber }} — {{ lesson.dayTitle }}</p>
+            <p class="text-xs text-white/50">
+              {{
+                'dashboard.dayInfo'
+                  | transloco: { number: lesson.dayNumber, title: lesson.dayTitle }
+              }}
+            </p>
           </a>
         } @else {
           <div
@@ -51,8 +58,10 @@
               />
             </svg>
             <div>
-              <p class="text-sm font-semibold text-emerald-400">Course complete!</p>
-              <p class="text-xs text-white/50">All 25 lessons done</p>
+              <p class="text-sm font-semibold text-emerald-400">
+                {{ 'dashboard.courseComplete' | transloco }}
+              </p>
+              <p class="text-xs text-white/50">{{ 'dashboard.allLessonsDone' | transloco }}</p>
             </div>
           </div>
         }
@@ -109,9 +118,9 @@
         >
           <!-- Week badge + ring -->
           <div class="flex items-center justify-between">
-            <span class="text-xs font-semibold uppercase tracking-widest text-white/40"
-              >Week {{ week.id }}</span
-            >
+            <span class="text-xs font-semibold uppercase tracking-widest text-white/40">{{
+              'dashboard.week' | transloco: { id: week.id }
+            }}</span>
             <svg viewBox="0 0 48 48" width="40" height="40" class="-rotate-90 shrink-0">
               <circle
                 cx="24"
@@ -152,7 +161,10 @@
             }
           </div>
           <p class="text-xs text-white/40">
-            {{ week.completedCount }}/{{ week.days.length }} days complete
+            {{
+              'dashboard.daysComplete'
+                | transloco: { completed: week.completedCount, total: week.days.length }
+            }}
           </p>
         </a>
       }

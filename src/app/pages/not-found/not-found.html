@@ -1,64 +1,107 @@
 <div class="min-h-screen flex items-center justify-center px-6 py-12">
   <div class="text-center max-w-xl fade-in">
     <!-- Egyptian Symbol -->
-    <div class="text-6xl mb-8 text-primary opacity-80 animate-float">𓂀</div>
+    <div class="text-6xl mb-6 text-primary opacity-80 animate-float" aria-hidden="true">𓂀</div>
 
     <!-- Title -->
-    <h1 class="text-4xl font-bold mb-4 text-text">Lost in the Archives</h1>
+    <h1 class="text-4xl font-bold mb-3 text-text">{{ 'notFound.title' | transloco }}</h1>
 
     <!-- Mysterious message -->
-    <p class="text-muted mb-8 leading-relaxed text-lg">
-      You have wandered beyond the known scrolls of knowledge.
-      <br />
-      The path you seek does not exist… or perhaps it has yet to be discovered.
+    <p class="text-muted mb-8 leading-relaxed">
+      {{ 'notFound.description1' | transloco }}<br />
+      {{ 'notFound.description2' | transloco }}
     </p>
 
-    <!-- Riddle Box -->
-    <div
-      class="bg-surface border border-primary/20 p-6 rounded-2xl mb-6 shadow-lg hover:shadow-xl transition-shadow duration-300"
-    >
-      <p class="italic text-sm text-muted mb-4 uppercase tracking-wider">⚡ Ancient Riddle</p>
+    <!-- Riddle Card -->
+    <div class="riddle-card bg-surface border border-primary/20 p-6 rounded-2xl mb-8">
+      <p class="italic text-xs text-muted mb-4 uppercase tracking-widest">
+        {{ 'notFound.riddleLabel' | transloco }}
+      </p>
 
-      <p class="text-lg font-medium leading-relaxed text-text mb-6">
+      <p class="text-lg font-medium leading-loose text-text mb-6 whitespace-pre-line">
         {{ currentRiddle().question }}
       </p>
 
-      <!-- Answer Reveal Section -->
-      <div class="space-y-4">
-        @if (showAnswer()) {
-          <div class="bg-primary/10 border border-primary/30 rounded-lg p-4 animate-reveal">
-            <p class="text-sm text-muted uppercase tracking-wider mb-1">Answer:</p>
-            <p class="text-xl font-bold text-primary">{{ currentRiddle().answer }}</p>
-          </div>
+      @if (!revealed()) {
+        <!-- Guess input -->
+        <div class="mb-4">
+          <label for="guess-input" class="sr-only">{{ 'notFound.answerLabel' | transloco }}</label>
+          <input
+            id="guess-input"
+            type="text"
+            [ngModel]="guess()"
+            (ngModelChange)="onGuessInput($event)"
+            (keyup.enter)="submitGuess()"
+            [attr.placeholder]="'notFound.answerPlaceholder' | transloco"
+            class="guess-input w-full bg-transparent border-b border-primary/30 text-center text-text placeholder:text-muted/50 py-2 outline-none focus:border-primary transition-colors duration-300"
+            [class.border-accent]="guessResult() === 'correct'"
+            [class.border-red-500]="guessResult() === 'wrong'"
+            autocomplete="off"
+          />
+        </div>
+
+        <!-- Feedback message -->
+        @if (guessResult() === 'wrong') {
+          <p class="text-red-400 text-sm mb-4 animate-reveal">
+            {{ 'notFound.wrongFeedback' | transloco }}
+          </p>
         }
 
-        <div class="flex gap-3 justify-center">
+        <!-- Action buttons -->
+        <div class="flex gap-3 justify-center flex-wrap">
           <button
-            (click)="toggleAnswer()"
-            class="px-4 py-2 rounded-lg border border-primary/40 text-primary hover:bg-primary/10 transition-all duration-200 text-sm font-medium"
+            (click)="submitGuess()"
+            [disabled]="!guess().trim()"
+            class="px-5 py-2 rounded-xl border border-primary text-primary hover:bg-primary hover:text-black transition-all duration-300 text-sm font-semibold disabled:opacity-30 disabled:cursor-not-allowed"
           >
-            {{ showAnswer() ? 'Hide' : 'Reveal' }} Answer
+            {{ 'notFound.consultScrolls' | transloco }}
           </button>
 
           <button
-            (click)="nextRiddle()"
-            class="px-4 py-2 rounded-lg border border-primary/40 text-primary hover:bg-primary/10 transition-all duration-200 text-sm font-medium"
+            (click)="revealAnswer()"
+            class="px-4 py-2 text-muted hover:text-text transition-colors duration-300 text-sm"
           >
-            Next Riddle 🔄
+            {{ 'notFound.revealTruth' | transloco }}
           </button>
         </div>
-      </div>
+      } @else {
+        <!-- Answer revealed -->
+        <div class="answer-reveal animate-reveal">
+          <p class="text-xs text-muted uppercase tracking-widest mb-2">
+            {{ 'notFound.theAnswer' | transloco }}
+          </p>
+          <p class="text-2xl font-bold glow-answer text-primary">
+            {{ currentRiddle().answer }}
+          </p>
+          @if (guessResult() === 'correct') {
+            <p class="text-accent text-sm mt-3 animate-reveal">
+              {{ 'notFound.correctFeedback' | transloco }}
+            </p>
+          }
+        </div>
+      }
     </div>
 
-    <!-- CTA Button -->
-    <button
-      routerLink="/"
-      class="bg-primary text-black px-8 py-3 rounded-xl font-semibold hover:bg-primary-hover transition-all duration-200 text-lg inline-block w-full sm:w-auto"
-    >
-      Return to the Temple
-    </button>
+    <!-- Bottom CTAs -->
+    <div class="flex justify-center gap-4 flex-wrap">
+      <button
+        routerLink="/"
+        class="bg-primary text-black px-6 py-2.5 rounded-xl font-semibold hover:bg-primary-hover transition-all duration-200"
+      >
+        {{ 'notFound.returnTemple' | transloco }}
+      </button>
+
+      <button
+        (click)="nextRiddle()"
+        class="text-muted hover:text-text transition-colors duration-300 text-sm self-center"
+      >
+        {{ 'notFound.anotherRiddle' | transloco }}
+      </button>
+    </div>
 
     <!-- Footer hint -->
-    <p class="text-muted text-xs mt-8 opacity-60">Error 404 • Lost in Time</p>
+    <p class="text-muted text-xs mt-10 opacity-40 tracking-widest uppercase">
+      {{ 'notFound.error404' | transloco }}
+    </p>
   </div>
 </div>

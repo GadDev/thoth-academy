@@ -2,14 +2,15 @@
   <div class="max-w-4xl mx-auto px-6 pt-16 pb-24">
     <!-- Page Header -->
     <div class="mb-14">
-      <p class="text-xs font-semibold uppercase tracking-widest text-primary mb-3">Cheat Sheet</p>
+      <p class="text-xs font-semibold uppercase tracking-widest text-primary mb-3">
+        {{ 'cheatsheet.tag' | transloco }}
+      </p>
       <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-4">
-        🐫 Angular<br class="hidden md:block" />
-        <span class="text-white/50">Beginner-Friendly Guide</span>
+        {{ 'cheatsheet.title' | transloco }}<br class="hidden md:block" />
+        <span class="text-white/50">{{ 'cheatsheet.titleSub' | transloco }}</span>
       </h1>
       <p class="text-white/60 leading-relaxed max-w-2xl">
-        From Angular 16 / 17 → Angular 21. A clear, structured reference for beginners covering
-        evolution, signals, templates, routing, and migration strategy.
+        {{ 'cheatsheet.subtitle' | transloco }}
       </p>
 
       <!-- Jump links -->
@@ -90,7 +91,7 @@
           @if (section.analogy) {
             <div class="bg-accent/5 border border-accent/15 rounded-xl px-4 py-3">
               <p class="text-xs font-semibold uppercase tracking-widest text-accent/70 mb-1">
-                🧠 Analogy
+                {{ 'cheatsheet.analogy' | transloco }}
               </p>
               <p class="text-sm text-white/70">{{ section.analogy }}</p>
             </div>
@@ -132,7 +133,7 @@
           @if (section.tip) {
             <div class="bg-primary/5 border border-primary/20 rounded-xl px-4 py-3">
               <p class="text-xs font-semibold uppercase tracking-widest text-primary/70 mb-1">
-                💡 Key takeaway
+                {{ 'cheatsheet.keyTakeaway' | transloco }}
               </p>
               <p class="text-sm text-white/80">{{ section.tip }}</p>
             </div>
@@ -143,12 +144,11 @@
 
     <!-- Final takeaway -->
     <div class="mt-6 bg-surface border border-primary/20 rounded-2xl px-6 py-6 text-center">
-      <p class="text-lg font-semibold text-white mb-2">🎯 Final Beginner Takeaway</p>
+      <p class="text-lg font-semibold text-white mb-2">
+        {{ 'cheatsheet.finalTakeaway' | transloco }}
+      </p>
       <p class="text-white/60 text-sm max-w-xl mx-auto leading-relaxed">
-        Angular is becoming simpler and more reactive. You don't need to learn everything at once.
-        Start with <span class="text-primary font-medium">components</span>,
-        <span class="text-primary font-medium">inputs/outputs</span>, and
-        <span class="text-primary font-medium">basic signals</span>.
+        {{ 'cheatsheet.finalDesc' | transloco }}
       </p>
     </div>
   </div>

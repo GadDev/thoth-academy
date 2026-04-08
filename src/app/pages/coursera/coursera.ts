@@ -3,6 +3,7 @@ import { Home } from './components/home/home';
 import { CurrencyPipe } from '@angular/common';
 import { CustompipePipe } from './custom.pipe';
 import { ReversePipe } from './reverse.pipe';
+import { TranslocoPipe } from '@jsverse/transloco';
 
 const COURSES = [
   {
@@ -22,7 +23,7 @@ const COURSES = [
 
 @Component({
   selector: 'app-coursera',
-  imports: [Home, CurrencyPipe, CustompipePipe, ReversePipe],
+  imports: [Home, CurrencyPipe, CustompipePipe, ReversePipe, TranslocoPipe],
   templateUrl: './coursera.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

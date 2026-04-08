@@ -2,10 +2,12 @@
   <div class="max-w-4xl mx-auto px-6 pt-16 pb-24">
     <!-- Page Header -->
     <div class="mb-14">
-      <p class="text-xs font-semibold uppercase tracking-widest text-primary mb-3">Cheat Sheet</p>
+      <p class="text-xs font-semibold uppercase tracking-widest text-primary mb-3">
+        {{ 'interview.tag' | transloco }}
+      </p>
       <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-4">
-        Interview<br class="hidden md:block" />
-        <span class="text-white/50">Cheat Sheet</span>
+        {{ 'interview.title' | transloco }}<br class="hidden md:block" />
+        <span class="text-white/50">{{ 'interview.titleSub' | transloco }}</span>
       </h1>
       <p class="text-white/60 leading-relaxed max-w-2xl">
         High-impact answers for React → Angular interview questions. Each question includes a strong

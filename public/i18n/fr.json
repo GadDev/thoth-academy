@@ -1,0 +1,621 @@
+{
+  "nav": {
+    "mainNav": "Navigation principale",
+    "toggleNav": "Basculer la navigation",
+    "thothHome": "Accueil Thoth Academy",
+    "home": "Tableau de bord",
+    "weeks": "Semaines",
+    "week": "Semaine {{ n }}",
+    "resources": "Ressources",
+    "about": "À propos",
+    "guide": "Guide",
+    "cheatSheet": "Aide-mémoire",
+    "coursera": "Coursera"
+  },
+  "lang": {
+    "switcher": "Langue",
+    "en": "EN",
+    "fr": "FR",
+    "nl": "NL"
+  },
+  "footer": {
+    "tagline": "Un parcours d'apprentissage Angular de 5 semaines avec Claude. 25 leçons, exercices pratiques et solutions de référence.",
+    "course": "Cours",
+    "resources": "Ressources",
+    "learnMore": "En savoir plus",
+    "dashboard": "Tableau de bord",
+    "week": "Semaine {{ n }}",
+    "allMaterials": "Tous les supports",
+    "userGuide": "Guide utilisateur",
+    "interviewSheet": "Aide-mémoire entretien",
+    "reactAngularSheet": "Aide-mémoire React → Angular",
+    "angularSheet": "Aide-mémoire Angular débutant",
+    "courseraTracker": "Suivi Coursera",
+    "angularDocs": "Documentation Angular",
+    "angularTutorials": "Tutoriels Angular",
+    "claudeAI": "Claude IA",
+    "certificatesDev": "Certificates.dev",
+    "coursera": "Coursera",
+    "copyright": "© {{ year }} Thoth Academy. Fait avec amour ❤️ au Luxembourg 🇱🇺 & Angular."
+  },
+  "dashboard": {
+    "tag": "Parcours d'apprentissage Angular",
+    "title": "Angular 5 semaines",
+    "titleHighlight": "Cours de maîtrise",
+    "description": "25 leçons sur 5 semaines. Créez de vraies applications Angular avec des exercices guidés, des défis et l'assistance Claude.",
+    "continueLearning": "Continuer l'apprentissage",
+    "weekTitle": "Semaine {{ id }} : {{ title }}",
+    "dayInfo": "Jour {{ number }} — {{ title }}",
+    "courseComplete": "Cours terminé !",
+    "allLessonsDone": "Toutes les 25 leçons effectuées",
+    "week": "Semaine {{ id }}",
+    "daysComplete": "{{ completed }}/{{ total }} jours terminés"
+  },
+  "about": {
+    "tag": "À propos",
+    "subtitle": "Une plateforme d'apprentissage moderne fondée sur la philosophie égyptienne de la connaissance organisée et purposive.",
+    "whyThoth": "Pourquoi « Thoth Academy » ?",
+    "thothCaption": "Thoth · Wikimedia Commons",
+    "thothNamed": "tire son nom de Thoth, l'une des divinités les plus importantes de la mythologie égyptienne antique.",
+    "thothWisdom": "dieu de la sagesse, du savoir, de l'écriture et de l'apprentissage",
+    "thothDesc": "Thoth était connu comme le",
+    "thothAligns": "Ce symbolisme est étroitement lié à la vocation de cette plateforme.",
+    "corePhilosophy": "Philosophie centrale",
+    "structuredTitle": "Apprentissage structuré",
+    "structuredDesc": "Connaissances organisées en un parcours clair et progressif — 5 semaines, 25 leçons.",
+    "deepTitle": "Compréhension profonde",
+    "deepDesc": "Favoriser une véritable compréhension plutôt que la consommation passive — réfléchir, puis construire.",
+    "practiceTitle": "Pratique & Réflexion",
+    "practiceDesc": "Chaque leçon est accompagnée d'exercices pratiques et de solutions guidées.",
+    "mission": "« Thoth Academy est conçue comme une interprétation moderne de cette philosophie — un lieu où la connaissance est organisée, explorée et appliquée par l'expérience. »",
+    "learnMoreTitle": "En savoir plus sur Thoth",
+    "learnMoreDesc": "Lisez l'article sur l'ancien dieu égyptien de la sagesse sur Wikipédia."
+  },
+  "guide": {
+    "tag": "Guide utilisateur",
+    "title": "Certification Angular Senior",
+    "titleSub": "Préparation intensive 5 semaines",
+    "subtitle": "Instructions du projet Claude pour tirer le meilleur de chaque session — comment travailler ensemble, les formats de session et le programme jour par jour.",
+    "jump": {
+      "overview": "Ce qu'est ce cours",
+      "profile": "Mon profil",
+      "setup": "Configuration Claude",
+      "workingRules": "Règles de travail",
+      "sessions": "Formats de session",
+      "routine": "Routine quotidienne",
+      "schedule": "Programme 5 semaines",
+      "tips": "Conseils pratiques",
+      "instructions": "Instructions",
+      "pdfs": "Bibliothèque PDF",
+      "start": "Démarrer",
+      "progress": "Progression"
+    },
+    "overview": {
+      "heading": "Ce qu'est ce cours",
+      "desc1": "Il s'agit d'un cours intensif structuré sur 5 semaines utilisant Claude comme instructeur Angular personnel. Vous disposez d'un projet Claude configuré avec des instructions personnalisées donnant à Claude tout votre contexte — background React, calendrier, certification cible et programme jour par jour.",
+      "desc2": "Chaque session reprend exactement là où vous vous êtes arrêté. Pas de réexplication. Pas de contexte perdu.",
+      "colWeek": "Semaine",
+      "colTheme": "Thème",
+      "colLaneMix": "Rythme",
+      "colFriday": "Vendredi",
+      "w1": {
+        "theme": "Fondamentaux Angular — composants, DI, signaux, détection de changement",
+        "laneMix": "3 difficult · 1 rapide · 1 exercice",
+        "friday": "Exercice de code 4h"
+      },
+      "w2": {
+        "theme": "Routing, RxJS, HttpClient",
+        "laneMix": "2 difficile · 2 rapide · 1 défi",
+        "friday": "Défi chronométré 60 min"
+      },
+      "w3": {
+        "theme": "Formulaires, pipes, directives",
+        "laneMix": "2 difficile · 2 rapide · 1 défi",
+        "friday": "Défi chronométré 90 min"
+      },
+      "w4": {
+        "theme": "Architecture, état, SSR, performance",
+        "laneMix": "4 difficile · 1 rapide · 1 défi",
+        "friday": "Défi d'architecture 90 min"
+      },
+      "w5": {
+        "theme": "Tests, examens blancs, correction des points faibles",
+        "laneMix": "Simulation d'examen",
+        "friday": "Jour d'examen"
+      }
+    },
+    "profile": {
+      "heading": "Mon profil",
+      "backgroundLabel": "Background",
+      "backgroundValue": "Ingénieur React expérimenté — hooks, context, patterns de composants, React Router, react-hook-form, Redux/Zustand, React Testing Library, TypeScript, écosystème JS",
+      "targetLabel": "Objectif",
+      "targetValue": "Certification Développeur Angular Senior sur",
+      "timelineLabel": "Calendrier",
+      "timelineValue": "5 semaines · 4h+/jour · ~140 heures au total",
+      "examFormatLabel": "Format examen",
+      "examFormatValue": "40 QCM (90 min) + défi de code (105 min)"
+    },
+    "setup": {
+      "heading": "Configurer votre projet Claude",
+      "intro": "Un projet Claude stocke vos instructions et fichiers de référence de façon persistante. Chaque conversation que vous démarrez dans le projet charge votre contexte automatiquement — vous n'avez jamais à réexpliquer votre background ou votre calendrier.",
+      "step1": {
+        "title": "Créer le projet",
+        "description": "Sur claude.ai, cliquez sur Projets dans la barre latérale → Nouveau projet. Nommez-le 'Angular Senior Cert Prep'. C'est votre espace d'étude permanent."
+      },
+      "step2": {
+        "title": "Ajouter les instructions du projet",
+        "description": "Cliquez sur l'icône crayon/modifier dans le projet. Collez le contenu du fichier angular-cert-project-instructions.md. Cela indique à Claude votre background, votre calendrier et vos préférences de format de session."
+      },
+      "step3": {
+        "title": "Télécharger les PDF de référence",
+        "description": "Cliquez sur 'Ajouter du contenu' ou l'icône de téléchargement dans votre projet. Téléchargez tous les PDF du cours — un par jour, par semaine. Claude peut les consulter lors de la révision du code."
+      },
+      "step4": {
+        "title": "Toujours démarrer les sessions depuis le projet",
+        "description": "Cliquez sur 'Nouvelle conversation' DEPUIS le projet — pas depuis la barre latérale d'accueil. Si vous démarrez depuis l'accueil, vos instructions ne sont pas chargées."
+      }
+    },
+    "workingRules": {
+      "heading": "Comment travailler avec moi — Toujours",
+      "rule1": "Faire des analogies React lors de l'introduction des concepts Angular",
+      "rule2": "Signaler explicitement quand un concept n'a <strong class=\"text-white\">PAS d'équivalent React</strong> — y consacrer plus de temps : DI, directives structurelles, détection de changement / Zone.js / OnPush / zoneless, Observables RxJS",
+      "rule3": "Quand je partage du code, le revoir comme le ferait un <strong class=\"text-white\">examinateur senior de certification Angular</strong> — signaler les mauvais patterns, pas seulement les bugs",
+      "rule4": "Signaler les habitudes React qui me coûteraient des points (mutation de tableaux avec OnPush, méthodes dans les templates, track manquant, inject() hors contexte d'injection)",
+      "rule5": "Référencer le contenu PDF du jour quand c'est pertinent"
+    },
+    "sessions": {
+      "heading": "Formats de session",
+      "teaching": {
+        "title": "Session d'enseignement",
+        "trigger": "\"Semaine X, Jour Y — explique-moi [sujet]\"",
+        "step1": "Explication du concept avec analogie React (ou drapeau SANS ÉQUIVALENT)",
+        "step2": "Exemple de code minimal fonctionnel",
+        "step3": "Comparaison côte à côte React vs Angular",
+        "step4": "3 questions pièges pour vérifier la compréhension"
+      },
+      "quiz": {
+        "title": "Session quiz",
+        "trigger": "\"Interroge-moi sur [sujet] — 10 questions\"",
+        "step1": "Donner les 10 QCM (A/B/C/D) d'abord — je réponds à tous, puis vous notez",
+        "step2": "Pour chaque mauvaise réponse : expliquer pourquoi, montrer le bon code, donner 1 question de suivi"
+      },
+      "coding": {
+        "title": "Session de code",
+        "trigger": "\"[Défi de code semaine X] — voici ma solution : [coller]\"",
+        "step1": "Réviser comme un examinateur senior : exactitude, patterns, performance",
+        "step2": "Ce qu'un senior ferait différemment",
+        "step3": "Signaler toute habitude React qui s'est glissée"
+      },
+      "weakSpot": {
+        "title": "Session points faibles",
+        "trigger": "\"Drille-moi sur [sujet] — règle des 3 d'affilée\"",
+        "step1": "Continuer à poser des questions ciblées jusqu'à obtenir 3 bonnes réponses consécutives",
+        "step2": "Puis donner un mini exercice de code sur ce sujet"
+      },
+      "mockExam": {
+        "title": "Examen blanc",
+        "trigger": "\"Donne-moi un examen blanc senior complet — 40 questions\"",
+        "step1": "Les 40 d'un coup, je réponds à tout avant que vous notiez",
+        "step2": "Note par catégorie, explique chaque mauvaise réponse",
+        "step3": "Liste mes 3 points les plus faibles"
+      }
+    },
+    "routine": {
+      "heading": "Votre routine d'étude quotidienne",
+      "intro": "Suivre cette routine chaque jour maintient Claude calibré sur votre progression et maximise la valeur de chaque session.",
+      "block1": {
+        "time": "5 premières min",
+        "title": "Ouvrir une nouvelle conversation dans le projet et poser le contexte",
+        "step1": "Commencer par : \"Je suis à la Semaine X, Jour Y — [sujet]. Commençons.\"",
+        "step2": "Claude charge vos instructions et sait exactement où vous en êtes."
+      },
+      "block2": {
+        "time": "Bloc principal · 2–3h",
+        "title": "Session d'enseignement ou de code sur le sujet du jour",
+        "step1": "Suivre le PDF du jour.",
+        "step2": "Pour les jours d'enseignement : demandez à Claude d'enseigner, puis faites le mini-défi.",
+        "step3": "Pour les jours de code : lisez le cahier des charges, lancez le minuteur, codez, collez pour revue."
+      },
+      "block3": {
+        "time": "Deuxième bloc · 1–2h",
+        "title": "Session quiz ou travail sur les points faibles",
+        "step1": "Terminer la session par : \"Interroge-moi sur le sujet d'aujourd'hui — 10 questions.\"",
+        "step2": "Notez-vous. Tout sujet où vous marquez moins de 7/10 rejoint votre liste de points faibles."
+      },
+      "block4": {
+        "time": "5 dernières min",
+        "title": "Mettre à jour vos instructions de projet",
+        "step1": "Modifier la section 'Progression actuelle' : mettre à jour semaine/jour, cocher les sujets maîtrisés, ajouter les nouveaux points faibles.",
+        "step2": "Cela maintient Claude parfaitement calibré pour demain."
+      }
+    },
+    "schedule": {
+      "heading": "Programme jour par jour sur 5 semaines"
+    },
+    "weeks": {
+      "w1": {
+        "title": "Fondamentaux Angular + Signaux",
+        "theme": "Établir le modèle mental Angular depuis une base React",
+        "d1": {
+          "name": "Lundi — Composants & Syntaxe de template moderne",
+          "hard": "Voie rapide · 4h",
+          "p1": "Standalone @Component, selector, template, tableau imports",
+          "p2": "Liaisons de template : {{ }} interpolation, [prop] propriété, (event) événement, [(ngModel)] bidirectionnel",
+          "p3": "Flux de contrôle moderne : @if / @else if / @else, @for avec track obligatoire, @switch",
+          "p4": "@defer avec tous les déclencheurs : on idle, on viewport, on interaction, on hover, on timer(ms), when condition",
+          "p5": "Blocs @placeholder, @loading (minimum Xms), @error dans @defer"
+        },
+        "d2": {
+          "name": "Mardi — Injection de dépendances",
+          "hard": "Difficile · PAS d'équivalent React · 4–5h",
+          "p1": "@Injectable({ providedIn: 'root' }) — service singleton",
+          "p2": "Fonction inject() (moderne) vs injection par constructeur (héritage)",
+          "p3": "Arbre des injecteurs : root → composant → enfant — la portée détermine le nombre d'instances",
+          "p4": "Recettes de provider : useClass, useValue, useFactory, useExisting",
+          "p5": "InjectionToken<T> pour les valeurs non-classe (chaînes, objets de config, primitives)"
+        },
+        "d3": {
+          "name": "Mercredi — Signaux & Réactivité",
+          "hard": "Difficile · 4–5h",
+          "p1": "signal<T>(init) — lecture avec signal(), écriture avec .set(), .update()",
+          "p2": "computed(() => expr) — valeur dérivée lazy, mémoïsée, auto-trackée",
+          "p3": "effect(() => sideEffect) — réexécuté automatiquement quand les signaux internes changent, pas de tableau de dépendances",
+          "p4": "input(), input.required<T>(), output<T>(), model<T>() — E/S basées sur les signaux",
+          "p5": "toSignal(obs$, { initialValue }), toObservable(signal) — fonctions de pont"
+        },
+        "d4": {
+          "name": "Jeudi — Détection de changement & OnPush",
+          "hard": "Difficile · PAS d'équivalent React · 4–5h",
+          "p1": "Zone.js : monkey-patch des APIs async → notifie Angular après chaque complétion → CD sur tout l'arbre",
+          "p2": "CD par défaut : vérifie CHAQUE composant après chaque événement async",
+          "p3": "OnPush — 4 déclencheurs : changement de référence @Input(), événement du composant, pipe async, markForCheck() manuel",
+          "p4": "ChangeDetectorRef : markForCheck(), detectChanges(), detach(), reattach()",
+          "p5": "Zoneless : provideZonelessChangeDetection() — pas de Zone.js, seuls signaux/markForCheck pilotent la CD"
+        },
+        "d5": {
+          "name": "Vendredi — Exercice de code",
+          "hard": "4h chronométré",
+          "p1": "ProductService (DI, providedIn: root, signal pour la liste de produits)",
+          "p2": "ProductListComponent (standalone, OnPush) : injection du service, @for track, filtre computed, @if/@empty, @defer",
+          "p3": "ProductCardComponent (dumb, OnPush) : input.required<Product>(), output<string>()",
+          "p4": "Pas de type any, génériques TypeScript complets"
+        }
+      },
+      "w2": {
+        "title": "Routing + RxJS + HttpClient",
+        "theme": "La couche async. RxJS est le changement le plus difficile React→Angular",
+        "d1": {
+          "name": "Lundi — Router & Chargement différé",
+          "hard": "Voie rapide · 4h",
+          "p1": "provideRouter(routes, withComponentInputBinding(), withPreloading(...))",
+          "p2": "loadComponent et loadChildren pour le chargement différé",
+          "p3": "withComponentInputBinding() — params de route liés aux signaux input() automatiquement",
+          "p4": "Guards fonctionnels : CanActivateFn, CanDeactivateFn, CanMatchFn",
+          "p5": "ResolveFn<T> — précharger les données avant le chargement du composant"
+        },
+        "d2": {
+          "name": "Mardi — Fondamentaux RxJS",
+          "hard": "Difficile · PAS d'équivalent React · 5h",
+          "p1": "Observable<T> — froid par défaut (nouveau producteur par abonné)",
+          "p2": "Subject<T>, BehaviorSubject<T> (valeur courante), ReplaySubject<T>(n)",
+          "p3": "Froid vs chaud : HTTP = froid (2 subscribes = 2 requêtes) ; Subject = chaud",
+          "p4": "takeUntilDestroyed() — désabonnement automatique à la destruction du composant",
+          "p5": "Pipe async — s'abonne, retourne la dernière valeur, se désabonne, déclenche la CD OnPush"
+        },
+        "d3": {
+          "name": "Mercredi — Operateurs RxJS approfondis",
+          "hard": "Difficile · 5h",
+          "p1": "switchMap — annule le précédent ; utiliser pour recherche/autocomplétion",
+          "p2": "mergeMap — exécution concurrente ; utiliser pour requêtes HTTP parallèles",
+          "p3": "concatMap — file d'attente dans l'ordre ; utiliser pour sauvegardes séquentielles",
+          "p4": "exhaustMap — ignore les nouveaux tant que l'interne s'exécute ; utiliser pour login/soumission",
+          "p5": "combineLatest, forkJoin, catchError, debounceTime, distinctUntilChanged, shareReplay(1)"
+        },
+        "d4": {
+          "name": "Jeudi — HttpClient & Intercepteurs",
+          "hard": "Voie rapide · 4h",
+          "p1": "provideHttpClient(withInterceptors([fn1, fn2])) — intercepteurs fonctionnels",
+          "p2": "http.get<T>(url, { params, headers }) — toujours typer le générique",
+          "p3": "HttpRequest est immuable — toujours req.clone({ setHeaders: {...} })",
+          "p4": "HttpInterceptorFn = (req, next) => next(clonedReq) — inject() fonctionne à l'intérieur",
+          "p5": "withFetch() requis pour SSR (XHR ne fonctionne pas dans Node.js)"
+        },
+        "d5": {
+          "name": "Vendredi — Défi chronométré",
+          "hard": "60 min",
+          "p1": "Recherche de films : HttpClient + debounceTime(300) + distinctUntilChanged + filter + switchMap",
+          "p2": "Signal isLoading (true dans tap, false dans finalize), signal errorMessage (catchError)",
+          "p3": "toSignal() ou pipe async — pas les deux ; OnPush partout ; track dans @for"
+        }
+      },
+      "w3": {
+        "title": "Formulaires + Pipes + Directives",
+        "theme": "La couche déclarative. Les formulaires sont un sujet majeur à l'examen",
+        "d1": {
+          "name": "Lundi — Formulaires réactifs & FormControl typé",
+          "hard": "Voie rapide · 4h",
+          "p1": "FormBuilder.nonNullable.group({field: ['init', [Validators.required]]}) — toujours nonNullable",
+          "p2": "FormArray pour les listes dynamiques",
+          "p3": "ValidatorFn personnalisé : (ctrl: AbstractControl) => ValidationErrors | null",
+          "p4": "Validateur inter-champs sur FormGroup — ex. correspondance de mot de passe",
+          "p5": "AsyncValidatorFn : (ctrl) => Observable<ValidationErrors | null> — debounce avec timer()",
+          "p6": "Toujours form.getRawValue() à la soumission — jamais form.value"
+        },
+        "d2": {
+          "name": "Mardi — Formulaires template & ngModel",
+          "hard": "Difficile · 4h",
+          "p1": "Importer FormsModule dans le tableau imports du composant standalone — facile à oublier",
+          "p2": "[(ngModel)]='prop' — liaison bidirectionnelle (banane dans une boîte)",
+          "p3": "Attribut name='fieldName' — REQUIS pour que ngForm suive le contrôle",
+          "p4": "#ref='ngModel' — référence de template ; .valid, .touched, .errors",
+          "p5": "Quand utiliser : template pour formulaires simples ; réactif pour validation complexe + tests"
+        },
+        "d3": {
+          "name": "Mercredi — Pipes",
+          "hard": "Voie rapide · 3h",
+          "p1": "Intégrés : currency, date, number, percent, uppercase, lowercase, titlecase, json, async, slice, keyvalue",
+          "p2": "@if (obs$ | async; as val) — l'alias évite la double souscription",
+          "p3": "Pipe pur (défaut) : réexécuté uniquement si la référence d'entrée change — comme useMemo",
+          "p4": "Pipe impur (pure: false) : réexécuté à chaque cycle CD — coûteux ; préférer computed()",
+          "p5": "@Pipe({ name: 'x', standalone: true, pure: true }) + implements PipeTransform"
+        },
+        "d4": {
+          "name": "Jeudi — Directives personnalisées",
+          "hard": "Difficile · PAS d'équivalent React · 4–5h",
+          "p1": "@Directive({ selector: '[appName]', standalone: true })",
+          "p2": "inject(ElementRef), inject(Renderer2) — toujours Renderer2 (compatible SSR)",
+          "p3": "@HostListener('event'), @HostBinding('class.active') sur l'élément hôte",
+          "p4": "Directive structurelle : inject(TemplateRef) + inject(ViewContainerRef)",
+          "p5": "vcr.createEmbeddedView(tmpl) pour afficher, vcr.clear() pour supprimer",
+          "p6": "Désucrage de * : *appUnless='cond' → <ng-template [appUnless]='cond'>"
+        },
+        "d5": {
+          "name": "Vendredi — Défi chronométré",
+          "hard": "90 min",
+          "p1": "Formulaire d'inscription multi-étapes : firstName, lastName, email (async unique), password, confirmPassword",
+          "p2": "Validateur de correspondance de mots de passe inter-champs sur FormGroup",
+          "p3": "PasswordStrengthPipe (pur) — faible/moyen/fort",
+          "p4": "Directive appFocusHighlight — classe CSS sur focus/blur via Renderer2"
+        }
+      },
+      "w4": {
+        "title": "Architecture + Performance + SSR",
+        "theme": "Pensée de niveau senior. Pas seulement « est-ce que ça marche » mais « est-ce bien conçu »",
+        "d1": {
+          "name": "Lundi — Architecture d'application à grande échelle",
+          "hard": "Difficile · 5h",
+          "p1": "Structure de dossiers par fonctionnalité : core/ shared/ features/[feature]/",
+          "p2": "Composant smart : injecte la façade, OnPush, gère l'état de la page",
+          "p3": "Composant dumb : input() / output() uniquement, OnPush, pas d'injection de service, facilement testable",
+          "p4": "Pattern façade : encapsule store + service ; composants parlent UNIQUEMENT à la façade ; expose des signaux en lecture seule",
+          "p5": "APP_INITIALIZER — bloque le démarrage de l'app ; ENVIRONMENT_INITIALIZER — bootstrap au niveau fonctionnalité"
+        },
+        "d2": {
+          "name": "Mardi — Gestion d'état",
+          "hard": "Difficile · 5h",
+          "p1": "Store service avec signaux : private _x = signal<T>(init) + readonly x = this._x.asReadonly()",
+          "p2": "NgRx : createAction → createReducer(on(...)) → createSelector → createEffect",
+          "p3": "@ngrx/signals : signalStore(withState, withComputed, withMethods) — NgRx moderne",
+          "p4": "Quand utiliser : service avec signaux (petite équipe, simple) ; NgRx (grande équipe, DevTools nécessaires)"
+        },
+        "d3": {
+          "name": "Mercredi — SSR, SSG & Hydratation",
+          "hard": "Voie rapide · 4h",
+          "p1": "ng add @angular/ssr — crée server.ts + app.config.server.ts",
+          "p2": "provideClientHydration(withEventReplay()) — active l'hydratation + relecture d'événements",
+          "p3": "provideHttpClient(withFetch()) — requis pour SSR",
+          "p4": "isPlatformBrowser(inject(PLATFORM_ID)) — protège localStorage/window/document",
+          "p5": "TransferState + makeStateKey<T>('key') — évite la double requête HTTP serveur→navigateur"
+        },
+        "d4": {
+          "name": "Jeudi — Optimisation des performances",
+          "hard": "Difficile · 5h",
+          "p1": "@defer : on idle|viewport|interaction|hover|timer(ms), when condition, prefetch on idle",
+          "p2": "@for (x of arr(); track x.id) — toujours tracker ; $index, $first, $last, $even, $odd",
+          "p3": "Défilement virtuel CDK : <cdk-virtual-scroll-viewport itemSize='72'> + *cdkVirtualFor",
+          "p4": "Pipe pur > méthode dans le template — les méthodes s'exécutent à chaque cycle CD, les pipes sont mémoïsés",
+          "p5": "NgOptimizedImage : [ngSrc], width, height (requis), priority pour l'image LCP"
+        },
+        "d5": {
+          "name": "Vendredi — Défi d'architecture",
+          "hard": "90 min",
+          "p1": "Fonctionnalité e-commerce complète : structure de dossiers, store signaux, façade, séparation smart/dumb",
+          "p2": "Route lazy, guard, resolver, @defer, guards SSR, NgOptimizedImage, pipe pur",
+          "p3": "Rédiger des commentaires de décision architecturale tout au long"
+        }
+      },
+      "w5": {
+        "title": "Tests + Examens blancs + Correction des points faibles",
+        "theme": "Consolider, trouver les lacunes, simuler le vrai examen",
+        "d1": {
+          "name": "Lundi — Tests avec TestBed",
+          "hard": "Difficile · 5h",
+          "p1": "TestBed.configureTestingModule({ imports: [StandaloneComp], providers: [...] })",
+          "p2": "fixture.detectChanges() — obligatoire après chaque changement d'état (TestBed désactive l'auto-CD)",
+          "p3": "fixture.componentRef.setInput('propName', value) — bonne façon de définir les inputs signal dans les tests",
+          "p4": "fakeAsync(() => { tick(300); }) — contrôler le temps pour les tests debounce/interval",
+          "p5": "provideHttpClientTesting() + HttpTestingController : expectOne(url), req.flush(data), verify()"
+        },
+        "d2": {
+          "name": "Mardi — Examen blanc senior complet",
+          "hard": "90 min chronométré",
+          "p1": "40 QCM couvrant tous les sujets des semaines 1–4",
+          "p2": "Répondre aux 40 avant de coller pour la correction",
+          "p3": "Note par catégorie → identifier les 3 points les plus faibles → ils pilotent le mercredi"
+        },
+        "d3": {
+          "name": "Mercredi — Correction des points faibles",
+          "hard": "5h",
+          "p1": "Par sujet : réexpliquer sous un angle nouveau → 5 questions ciblées → règle des 3 d'affilée → mini exercice de code",
+          "p2": "Re-tester en fin de journée — confirmer que les lacunes sont comblées"
+        },
+        "d4": {
+          "name": "Jeudi — Simulation de code complète",
+          "hard": "105 min chronométré",
+          "p1": "Format d'examen réel : cahier des charges donné, construire de zéro, sans aide",
+          "p2": "Soumettre pour revue de l'examinateur avec 5 questions spécifiques"
+        },
+        "d5": {
+          "name": "Vendredi — Révision finale & Jour d'examen",
+          "hard": "🎓 Examen",
+          "p1": "Matin : 20 concepts en rafale + 10 pièges pour développeurs React + 5 questions d'échauffement",
+          "p2": "Examen : certificates.dev/angular — 40 QCM (90 min) + défi de code (105 min)"
+        }
+      }
+    },
+    "focusTopics": {
+      "heading": "Sujets nécessitant plus de temps",
+      "t1": "Injection de dépendances — inject(), recettes de provider, instances de portée",
+      "t2": "Opérateurs RxJS — surtout switchMap vs mergeMap vs exhaustMap",
+      "t3": "Détection de changement — OnPush, markForCheck, zoneless",
+      "t4": "Directives structurelles — TemplateRef, ViewContainerRef, syntaxe *",
+      "t5": "Formulaires template — ngModel, ngForm, liaison bidirectionnelle",
+      "t6": "NgRx — actions, reducers, sélecteurs, effets",
+      "t7": "Tester les composants OnPush — setInput(), timing de detectChanges()"
+    },
+    "tips": {
+      "heading": "Conseils pratiques pour les sessions Claude",
+      "tip1": {
+        "title": "Télécharger les aide-mémoires",
+        "description": "Téléchargez les aide-mémoires gratuits Angular Signals et Modern Template Syntax sur certificates.dev/cheat-sheets et téléversez-les dans votre projet. Claude peut les consulter lors des quiz."
+      },
+      "tip2": {
+        "title": "Utiliser la phrase d'ouverture exacte",
+        "description": "Les phrases de format de session ('explique-moi', 'interroge-moi', 'drille-moi') sont dans vos instructions de projet. Claude change de mode en fonction — utilisez-les systématiquement."
+      },
+      "tip3": {
+        "title": "Coller le code comme texte, pas comme image",
+        "description": "Lors de la soumission des défis de code, collez du TypeScript brut — pas des captures d'écran. Claude peut lire, exécuter et critiquer du vrai code bien mieux que des images."
+      },
+      "tip4": {
+        "title": "Demander des analogies explicitement",
+        "description": "Si une analogie React n'est pas claire, dites : 'Donne-moi une comparaison React plus concrète pour cela.' Claude essaiera différentes approches jusqu'à ce que ça soit clair."
+      },
+      "tip5": {
+        "title": "Examens blancs en un seul message",
+        "description": "Pour les sessions quiz : laissez Claude poser les 10 questions d'abord, puis soumettez les 10 réponses d'un coup. Ne répondez pas une par une — ça brise le déroulement de l'examen."
+      },
+      "tip6": {
+        "title": "La règle des 3 d'affilée",
+        "description": "Dans les sessions de points faibles, dites à Claude : 'Continue à me poser des questions jusqu'à ce que j'en aie 3 bonnes d'affilée, puis arrête.' Cela évite de passer à la suite avant d'être solide."
+      },
+      "tip7": {
+        "title": "Avant le jour d'examen",
+        "description": "Demandez à Claude : 'Donne-moi les 10 erreurs les plus fréquentes des développeurs React à l'examen Angular senior.' C'est une session de 30 minutes à haute valeur ajoutée."
+      }
+    },
+    "instructions": {
+      "heading": "Maintenir vos instructions de projet à jour",
+      "desc": "Les instructions du projet ont une section <strong class=\"text-white\">Progression actuelle</strong> en bas. Mettez-la à jour au début ou à la fin de chaque semaine — c'est ainsi que Claude sait où vous en êtes sans que vous le réexpliquez."
+    },
+    "pdfs": {
+      "heading": "Votre bibliothèque PDF de référence",
+      "intro": "Téléversez tous les fichiers ci-dessous dans votre projet Claude pour référence en session.",
+      "colFile": "Fichier",
+      "colUpload": "Téléverser ?",
+      "colNotes": "Notes",
+      "uploadYes": "Oui",
+      "uploadPaste": "Coller",
+      "entry1": {
+        "note": "Contexte de base — coller dans le champ instructions du projet. Claude le lit à chaque session."
+      },
+      "entry2": { "note": "Référence pour la routine d'étude et les formats de session." },
+      "entry3": { "note": "Référence durant et après le lundi semaine 1." },
+      "entry4": { "note": "Référence durant et après le mardi semaine 1." },
+      "entry5": { "note": "Référence durant et après le mercredi semaine 1." },
+      "entry6": { "note": "Référence durant et après le jeudi semaine 1." },
+      "entry7": { "note": "Cahier des charges du défi de code du vendredi semaine 1." },
+      "entry8": { "note": "Semaine 2 — Router, RxJS, HttpClient." },
+      "entry9": { "note": "Semaine 3 — Formulaires, Pipes, Directives." }
+    },
+    "start": {
+      "tag": "Vous êtes prêt",
+      "title": "Démarrer Semaine 1, Jour 1",
+      "desc": "Ouvrez claude.ai, allez dans votre projet Angular Senior Cert Prep, cliquez sur Nouvelle conversation et collez ceci :",
+      "prompt": "Semaine 1, Jour 1 — explique-moi les composants standalone Angular et la syntaxe de template moderne"
+    },
+    "progress": {
+      "heading": "Progression actuelle",
+      "currentWeekLabel": "Semaine actuelle",
+      "currentWeekValue": "Semaine 1",
+      "currentDayLabel": "Jour actuel",
+      "currentDayValue": "Lundi",
+      "mockExamLabel": "Score examen blanc",
+      "mockExamValue": "Pas encore passé",
+      "examDateLabel": "Date d'examen",
+      "examDateValue": "Pas encore réservé"
+    }
+  },
+  "resources": {
+    "tag": "Ressources",
+    "title": "Supports de cours",
+    "subtitle": "Tous les PDF du cours — aide-mémoires, notes de leçons quotidiennes, exercices de code et défis chronométrés.",
+    "claudeSetupTitle": "Configurer votre cours sur Claude",
+    "claudeSetupDesc": "Un guide étape par étape pour configurer Claude comme assistant d'apprentissage pour ce cours Angular.",
+    "readGuide": "Lire le guide",
+    "cheatSheets": "Aide-mémoires",
+    "weeklyMaterials": "Supports hebdomadaires",
+    "viewPdf": "Voir le PDF"
+  },
+  "notFound": {
+    "title": "Perdus dans les archives",
+    "description1": "Vous avez erré au-delà des parchemins connus de la connaissance.",
+    "description2": "Le chemin que vous cherchez n'existe pas… ou peut-être reste-t-il à découvrir.",
+    "riddleLabel": "𓆃 Énigme antique 𓆃",
+    "answerLabel": "Votre réponse",
+    "answerPlaceholder": "Prononcez votre réponse…",
+    "wrongFeedback": "Pas tout à fait… les textes anciens suggèrent autre chose.",
+    "consultScrolls": "Consulter les parchemins",
+    "revealTruth": "Révéler la vérité",
+    "theAnswer": "La réponse",
+    "correctFeedback": "✦ Les parchemins confirment votre sagesse ✦",
+    "returnTemple": "Retourner au temple",
+    "anotherRiddle": "Une autre énigme →",
+    "error404": "Erreur 404 • Perdu dans le temps"
+  },
+  "weekDetail": {
+    "breadcrumbHome": "Tableau de bord",
+    "week": "Semaine {{ id }}",
+    "days": "Jours",
+    "day": "Jour {{ n }}",
+    "viewPdf": "Voir le PDF",
+    "completed": "Terminé",
+    "markComplete": "Marquer comme terminé",
+    "noChallenge": "Pas de défi pour ce jour",
+    "noSolution": "Pas de solution pour ce jour",
+    "studySolution": "Étudiez la solution de référence ci-dessous. Essayez d'abord le défi !",
+    "tab": {
+      "lesson": "Leçon",
+      "challenge": "Défi",
+      "solution": "Solution"
+    }
+  },
+  "cheatsheet": {
+    "tag": "Aide-mémoire",
+    "title": "🐫 Angular",
+    "titleSub": "Guide pour débutants",
+    "subtitle": "D'Angular 16/17 à Angular 21. Une référence claire et structurée pour les débutants couvrant l'évolution, les signaux, les templates, le routing et la stratégie de migration.",
+    "analogy": "🧠 Analogie",
+    "keyTakeaway": "💡 Point clé",
+    "finalTakeaway": "🎯 Conclusion pour débutants",
+    "finalDesc": "Angular devient plus simple et réactif. Vous n'avez pas besoin de tout apprendre d'un coup. Commencez par les composants, les entrées/sorties et les signaux de base."
+  },
+  "reactAngular": {
+    "tag": "Aide-mémoire",
+    "title": "React → Angular",
+    "titleSub": "Guide de correspondance",
+    "subtitle": "Une couche de traduction mentale pour les développeurs React apprenant Angular. Chaque concept que vous connaissez déjà a un équivalent direct en Angular.",
+    "mentalShortcuts": "🔥 Raccourcis mentaux"
+  },
+  "interview": {
+    "tag": "Préparation entretien",
+    "title": "Entretien Angular",
+    "titleSub": "Aide-mémoire"
+  },
+  "coursera": {
+    "myCourses": "Mes cours {{ title }}",
+    "subtitle": "Suivi des cours externes en parallèle du parcours Angular. Cette page sera supprimée une fois terminé.",
+    "progress": "Progression",
+    "openCourse": "Ouvrir le cours"
+  }
+}

@@ -8,8 +8,7 @@
           <span class="text-lg font-bold text-primary">Thoth Academy</span>
         </a>
         <p class="text-sm text-white/50 leading-relaxed mb-5">
-          A 5-week Angular learning path built with Claude. 25 lessons, hands-on challenges, and
-          reference solutions.
+          {{ 'footer.tagline' | transloco }}
         </p>
         <div class="flex gap-3">
           @for (link of socialLinks; track link.href) {
@@ -28,19 +27,21 @@
 
       <!-- Course -->
       <div>
-        <h3 class="font-semibold text-white mb-4 text-xs uppercase tracking-widest">Course</h3>
+        <h3 class="font-semibold text-white mb-4 text-xs uppercase tracking-widest">
+          {{ 'footer.course' | transloco }}
+        </h3>
         <ul class="space-y-2.5">
           <li>
-            <a routerLink="/" class="text-sm text-white/60 hover:text-white transition-colors"
-              >Dashboard</a
-            >
+            <a routerLink="/" class="text-sm text-white/60 hover:text-white transition-colors">
+              {{ 'footer.dashboard' | transloco }}
+            </a>
           </li>
           @for (w of [1, 2, 3, 4, 5]; track w) {
             <li>
               <a
                 [routerLink]="['/week', w]"
                 class="text-sm text-white/60 hover:text-white transition-colors"
-                >Week {{ w }}</a
+                >{{ 'footer.week' | transloco: { n: w } }}</a
               >
             </li>
           }
@@ -49,7 +50,9 @@
 
       <!-- Resources -->
       <div>
-        <h3 class="font-semibold text-white mb-4 text-xs uppercase tracking-widest">Resources</h3>
+        <h3 class="font-semibold text-white mb-4 text-xs uppercase tracking-widest">
+          {{ 'footer.resources' | transloco }}
+        </h3>
         <ul class="space-y-2.5">
           @for (link of resourceLinks; track link.path) {
             <li>
@@ -57,7 +60,7 @@
                 [routerLink]="link.path"
                 class="text-sm transition-colors"
                 [class]="link.highlightClass ?? 'text-white/60 hover:text-white'"
-                >{{ link.label }}</a
+                >{{ link.key | transloco }}</a
               >
             </li>
           }
@@ -66,7 +69,9 @@
 
       <!-- External -->
       <div>
-        <h3 class="font-semibold text-white mb-4 text-xs uppercase tracking-widest">Learn More</h3>
+        <h3 class="font-semibold text-white mb-4 text-xs uppercase tracking-widest">
+          {{ 'footer.learnMore' | transloco }}
+        </h3>
         <ul class="space-y-2.5">
           @for (link of externalLinks; track link.href) {
             <li>
@@ -76,7 +81,7 @@
                 rel="noopener noreferrer"
                 class="text-sm text-white/60 hover:text-white transition-colors inline-flex items-center gap-1.5"
               >
-                {{ link.label }}
+                {{ link.key | transloco }}
                 <svg
                   viewBox="0 0 24 24"
                   fill="none"
@@ -101,7 +106,7 @@
 
     <div class="flex flex-col md:flex-row justify-between items-center gap-4">
       <p class="text-xs text-white/40">
-        © {{ currentYear }} Thoth Academy. Built with Love ❤️ in Luxembourg 🇱🇺 & Angular.
+        {{ 'footer.copyright' | transloco: { year: currentYear } }}
       </p>
     </div>
   </div>

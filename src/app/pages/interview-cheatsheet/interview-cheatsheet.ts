@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { TranslocoPipe } from '@jsverse/transloco';
 import { RouterLink } from '@angular/router';
 
 interface Question {
@@ -20,7 +21,7 @@ interface Block {
 
 @Component({
   selector: 'app-interview-cheatsheet',
-  imports: [RouterLink],
+  imports: [RouterLink, TranslocoPipe],
   templateUrl: './interview-cheatsheet.html',
   styleUrl: './interview-cheatsheet.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
