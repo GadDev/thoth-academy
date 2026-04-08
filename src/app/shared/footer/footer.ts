@@ -26,6 +26,7 @@ export class Footer {
     { path: '/guide', label: 'User Guide' },
     { path: '/react-angular', label: 'React to Angular Cheat Sheet' },
     { path: '/interview', label: 'Interview Cheat Sheet' },
+    { path: '/angular-cheatsheet', label: 'Angular Beginner Cheat Sheet' },
     {
       path: '/coursera',
       label: 'Coursera Tracker',

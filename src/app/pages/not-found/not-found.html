@@ -1,0 +1,64 @@
+<div class="min-h-screen flex items-center justify-center px-6 py-12">
+  <div class="text-center max-w-xl fade-in">
+    <!-- Egyptian Symbol -->
+    <div class="text-6xl mb-8 text-primary opacity-80 animate-float">𓂀</div>
+
+    <!-- Title -->
+    <h1 class="text-4xl font-bold mb-4 text-text">Lost in the Archives</h1>
+
+    <!-- Mysterious message -->
+    <p class="text-muted mb-8 leading-relaxed text-lg">
+      You have wandered beyond the known scrolls of knowledge.
+      <br />
+      The path you seek does not exist… or perhaps it has yet to be discovered.
+    </p>
+
+    <!-- Riddle Box -->
+    <div
+      class="bg-surface border border-primary/20 p-6 rounded-2xl mb-6 shadow-lg hover:shadow-xl transition-shadow duration-300"
+    >
+      <p class="italic text-sm text-muted mb-4 uppercase tracking-wider">⚡ Ancient Riddle</p>
+
+      <p class="text-lg font-medium leading-relaxed text-text mb-6">
+        {{ currentRiddle().question }}
+      </p>
+
+      <!-- Answer Reveal Section -->
+      <div class="space-y-4">
+        @if (showAnswer()) {
+          <div class="bg-primary/10 border border-primary/30 rounded-lg p-4 animate-reveal">
+            <p class="text-sm text-muted uppercase tracking-wider mb-1">Answer:</p>
+            <p class="text-xl font-bold text-primary">{{ currentRiddle().answer }}</p>
+          </div>
+        }
+
+        <div class="flex gap-3 justify-center">
+          <button
+            (click)="toggleAnswer()"
+            class="px-4 py-2 rounded-lg border border-primary/40 text-primary hover:bg-primary/10 transition-all duration-200 text-sm font-medium"
+          >
+            {{ showAnswer() ? 'Hide' : 'Reveal' }} Answer
+          </button>
+
+          <button
+            (click)="nextRiddle()"
+            class="px-4 py-2 rounded-lg border border-primary/40 text-primary hover:bg-primary/10 transition-all duration-200 text-sm font-medium"
+          >
+            Next Riddle 🔄
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA Button -->
+    <button
+      routerLink="/"
+      class="bg-primary text-black px-8 py-3 rounded-xl font-semibold hover:bg-primary-hover transition-all duration-200 text-lg inline-block w-full sm:w-auto"
+    >
+      Return to the Temple
+    </button>
+
+    <!-- Footer hint -->
+    <p class="text-muted text-xs mt-8 opacity-60">Error 404 • Lost in Time</p>
+  </div>
+</div>

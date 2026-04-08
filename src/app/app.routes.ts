@@ -39,5 +39,13 @@ export const routes: Routes = [
         (m) => m.InterviewCheatsheet,
       ),
   },
-  { path: '**', redirectTo: '' },
+  {
+    path: 'angular-cheatsheet',
+    loadComponent: () =>
+      import('./pages/angular-cheatsheet/angular-cheatsheet').then((m) => m.AngularCheatsheet),
+  },
+  {
+    path: '**',
+    loadComponent: () => import('./pages/not-found/not-found').then((m) => m.NotFound),
+  },
 ];

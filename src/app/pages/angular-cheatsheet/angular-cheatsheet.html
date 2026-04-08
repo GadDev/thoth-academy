@@ -1,0 +1,155 @@
+<div class="min-h-screen bg-bg text-white">
+  <div class="max-w-4xl mx-auto px-6 pt-16 pb-24">
+    <!-- Page Header -->
+    <div class="mb-14">
+      <p class="text-xs font-semibold uppercase tracking-widest text-primary mb-3">Cheat Sheet</p>
+      <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-4">
+        🐫 Angular<br class="hidden md:block" />
+        <span class="text-white/50">Beginner-Friendly Guide</span>
+      </h1>
+      <p class="text-white/60 leading-relaxed max-w-2xl">
+        From Angular 16 / 17 → Angular 21. A clear, structured reference for beginners covering
+        evolution, signals, templates, routing, and migration strategy.
+      </p>
+
+      <!-- Jump links -->
+      <nav aria-label="Page sections" class="mt-8 flex flex-wrap gap-2">
+        @for (link of jumpLinks; track link.id) {
+          <a
+            routerLink="."
+            [fragment]="link.id"
+            class="text-xs px-3 py-1.5 rounded-full border border-white/10 bg-surface text-white/50 hover:text-primary hover:border-primary/30 transition-colors focus-visible:outline-2 focus-visible:outline-primary focus-visible:outline-offset-2"
+            >{{ link.label }}</a
+          >
+        }
+      </nav>
+    </div>
+
+    <!-- Sections -->
+    @for (section of sections; track section.id) {
+      <section
+        [id]="section.id"
+        class="mb-10 bg-surface border border-white/10 rounded-2xl overflow-hidden"
+        [attr.aria-labelledby]="section.id + '-heading'"
+      >
+        <!-- Section header -->
+        <div class="px-6 py-5 border-b border-white/10">
+          <div class="flex items-center gap-3">
+            <span class="text-2xl" aria-hidden="true">{{ section.icon }}</span>
+            <div>
+              <h2 [id]="section.id + '-heading'" class="text-base font-semibold text-white">
+                {{ section.title }}
+              </h2>
+              @if (section.subtitle) {
+                <p class="text-xs text-white/40 mt-0.5">{{ section.subtitle }}</p>
+              }
+            </div>
+          </div>
+        </div>
+
+        <!-- Section body -->
+        <div class="px-6 py-5 space-y-4">
+          <!-- Paragraphs -->
+          @for (para of section.paragraphs; track para) {
+            <p class="text-sm text-white/70 leading-relaxed">{{ para }}</p>
+          }
+
+          <!-- Code examples -->
+          @if (section.examples && section.examples.length > 0) {
+            <div class="space-y-3">
+              @for (ex of section.examples; track ex.label) {
+                <div>
+                  <p class="text-xs font-semibold uppercase tracking-widest text-primary/70 mb-1.5">
+                    {{ ex.label }}
+                  </p>
+                  <pre
+                    class="bg-bg border border-white/10 rounded-xl px-4 py-3 text-xs text-green-300/90 font-mono overflow-x-auto whitespace-pre leading-relaxed"
+                    >{{ ex.code }}</pre
+                  >
+                </div>
+              }
+            </div>
+          }
+
+          <!-- Bullets -->
+          @if (section.bullets && section.bullets.length > 0) {
+            <ul class="space-y-1.5 pl-1" role="list">
+              @for (item of section.bullets; track item) {
+                <li class="flex items-start gap-2 text-sm text-white/70 leading-relaxed">
+                  <span
+                    class="mt-1 shrink-0 w-1.5 h-1.5 rounded-full bg-primary/60"
+                    aria-hidden="true"
+                  ></span>
+                  <span>{{ item }}</span>
+                </li>
+              }
+            </ul>
+          }
+
+          <!-- Analogy -->
+          @if (section.analogy) {
+            <div class="bg-accent/5 border border-accent/15 rounded-xl px-4 py-3">
+              <p class="text-xs font-semibold uppercase tracking-widest text-accent/70 mb-1">
+                🧠 Analogy
+              </p>
+              <p class="text-sm text-white/70">{{ section.analogy }}</p>
+            </div>
+          }
+
+          <!-- Table -->
+          @if (section.tableRows && section.tableRows.length > 0) {
+            <div class="bg-bg border border-white/10 rounded-xl overflow-hidden">
+              <table class="w-full text-sm">
+                <thead>
+                  <tr class="border-b border-white/10">
+                    <th
+                      scope="col"
+                      class="text-left px-5 py-3 text-xs font-semibold uppercase tracking-widest text-white/40"
+                    >
+                      Situation
+                    </th>
+                    <th
+                      scope="col"
+                      class="text-left px-5 py-3 text-xs font-semibold uppercase tracking-widest text-white/40"
+                    >
+                      Use
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  @for (row of section.tableRows; track row.situation) {
+                    <tr class="border-b border-white/5 last:border-b-0">
+                      <td class="px-5 py-3 text-white/70 text-xs">{{ row.situation }}</td>
+                      <td class="px-5 py-3 text-primary font-mono text-xs">{{ row.use }}</td>
+                    </tr>
+                  }
+                </tbody>
+              </table>
+            </div>
+          }
+
+          <!-- Tip -->
+          @if (section.tip) {
+            <div class="bg-primary/5 border border-primary/20 rounded-xl px-4 py-3">
+              <p class="text-xs font-semibold uppercase tracking-widest text-primary/70 mb-1">
+                💡 Key takeaway
+              </p>
+              <p class="text-sm text-white/80">{{ section.tip }}</p>
+            </div>
+          }
+        </div>
+      </section>
+    }
+
+    <!-- Final takeaway -->
+    <div class="mt-6 bg-surface border border-primary/20 rounded-2xl px-6 py-6 text-center">
+      <p class="text-lg font-semibold text-white mb-2">🎯 Final Beginner Takeaway</p>
+      <p class="text-white/60 text-sm max-w-xl mx-auto leading-relaxed">
+        Angular is becoming simpler and more reactive. You don't need to learn everything at once.
+        Start with <span class="text-primary font-medium">components</span>,
+        <span class="text-primary font-medium">inputs/outputs</span>, and
+        <span class="text-primary font-medium">basic signals</span>.
+      </p>
+    </div>
+  </div>
+</div>
