@@ -1,11 +1,4 @@
-import {
-  afterNextRender,
-  ChangeDetectionStrategy,
-  Component,
-  DestroyRef,
-  inject,
-  signal,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 interface WorkingRule {
@@ -73,21 +66,6 @@ interface PdfEntry {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Guide {
-  readonly showBackToTop = signal(false);
-
-  constructor() {
-    const destroyRef = inject(DestroyRef);
-    afterNextRender(() => {
-      const handler = () => this.showBackToTop.set(window.scrollY > 400);
-      window.addEventListener('scroll', handler, { passive: true });
-      destroyRef.onDestroy(() => window.removeEventListener('scroll', handler));
-    });
-  }
-
-  scrollToTop(): void {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
-
   readonly jumpLinks: { id: string; label: string }[] = [
     { id: 'overview', label: 'What This Course Is' },
     { id: 'profile', label: 'My Profile' },
