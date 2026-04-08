@@ -1,0 +1,221 @@
+<footer class="bg-surface border-t border-white/10">
+  <div class="max-w-6xl mx-auto px-6 py-14">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-10">
+      <!-- Brand -->
+      <div class="md:col-span-1">
+        <a routerLink="/" class="flex items-center gap-2 mb-3">
+          <img src="/logo.svg" alt="" aria-hidden="true" width="28" height="28" class="shrink-0" />
+          <span class="text-lg font-bold text-primary">Thoth Academy</span>
+        </a>
+        <p class="text-sm text-white/50 leading-relaxed mb-5">
+          A 5-week Angular learning path built with Claude. 25 lessons, hands-on challenges, and
+          reference solutions.
+        </p>
+        <div class="flex gap-3">
+          <a
+            href="https://github.com/GadDev"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub"
+            class="flex items-center justify-center w-8 h-8 rounded bg-white/5 border border-white/10 text-white/60 hover:text-white hover:bg-accent/10 hover:border-accent/20 transition-colors"
+          >
+            <img src="/social/github.svg" alt="GitHub" width="16" height="16" />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/alexandre-gadaix-a7792947/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+            class="flex items-center justify-center w-8 h-8 rounded bg-white/5 border border-white/10 text-white/60 hover:text-white hover:bg-accent/10 hover:border-accent/20 transition-colors"
+          >
+            <img src="/social/linkedin.svg" alt="LinkedIn" width="16" height="16" />
+          </a>
+        </div>
+      </div>
+
+      <!-- Course -->
+      <div>
+        <h3 class="font-semibold text-white mb-4 text-xs uppercase tracking-widest">Course</h3>
+        <ul class="space-y-2.5">
+          <li>
+            <a routerLink="/" class="text-sm text-white/60 hover:text-white transition-colors"
+              >Dashboard</a
+            >
+          </li>
+          @for (w of [1, 2, 3, 4, 5]; track w) {
+            <li>
+              <a
+                [routerLink]="['/week', w]"
+                class="text-sm text-white/60 hover:text-white transition-colors"
+                >Week {{ w }}</a
+              >
+            </li>
+          }
+        </ul>
+      </div>
+
+      <!-- Resources -->
+      <div>
+        <h3 class="font-semibold text-white mb-4 text-xs uppercase tracking-widest">Resources</h3>
+        <ul class="space-y-2.5">
+          <li>
+            <a
+              routerLink="/resources"
+              class="text-sm text-white/60 hover:text-white transition-colors"
+              >All Materials</a
+            >
+          </li>
+          <li>
+            <a routerLink="/about" class="text-sm text-white/60 hover:text-white transition-colors"
+              >About</a
+            >
+          </li>
+          <li>
+            <a routerLink="/guide" class="text-sm text-white/60 hover:text-white transition-colors"
+              >User Guide</a
+            >
+          </li>
+          <li>
+            <a
+              routerLink="/interview"
+              class="text-sm text-white/60 hover:text-white transition-colors"
+              >Interview Sheet</a
+            >
+          </li>
+          <li>
+            <a
+              routerLink="/coursera"
+              class="text-sm text-amber-400/70 hover:text-amber-300 transition-colors"
+            >
+              Coursera Tracker
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- External -->
+      <div>
+        <h3 class="font-semibold text-white mb-4 text-xs uppercase tracking-widest">Learn More</h3>
+        <ul class="space-y-2.5">
+          <li>
+            <a
+              href="https://angular.dev"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-sm text-white/60 hover:text-white transition-colors inline-flex items-center gap-1.5"
+            >
+              Angular Docs
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                width="11"
+                height="11"
+              >
+                <path
+                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                />
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://angular.dev/tutorials"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-sm text-white/60 hover:text-white transition-colors inline-flex items-center gap-1.5"
+            >
+              Angular Tutorials
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                width="11"
+                height="11"
+              >
+                <path
+                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                />
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://claude.ai"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-sm text-white/60 hover:text-white transition-colors inline-flex items-center gap-1.5"
+            >
+              Claude AI
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                width="11"
+                height="11"
+              >
+                <path
+                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                />
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.coursera.org"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-sm text-white/60 hover:text-white transition-colors inline-flex items-center gap-1.5"
+            >
+              Coursera
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                width="11"
+                height="11"
+              >
+                <path
+                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                />
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="border-t border-white/10 mb-6"></div>
+
+    <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+      <p class="text-xs text-white/40">
+        © {{ currentYear }} Thoth Academy. Built with Love ❤️ in Luxembourg 🇱🇺 & Angular.
+      </p>
+      <div class="flex gap-6">
+        <a
+          routerLink="/resources"
+          class="text-xs text-white/40 hover:text-white/60 transition-colors"
+          >Resources</a
+        >
+        <a
+          href="https://angular.dev"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-xs text-white/40 hover:text-white/60 transition-colors"
+          >Angular Docs</a
+        >
+        <a
+          href="https://claude.ai"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-xs text-white/40 hover:text-white/60 transition-colors"
+          >Claude AI</a
+        >
+      </div>
+    </div>
+  </div>
+</footer>
