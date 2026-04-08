@@ -1,0 +1,8 @@
+<p>child works!</p>
+<ul>
+  @for (item of items(); track item) {
+    <li (click)="selectedItem.emit(item)" (keyup.enter)="selectedItem.emit(item)" tabindex="0">
+      {{ item }}
+    </li>
+  }
+</ul>

@@ -1,0 +1,35 @@
+<h1 appHighlight>Angular app</h1>
+<section class="flex gap-2">
+  @if (SuperAdmin) {
+    <button class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors">
+      Super admin button
+    </button>
+  } @else if (Admin) {
+    <button class="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 transition-colors">
+      Admin button
+    </button>
+  } @else {
+    <p class="text-white">No access</p>
+  }
+</section>
+<section>
+  @switch (color) {
+    @case ('red') {
+      <p class="text-red-500">Red color</p>
+    }
+    @case ('green') {
+      <p class="text-green-500">Green color</p>
+    }
+    @case ('blue') {
+      <p class="text-blue-500">Blue color</p>
+    }
+    @default {
+      <p class="text-gray-500">Unknown color</p>
+    }
+  }
+</section>
+<section>
+  <app-child [items]="itemList" (selectedItem)="OnItemSelected($event)"></app-child>
+  <p appHighlight>Selected item: {{ selectedItem }}</p>
+</section>
+<section><button (click)="addItem()">Add new item</button></section>
