@@ -3,8 +3,8 @@ import { ActivatedRoute, RouterLink } from '@angular/router';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { map } from 'rxjs';
 import { MonacoEditorModule, NgxEditorModel } from 'ngx-monaco-editor-v2';
-import { COURSE_WEEKS } from '../../data/course-data';
-import { ProgressService } from '../../services/progress.service';
+import { COURSE_WEEKS } from '../../core/course-data';
+import { ProgressService } from '../../core/progress.service';
 
 type Tab = 'lesson' | 'challenge' | 'solution';
 

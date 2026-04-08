@@ -1,7 +1,7 @@
 import { Component, ChangeDetectionStrategy, computed, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { COURSE_WEEKS, TOTAL_LESSONS } from '../../data/course-data';
-import { ProgressService } from '../../services/progress.service';
+import { COURSE_WEEKS, TOTAL_LESSONS } from '../../core/course-data';
+import { ProgressService } from '../../core/progress.service';
 
 const CIRCUMFERENCE = 2 * Math.PI * 20;
 
