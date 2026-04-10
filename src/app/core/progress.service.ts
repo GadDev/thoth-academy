@@ -1,7 +1,6 @@
 import { Injectable, computed, effect, signal } from '@angular/core';
 
 const STORAGE_KEY = 'thoth_progress';
-const LAST_ACTIVITY_KEY = 'thoth_last_activity';
 
 interface ProgressData {
   completedDays: string[];
@@ -44,10 +43,6 @@ export class ProgressService {
 
     for (let i = 0; i < 100; i++) {
       // Arbitrary limit to prevent infinite loops
-      const year = checkDate.getFullYear();
-      const month = checkDate.getMonth() + 1;
-      const day = checkDate.getDate();
-
       // Find if there's any completed day on this date
       // For simplicity, we'll check if ANY day was completed and assume at most 1 per day
       // A more sophisticated approach would track dates per completion

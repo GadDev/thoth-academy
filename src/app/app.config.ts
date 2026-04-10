@@ -10,7 +10,6 @@ import { provideTransloco } from '@jsverse/transloco';
 import { MonacoEditorModule } from 'ngx-monaco-editor-v2';
 
 import { routes } from './app.routes';
-import { TranslationLoader } from './core/translation.loader';
 import { TranslocoHttpLoader } from './transloco-loader';
 
 export const appConfig: ApplicationConfig = {

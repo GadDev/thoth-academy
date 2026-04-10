@@ -1,5 +1,4 @@
 import type { CourseChallenge } from '../../types';
-import { WEEK1_DAY1_SOLUTION_HARD } from './solution-hard';
 
 export const WEEK1_DAY1_CHALLENGE_HARD: CourseChallenge = {
   difficulty: 'hard',

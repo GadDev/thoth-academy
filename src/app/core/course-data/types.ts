@@ -38,7 +38,7 @@ export interface LessonListBlock {
 
 export interface LessonQABlock {
   type: 'qa';
-  items: Array<{ questionKey: string; answerKey: string }>;
+  items: { questionKey: string; answerKey: string }[];
 }
 
 export type LessonBlock =
