@@ -143,61 +143,120 @@
   <section class="max-w-6xl mx-auto px-6 pb-20">
     <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
       @for (week of weekData(); track week.id) {
-        <a
-          [routerLink]="['/week', week.id]"
-          class="group relative flex flex-col gap-4 bg-surface hover:bg-surface-light border border-white/10 hover:border-primary/30 rounded-2xl p-6 transition-all duration-200 cursor-pointer no-underline"
-        >
-          <!-- Week badge + ring -->
-          <div class="flex items-center justify-between">
-            <span class="text-xs font-semibold uppercase tracking-widest text-white/40">{{
-              'dashboard.week' | transloco: { id: week.id }
-            }}</span>
-            <svg viewBox="0 0 48 48" width="40" height="40" class="-rotate-90 shrink-0">
-              <circle
-                cx="24"
-                cy="24"
-                r="20"
-                fill="none"
-                stroke="rgba(255,255,255,0.08)"
-                stroke-width="4"
-              />
-              <circle
-                cx="24"
-                cy="24"
-                r="20"
-                fill="none"
-                stroke="#3ABEFF"
-                stroke-width="4"
-                stroke-linecap="round"
-                [attr.stroke-dasharray]="circumference"
-                [attr.stroke-dashoffset]="week.strokeDashoffset"
-              />
-            </svg>
-          </div>
+        @if (week.id === 1) {
+          <a
+            [routerLink]="['/week', week.id]"
+            class="group relative flex flex-col gap-4 bg-surface hover:bg-surface-light border border-white/10 hover:border-primary/30 rounded-2xl p-6 transition-all duration-200 cursor-pointer no-underline"
+          >
+            <!-- Week badge + ring -->
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-semibold uppercase tracking-widest text-white/40">{{
+                'dashboard.week' | transloco: { id: week.id }
+              }}</span>
+              <svg viewBox="0 0 48 48" width="40" height="40" class="-rotate-90 shrink-0">
+                <circle
+                  cx="24"
+                  cy="24"
+                  r="20"
+                  fill="none"
+                  stroke="rgba(255,255,255,0.08)"
+                  stroke-width="4"
+                />
+                <circle
+                  cx="24"
+                  cy="24"
+                  r="20"
+                  fill="none"
+                  stroke="#3ABEFF"
+                  stroke-width="4"
+                  stroke-linecap="round"
+                  [attr.stroke-dasharray]="circumference"
+                  [attr.stroke-dashoffset]="week.strokeDashoffset"
+                />
+              </svg>
+            </div>
 
-          <div>
-            <h2 class="text-lg font-semibold mb-1 group-hover:text-primary transition-colors">
-              {{ week.title }}
-            </h2>
-            <p class="text-sm text-white/50">{{ week.theme }}</p>
-          </div>
+            <div>
+              <h2 class="text-lg font-semibold mb-1 group-hover:text-primary transition-colors">
+                {{ week.title }}
+              </h2>
+              <p class="text-sm text-white/50">{{ week.theme }}</p>
+            </div>
 
-          <!-- Days progress -->
-          <div class="flex gap-1.5 mt-auto">
-            @for (dayItem of week.dayCompletion; track dayItem.n) {
-              <div
-                class="h-1.5 flex-1 rounded-full"
-                [class]="dayItem.complete ? 'bg-primary' : 'bg-white/10'"
-              ></div>
-            }
+            <!-- Days progress -->
+            <div class="flex gap-1.5 mt-auto">
+              @for (dayItem of week.dayCompletion; track dayItem.n) {
+                <div
+                  class="h-1.5 flex-1 rounded-full"
+                  [class]="dayItem.complete ? 'bg-primary' : 'bg-white/10'"
+                ></div>
+              }
+            </div>
+            <p class="text-xs text-white/40">
+              {{
+                'dashboard.daysComplete'
+                  | transloco: { completed: week.completedCount, total: week.days.length }
+              }}
+            </p>
+          </a>
+        } @else {
+          <div
+            class="relative flex flex-col gap-4 bg-surface border border-white/10 rounded-2xl p-6 opacity-40 cursor-not-allowed"
+            aria-disabled="true"
+          >
+            <span
+              class="absolute top-3 right-3 text-xs font-semibold uppercase tracking-widest text-white/40 bg-white/10 rounded-full px-2 py-0.5"
+              >Coming soon</span
+            >
+            <!-- Week badge + ring -->
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-semibold uppercase tracking-widest text-white/40">{{
+                'dashboard.week' | transloco: { id: week.id }
+              }}</span>
+              <svg viewBox="0 0 48 48" width="40" height="40" class="-rotate-90 shrink-0">
+                <circle
+                  cx="24"
+                  cy="24"
+                  r="20"
+                  fill="none"
+                  stroke="rgba(255,255,255,0.08)"
+                  stroke-width="4"
+                />
+                <circle
+                  cx="24"
+                  cy="24"
+                  r="20"
+                  fill="none"
+                  stroke="#3ABEFF"
+                  stroke-width="4"
+                  stroke-linecap="round"
+                  [attr.stroke-dasharray]="circumference"
+                  [attr.stroke-dashoffset]="week.strokeDashoffset"
+                />
+              </svg>
+            </div>
+
+            <div>
+              <h2 class="text-lg font-semibold mb-1">
+                {{ week.title }}
+              </h2>
+              <p class="text-sm text-white/50">{{ week.theme }}</p>
+            </div>
+
+            <!-- Days progress -->
+            <div class="flex gap-1.5 mt-auto">
+              @for (dayItem of week.dayCompletion; track dayItem.n) {
+                <div class="h-1.5 flex-1 rounded-full bg-white/10"></div>
+              }
+            </div>
+            <p class="text-xs text-white/40">
+              {{
+                'dashboard.daysComplete'
+                  | transloco: { completed: week.completedCount, total: week.days.length }
+              }}
+            </p>
           </div>
-          <p class="text-xs text-white/40">
-            {{
-              'dashboard.daysComplete'
-                | transloco: { completed: week.completedCount, total: week.days.length }
-            }}
-          </p>
-        </a>
+        }
       }
     </div>
   </section>

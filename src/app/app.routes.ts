@@ -5,6 +5,10 @@ export const routes: Routes = [
     path: '',
     loadComponent: () => import('./pages/dashboard/dashboard').then((m) => m.Dashboard),
   },
+  { path: 'week/2', redirectTo: '/not-found' },
+  { path: 'week/3', redirectTo: '/not-found' },
+  { path: 'week/4', redirectTo: '/not-found' },
+  { path: 'week/5', redirectTo: '/not-found' },
   {
     path: 'week/:id',
     loadComponent: () => import('./pages/week-detail/week-detail').then((m) => m.WeekDetail),
