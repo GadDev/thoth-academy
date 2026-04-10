@@ -1,4 +1,5 @@
 export interface CourseChallenge {
+  difficulty?: 'easy' | 'medium' | 'hard';
   description: string;
   starterCode: string;
   solutionCode: string;
@@ -56,6 +57,7 @@ export interface CourseDay {
   summary: string;
   pdfUrl?: string;
   challenge?: CourseChallenge;
+  challenges?: CourseChallenge[];
   blocks?: LessonBlock[];
 }
 
@@ -88,17 +90,32 @@ export const COURSE_WEEKS: CourseWeek[] = [
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-greeting',
+  selector: 'app-greeting', // custom HTML tag for this component
   standalone: true, // no NgModule needed
   template: \`
     <h1>Hello, {{ name }}!</h1>
     <button (click)="greet()">Say hi</button>
   \`,
+  imports: [], // array of other components, directives, pipes used in the template
 })
 export class GreetingComponent {
   name = 'Angular';
   greet() { alert('Hi from ' + this.name); }
 }`,
+          },
+          { type: 'heading', key: 'The React brain translation:' },
+          {
+            type: 'list',
+            itemKeys: [
+              'Your react file exports a function -> Your Angular file exports a class',
+              'JSX lives in the function body -> template lives in the decorator',
+              '`useState`, `useEffect` etc. -> class properties and methods',
+              'import MyComp from "./MyComp" for composition -> list MyComp in the imports array in the decorator',
+            ],
+          },
+          {
+            type: 'paragraph',
+            key: "The imports array is critical and trips up React devs constantly. If you use <product-card /> in the template, ProductCardComponent must be in the imports array of the component's decorator. No imports array entry = Angular pretends the components doesn't exist, no error thrown",
           },
           { type: 'heading', key: 'lessons.w1d1.sec2Title' },
           {
@@ -207,6 +224,385 @@ export class CardComponent {
               'lessons.w1d1.sec7Item3',
               'lessons.w1d1.sec7Item4',
             ],
+          },
+        ],
+        challenges: [
+          // ─── EASY ────────────────────────────────────────────────────────
+          {
+            difficulty: 'easy',
+            description: `<p>You know React — now translate it. Convert the <code>UserCard</code> component into a proper Angular standalone component.</p>
+<ul class="mt-3 space-y-2">
+  <li class="flex items-start gap-2 text-sm text-white/70"><span aria-hidden="true" class="text-primary/70 font-bold mt-px shrink-0">•</span><code>name = input.required&lt;string&gt;()</code></li>
+  <li class="flex items-start gap-2 text-sm text-white/70"><span aria-hidden="true" class="text-primary/70 font-bold mt-px shrink-0">•</span><code>role = input&lt;string&gt;('')</code> — optional with default</li>
+  <li class="flex items-start gap-2 text-sm text-white/70"><span aria-hidden="true" class="text-primary/70 font-bold mt-px shrink-0">•</span><code>follow = output&lt;string&gt;()</code> — emits the user name on click</li>
+  <li class="flex items-start gap-2 text-sm text-white/70"><span aria-hidden="true" class="text-primary/70 font-bold mt-px shrink-0">•</span><code>followed = signal(false)</code> — local state, no prop</li>
+  <li class="flex items-start gap-2 text-sm text-white/70"><span aria-hidden="true" class="text-primary/70 font-bold mt-px shrink-0">•</span><code>[class.followed]</code> on the wrapper <code>div</code></li>
+  <li class="flex items-start gap-2 text-sm text-white/70"><span aria-hidden="true" class="text-primary/70 font-bold mt-px shrink-0">•</span>Button is <code>disabled</code> once <code>followed()</code> is <code>true</code></li>
+  <li class="flex items-start gap-2 text-sm text-white/70"><span aria-hidden="true" class="text-primary/70 font-bold mt-px shrink-0">•</span>Standalone, <code>OnPush</code>, no NgModule</li>
+</ul>
+<p><strong>React source to convert:</strong></p>
+<pre class="bg-[#0d1117] border border-white/10 rounded-xl px-5 py-4 overflow-x-auto text-xs font-mono text-emerald-300 leading-relaxed whitespace-pre"><code>function UserCard({ name, role, onFollow }) {
+  const [followed, setFollowed] = useState(false);
+  return (
+    &lt;div className={&#96;card \${followed ? "card--active" : ""}&#96;}&gt;
+      &lt;h2&gt;{name}&lt;/h2&gt;
+      &lt;span&gt;{role}&lt;/span&gt;
+      &lt;button onClick={() =&gt; { setFollowed(true); onFollow(name); }}&gt;
+        {followed ? "✓ Following" : "Follow"}
+      &lt;/button&gt;
+    &lt;/div&gt;
+  );
+}</code></pre>`,
+            starterCode: `import { Component, ChangeDetectionStrategy } from '@angular/core';
+
+// 🎯 Easy Challenge — React → Angular translation
+//
+// Convert this React component to Angular:
+//
+//   function UserCard({ name, role, onFollow }) {
+//     const [followed, setFollowed] = useState(false);
+//     return (
+//       <div className={\`card \${followed ? 'card--active' : ''}\`}>
+//         <h2>{name}</h2>
+//         <span>{role}</span>
+//         <button onClick={() => { setFollowed(true); onFollow(name); }}>
+//           {followed ? '✓ Following' : 'Follow'}
+//         </button>
+//       </div>
+//     );
+//   }
+//
+// Requirements:
+//   • Standalone component, selector: app-user-card, OnPush
+//   • name = input.required<string>()
+//   • role = input<string>('')
+//   • followed = signal(false)   ← local state, no prop for this
+//   • follow = output<string>()  ← emits name when clicked
+//   • [class.followed] on the wrapper div
+//   • Button is disabled once followed() is true
+
+@Component({
+  selector: 'app-user-card',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: \`<!-- TODO -->\`,
+})
+export class UserCard {
+  // TODO: name input, role input, followed signal, follow output, onFollow()
+}`,
+            solutionCode: `import { Component, ChangeDetectionStrategy, input, output, signal } from '@angular/core';
+
+@Component({
+  selector: 'app-user-card',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: \`
+    <div
+      [class.followed]="followed()"
+      style="display:flex;flex-direction:column;gap:.75rem;padding:1.5rem;
+             border:1px solid rgba(255,255,255,.1);border-radius:1rem;max-width:16rem"
+    >
+      <h2 style="font-size:1.125rem;font-weight:600">{{ name() }}</h2>
+      <span style="font-size:.875rem;opacity:.6">{{ role() }}</span>
+      <button
+        (click)="onFollow()"
+        [disabled]="followed()"
+        style="padding:.5rem 1rem;border-radius:.5rem;cursor:pointer;
+               font-weight:600;border:none;transition:opacity .15s"
+        [style.background]="followed() ? 'rgba(212,175,55,.3)' : '#D4AF37'"
+        [style.color]="'#0B0F14'"
+      >
+        {{ followed() ? '✓ Following' : 'Follow' }}
+      </button>
+    </div>
+  \`,
+})
+export class UserCard {
+  // Inputs — replaces React props
+  readonly name = input.required<string>();
+  readonly role = input<string>('');
+
+  // Local state — replaces useState(false)
+  readonly followed = signal(false);
+
+  // Output — replaces the onFollow callback prop
+  readonly follow = output<string>();
+
+  onFollow(): void {
+    this.followed.set(true);        // signal.set() — not setState()
+    this.follow.emit(this.name());  // read signal with (), then emit
+  }
+}`,
+          },
+          // ─── MEDIUM ───────────────────────────────────────────────────────
+          {
+            difficulty: 'medium',
+            description: `<p>Build a <code>ProductListComponent</code> that accepts a <code>products</code> array as input and lets the user filter by category. The filtered list must be derived reactively using <code>computed()</code> — not filtered inside the template.</p>
+<ul class="mt-3 space-y-2">
+  <li class="flex items-start gap-2 text-sm text-white/70"><span aria-hidden="true" class="text-primary/70 font-bold mt-px shrink-0">•</span><code>products = input&lt;Product[]&gt;(MOCK_PRODUCTS)</code></li>
+  <li class="flex items-start gap-2 text-sm text-white/70"><span aria-hidden="true" class="text-primary/70 font-bold mt-px shrink-0">•</span><code>selectedCategory = signal('all')</code></li>
+  <li class="flex items-start gap-2 text-sm text-white/70"><span aria-hidden="true" class="text-primary/70 font-bold mt-px shrink-0">•</span><code>categories = computed(() =&gt; ['all', ...uniqueCategories])</code></li>
+  <li class="flex items-start gap-2 text-sm text-white/70"><span aria-hidden="true" class="text-primary/70 font-bold mt-px shrink-0">•</span><code>filtered = computed(() =&gt; ...)</code> — return all when <code>'all'</code>, else filter by selected</li>
+  <li class="flex items-start gap-2 text-sm text-white/70"><span aria-hidden="true" class="text-primary/70 font-bold mt-px shrink-0">•</span>Template: category pill buttons + <code>@for (product of filtered(); track product.id)</code> with <code>@empty</code></li>
+  <li class="flex items-start gap-2 text-sm text-white/70"><span aria-hidden="true" class="text-primary/70 font-bold mt-px shrink-0">•</span>Each card shows name, price via <code>CurrencyPipe</code>, and a category badge</li>
+  <li class="flex items-start gap-2 text-sm text-white/70"><span aria-hidden="true" class="text-primary/70 font-bold mt-px shrink-0">•</span><code>OnPush</code>, <code>CurrencyPipe</code> in the <code>imports</code> array</li>
+</ul>
+<p><strong>Common React-dev trap:</strong> filtering inside the template with a method call instead of <code>computed()</code>.</p>`,
+            starterCode: `import { Component, ChangeDetectionStrategy, signal, computed, input } from '@angular/core';
+import { CurrencyPipe } from '@angular/common';
+
+// 🎯 Medium Challenge — Reactive filtering with signals
+//
+// Requirements:
+//   • products = input<Product[]>(MOCK_PRODUCTS)  // use provided data as default
+//   • selectedCategory = signal('all')
+//   • categories = computed(() => ['all', ...unique categories from products()])
+//   • filtered = computed(() => skip filter when 'all', else filter by selectedCategory())
+//
+// Template:
+//   • Category pills: @for (cat of categories(); track cat)
+//     – active pill styling with [style.background] or [class]
+//   • Product grid: @for (product of filtered(); track product.id)
+//     – show name, price (CurrencyPipe), category badge
+//     – @empty fallback message
+//   • OnPush
+
+export interface Product {
+  id: number;
+  name: string;
+  price: number;
+  category: string;
+}
+
+export const MOCK_PRODUCTS: Product[] = [
+  { id: 1, name: 'Angular Hoodie',    price: 49, category: 'apparel'   },
+  { id: 2, name: 'RxJS Mug',          price: 12, category: 'drinkware' },
+  { id: 3, name: 'Signal Cap',         price: 24, category: 'apparel'   },
+  { id: 4, name: 'TypeScript Bottle',  price: 18, category: 'drinkware' },
+  { id: 5, name: 'NgRx Sticker Pack',  price: 8,  category: 'stickers'  },
+];
+
+@Component({
+  selector: 'app-product-list',
+  imports: [CurrencyPipe],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: \`<!-- TODO -->\`,
+})
+export class ProductList {
+  readonly products = input<Product[]>(MOCK_PRODUCTS);
+  // TODO: selectedCategory, categories, filtered
+}`,
+            solutionCode: `import { Component, ChangeDetectionStrategy, signal, computed, input } from '@angular/core';
+import { CurrencyPipe } from '@angular/common';
+
+export interface Product { id: number; name: string; price: number; category: string; }
+
+export const MOCK_PRODUCTS: Product[] = [
+  { id: 1, name: 'Angular Hoodie',    price: 49, category: 'apparel'   },
+  { id: 2, name: 'RxJS Mug',          price: 12, category: 'drinkware' },
+  { id: 3, name: 'Signal Cap',         price: 24, category: 'apparel'   },
+  { id: 4, name: 'TypeScript Bottle',  price: 18, category: 'drinkware' },
+  { id: 5, name: 'NgRx Sticker Pack',  price: 8,  category: 'stickers'  },
+];
+
+@Component({
+  selector: 'app-product-list',
+  imports: [CurrencyPipe],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: \`
+    <div style="display:flex;flex-direction:column;gap:1.5rem;padding:1.5rem">
+
+      <!-- Category pills -->
+      <div style="display:flex;flex-wrap:wrap;gap:.5rem" role="group" aria-label="Filter by category">
+        @for (cat of categories(); track cat) {
+          <button
+            type="button"
+            (click)="selectedCategory.set(cat)"
+            style="padding:.375rem .875rem;border-radius:9999px;border:1px solid
+                   rgba(255,255,255,.15);font-size:.8125rem;cursor:pointer;transition:all .15s"
+            [style.background]="selectedCategory() === cat ? '#D4AF37' : 'rgba(255,255,255,.04)'"
+            [style.color]="selectedCategory() === cat ? '#0B0F14' : 'inherit'"
+            [style.font-weight]="selectedCategory() === cat ? '600' : '400'"
+          >{{ cat === 'all' ? 'All' : cat }}</button>
+        }
+      </div>
+
+      <!-- Product grid — note: computed(), not a method call -->
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(12rem,1fr));gap:1rem">
+        @for (product of filtered(); track product.id) {
+          <div style="padding:1rem;border:1px solid rgba(255,255,255,.08);
+                      border-radius:.75rem;background:rgba(255,255,255,.02)">
+            <span style="font-size:.7rem;font-weight:600;text-transform:uppercase;
+                         letter-spacing:.05em;opacity:.4">{{ product.category }}</span>
+            <p style="font-weight:600;margin:.375rem 0 .25rem">{{ product.name }}</p>
+            <p style="color:#3ABEFF;font-weight:600">{{ product.price | currency }}</p>
+          </div>
+        } @empty {
+          <p style="opacity:.3;font-size:.875rem;grid-column:1/-1">No products in this category.</p>
+        }
+      </div>
+    </div>
+  \`,
+})
+export class ProductList {
+  readonly products = input<Product[]>(MOCK_PRODUCTS);
+
+  // signal() replaces useState — mutable reactive value
+  readonly selectedCategory = signal('all');
+
+  // computed() replaces useMemo — recalculates only when products() changes
+  readonly categories = computed(() => [
+    'all',
+    ...new Set(this.products().map(p => p.category)),
+  ]);
+
+  // computed() again — this is the correct Angular pattern, NOT a template method call
+  readonly filtered = computed(() => {
+    const cat = this.selectedCategory();
+    return cat === 'all'
+      ? this.products()
+      : this.products().filter(p => p.category === cat);
+  });
+}`,
+          },
+          // ─── HARD ─────────────────────────────────────────────────────────
+          {
+            difficulty: 'hard',
+            description: `<p>Build a production-ready reusable <code>&lt;app-tabs&gt;</code> component from scratch.</p>
+<ul class="mt-3 space-y-2">
+  <li class="flex items-start gap-2 text-sm text-white/70"><span aria-hidden="true" class="text-primary/70 font-bold mt-px shrink-0">•</span>Interface: <code>Tab &#123; id: string; label: string; content: string &#125;</code></li>
+  <li class="flex items-start gap-2 text-sm text-white/70"><span aria-hidden="true" class="text-primary/70 font-bold mt-px shrink-0">•</span><code>tabs = input&lt;Tab[]&gt;([])</code>, <code>initialTabId = input&lt;string&gt;('')</code></li>
+  <li class="flex items-start gap-2 text-sm text-white/70"><span aria-hidden="true" class="text-primary/70 font-bold mt-px shrink-0">•</span><code>tabChange = output&lt;string&gt;()</code> — emits on every switch</li>
+  <li class="flex items-start gap-2 text-sm text-white/70"><span aria-hidden="true" class="text-primary/70 font-bold mt-px shrink-0">•</span><code>activeTabId = signal('')</code> — initialise from <code>initialTabId</code> (or first tab) inside <code>effect()</code> in the constructor</li>
+  <li class="flex items-start gap-2 text-sm text-white/70"><span aria-hidden="true" class="text-primary/70 font-bold mt-px shrink-0">•</span><code>host: &#123; role: 'tablist' &#125;</code> — <strong>NOT</strong> <code>@HostBinding</code></li>
+  <li class="flex items-start gap-2 text-sm text-white/70"><span aria-hidden="true" class="text-primary/70 font-bold mt-px shrink-0">•</span>Arrow key navigation (<code>ArrowRight</code> / <code>ArrowLeft</code>) via host keydown bindings</li>
+  <li class="flex items-start gap-2 text-sm text-white/70"><span aria-hidden="true" class="text-primary/70 font-bold mt-px shrink-0">•</span>Tab buttons: <code>role="tab"</code>, <code>[attr.aria-selected]</code>, <code>[attr.aria-controls]</code></li>
+  <li class="flex items-start gap-2 text-sm text-white/70"><span aria-hidden="true" class="text-primary/70 font-bold mt-px shrink-0">•</span>Panels: <code>role="tabpanel"</code>, <code>[hidden]</code>, <code>[attr.aria-labelledby]</code></li>
+  <li class="flex items-start gap-2 text-sm text-white/70"><span aria-hidden="true" class="text-primary/70 font-bold mt-px shrink-0">•</span>Wrap each panel content with <code>@defer (on interaction)</code> so inactive panels are lazy-rendered</li>
+</ul>
+<p><strong>Interview traps:</strong> <code>@HostBinding</code> vs <code>host</code> object, <code>[hidden]</code> vs <code>@if</code> for accessibility, <code>effect()</code> init pattern, <code>@defer</code> trigger syntax.</p>`,
+            starterCode: `import { Component, ChangeDetectionStrategy } from '@angular/core';
+
+// 🎯 Hard Challenge — Reusable accessible Tabs component
+//
+// Interface:
+//   Tab { id: string; label: string; content: string }
+//
+// Inputs / Outputs:
+//   • tabs = input<Tab[]>([])
+//   • initialTabId = input<string>('')   ← activate first tab if empty
+//   • tabChange = output<string>()       ← emits id on every switch
+//
+// State:
+//   • activeTabId = signal('')
+//     → initialise once in constructor with effect() when tabs first populate
+//
+// Template (WCAG AA):
+//   • Tab strip wrapper: no extra role needed — host already has role="tablist"
+//   • Each tab button: role="tab", [attr.aria-selected], [attr.aria-controls]="'panel-'+id"
+//   • Tab panels: role="tabpanel", [id]="'panel-'+id",
+//                 [attr.aria-labelledby]="'tab-'+id", [hidden]="activeTabId() !== tab.id"
+//   • Wrap panel inner content with @defer (on interaction)
+//
+// Host bindings (in @Component decorator, NOT @HostBinding / @HostListener):
+//   • role: 'tablist'
+//   • '(keydown.arrowRight)': 'navigate(1)'
+//   • '(keydown.arrowLeft)':  'navigate(-1)'
+
+export interface Tab { id: string; label: string; content: string; }
+
+@Component({
+  selector: 'app-tabs',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  // TODO: add host object
+  template: \`<!-- TODO -->\`,
+})
+export class TabsComponent {
+  // TODO: inputs, output, signal, effect, switchTo(), navigate()
+}`,
+            solutionCode: `import {
+  Component, ChangeDetectionStrategy,
+  input, output, signal, effect,
+} from '@angular/core';
+
+export interface Tab { id: string; label: string; content: string; }
+
+@Component({
+  selector: 'app-tabs',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  // host replaces @HostBinding / @HostListener — required by the style guide
+  host: {
+    role: 'tablist',
+    '(keydown.arrowRight)': 'navigate(1)',
+    '(keydown.arrowLeft)': 'navigate(-1)',
+  },
+  template: \`
+    <!-- Tab strip ––– host already carries role="tablist" -->
+    <div style="display:flex;gap:.25rem;border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:1.5rem">
+      @for (tab of tabs(); track tab.id) {
+        <button
+          type="button"
+          role="tab"
+          [id]="'tab-' + tab.id"
+          [attr.aria-selected]="activeTabId() === tab.id"
+          [attr.aria-controls]="'panel-' + tab.id"
+          (click)="switchTo(tab.id)"
+          style="padding:.625rem 1rem;border:none;background:none;
+                 font-size:.875rem;cursor:pointer;transition:all .15s;color:inherit"
+          [style.border-bottom]="activeTabId() === tab.id
+            ? '2px solid #D4AF37' : '2px solid transparent'"
+          [style.color]="activeTabId() === tab.id ? '#D4AF37' : 'rgba(255,255,255,.5)'"
+        >{{ tab.label }}</button>
+      }
+    </div>
+
+    <!-- Panels — [hidden] keeps DOM for AXE, @if would break aria-controls -->
+    @for (tab of tabs(); track tab.id) {
+      <div
+        role="tabpanel"
+        [id]="'panel-' + tab.id"
+        [attr.aria-labelledby]="'tab-' + tab.id"
+        [hidden]="activeTabId() !== tab.id"
+        style="outline:none"
+        [attr.tabindex]="activeTabId() === tab.id ? 0 : -1"
+      >
+        @defer (on interaction) {
+          <p style="font-size:.9375rem;line-height:1.7;opacity:.75">{{ tab.content }}</p>
+        } @placeholder {
+          <p style="opacity:.2;font-size:.875rem;font-style:italic">Loading…</p>
+        }
+      </div>
+    }
+  \`,
+})
+export class TabsComponent {
+  readonly tabs         = input<Tab[]>([]);
+  readonly initialTabId = input<string>('');
+  readonly tabChange    = output<string>();
+
+  readonly activeTabId = signal('');
+
+  constructor() {
+    // effect() replaces the "initialise on first render" useEffect pattern in React.
+    // Runs once when tabs() is non-empty, respects the initialTabId input.
+    effect(() => {
+      const tabs = this.tabs();
+      if (this.activeTabId() === '' && tabs.length > 0) {
+        this.activeTabId.set(this.initialTabId() || tabs[0].id);
+      }
+    });
+  }
+
+  switchTo(id: string): void {
+    this.activeTabId.set(id);
+    this.tabChange.emit(id);
+  }
+
+  navigate(direction: 1 | -1): void {
+    const tabs = this.tabs();
+    const idx  = tabs.findIndex(t => t.id === this.activeTabId());
+    const next = (idx + direction + tabs.length) % tabs.length;
+    this.switchTo(tabs[next].id);
+  }
+}`,
           },
         ],
       },

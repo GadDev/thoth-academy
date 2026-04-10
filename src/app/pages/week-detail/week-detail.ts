@@ -50,6 +50,8 @@ export class WeekDetail {
     // Move focus to day heading when active day changes
     effect(() => {
       this.activeDay();
+      // Reset difficulty selector when switching days
+      this.activeDifficulty.set('medium');
       // Use microtask to ensure DOM has updated
       Promise.resolve().then(() => {
         this.dayHeading?.nativeElement.focus();
@@ -58,8 +60,20 @@ export class WeekDetail {
   }
 
   // Challenge / Monaco
+  readonly activeDifficulty = signal<'easy' | 'medium' | 'hard'>('medium');
+
+  readonly availableDifficulties = computed(() => {
+    const day = this.week().days[this.activeDay() - 1];
+    return day.challenges?.map((c) => c.difficulty!).filter(Boolean) ?? [];
+  });
+
   readonly activeChallenge = computed(() => {
     const day = this.week().days[this.activeDay() - 1];
+    if (day.challenges?.length) {
+      return (
+        day.challenges.find((c) => c.difficulty === this.activeDifficulty()) ?? day.challenges[0]
+      );
+    }
     return day.challenge ?? null;
   });
 

@@ -178,11 +178,35 @@
               Challenge
             </p>
             <h2 class="text-xl font-semibold mb-4">{{ day.title }} — Practice</h2>
+
+            @if (availableDifficulties().length > 1) {
+              <div class="flex gap-2 mb-6" role="group" aria-label="Select difficulty">
+                @for (diff of availableDifficulties(); track diff) {
+                  <button
+                    type="button"
+                    (click)="activeDifficulty.set(diff)"
+                    class="px-3 py-1.5 rounded-full text-xs font-semibold border transition-colors capitalize"
+                    [class]="
+                      activeDifficulty() === diff
+                        ? diff === 'easy'
+                          ? 'bg-emerald-500/20 border-emerald-500/40 text-emerald-400'
+                          : diff === 'medium'
+                            ? 'bg-amber-500/20 border-amber-500/40 text-amber-400'
+                            : 'bg-rose-500/20 border-rose-500/40 text-rose-400'
+                        : 'bg-white/[0.03] border-white/10 text-white/40 hover:text-white/70'
+                    "
+                  >
+                    {{ diff }}
+                  </button>
+                }
+              </div>
+            }
+
             @if (activeChallenge(); as challenge) {
-              <p class="text-white/60 text-sm leading-relaxed mb-6">{{ challenge.description }}</p>
+              <div class="challenge-desc mb-6" [innerHTML]="challenge.description"></div>
               <ngx-monaco-editor
                 class="block w-full rounded-xl overflow-hidden"
-                style="height: 360px"
+                style="height: 620px"
                 [options]="challengeEditorOptions"
                 [model]="challengeModel()"
               />
@@ -203,13 +227,35 @@
               Solution
             </p>
             <h2 class="text-xl font-semibold mb-4">{{ day.title }} — Reference Solution</h2>
-            @if (activeChallenge()) {
-              <p class="text-white/60 text-sm leading-relaxed mb-6">
-                {{ 'weekDetail.studySolution' | transloco }}
-              </p>
+
+            @if (availableDifficulties().length > 1) {
+              <div class="flex gap-2 mb-6" role="group" aria-label="Select difficulty">
+                @for (diff of availableDifficulties(); track diff) {
+                  <button
+                    type="button"
+                    (click)="activeDifficulty.set(diff)"
+                    class="px-3 py-1.5 rounded-full text-xs font-semibold border transition-colors capitalize"
+                    [class]="
+                      activeDifficulty() === diff
+                        ? diff === 'easy'
+                          ? 'bg-emerald-500/20 border-emerald-500/40 text-emerald-400'
+                          : diff === 'medium'
+                            ? 'bg-amber-500/20 border-amber-500/40 text-amber-400'
+                            : 'bg-rose-500/20 border-rose-500/40 text-rose-400'
+                        : 'bg-white/[0.03] border-white/10 text-white/40 hover:text-white/70'
+                    "
+                  >
+                    {{ diff }}
+                  </button>
+                }
+              </div>
+            }
+
+            @if (activeChallenge(); as challenge) {
+              <div class="challenge-desc mb-6" [innerHTML]="challenge.description"></div>
               <ngx-monaco-editor
                 class="block w-full rounded-xl overflow-hidden"
-                style="height: 360px"
+                style="height: 620px"
                 [options]="solutionEditorOptions"
                 [model]="solutionModel()"
               />
