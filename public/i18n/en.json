@@ -618,5 +618,35 @@
     "subtitle": "Tracking external courses alongside the Angular learning path. This page will be removed once done.",
     "progress": "Progress",
     "openCourse": "Open Course"
+  },
+  "lessons": {
+    "w1d1": {
+      "sec1Title": "What is an Angular Component?",
+      "sec1Body": "In React a function is the component. In Angular a component is a TypeScript class decorated with @Component, always with three distinct parts: class (logic), template (HTML), and an optional stylesheet. The decorator wires them together.",
+      "sec1CodeCaption": "Minimal standalone component — the anatomy at a glance",
+      "sec2Title": "Template Binding Syntax",
+      "sec3Title": "Modern Control Flow (@if · @for · @switch · @defer)",
+      "sec3CodeCaption": "All three control-flow blocks in one template",
+      "sec4Title": "Inputs & Outputs (signal-based, Angular 17.1+)",
+      "sec4CodeCaption": "input() and output() — the modern, signal-native API",
+      "sec5Title": "Key Rules to Remember",
+      "sec5Item1": "track is MANDATORY in @for — like key in React, but the compiler enforces it",
+      "sec5Item2": "standalone: true means no NgModule — import dependencies directly in @Component",
+      "sec5Item3": "Read an input signal with title() — calling it like a function, not a property",
+      "sec5Item4": "@defer triggers: on viewport | on idle | on interaction | on hover | when condition",
+      "sec5Item5": "Two-way binding [(ngModel)] requires FormsModule in the imports array",
+      "sec6Title": "Exam Gotcha Questions",
+      "sec6Q1": "What happens if you forget track in @for?",
+      "sec6A1": "Angular will warn in dev mode and fall back to identity tracking — every item re-renders on change, killing performance. Always track by a unique ID.",
+      "sec6Q2": "Can you use @defer on any component, or only standalone ones?",
+      "sec6A2": "In practice @defer works best with standalone components because their bundle can be code-split cleanly. Non-standalone components inside an NgModule cannot be individually deferred.",
+      "sec6Q3": "What's the difference between [class] and [ngClass]?",
+      "sec6A3": "[class.active] toggles a single class. ngClass with an object map {active: bool, disabled: !bool} handles multiple classes at once. Prefer [class.x] for a single class.",
+      "sec7Title": "Mini Challenge: Template Conversion",
+      "sec7Item1": "Convert this React JSX to an Angular standalone component template: {isLoading ? <Spinner/> : items.map(item => <Card key={item.id} data={item}/>)}",
+      "sec7Item2": "Add an @empty block for when the items array is empty",
+      "sec7Item3": "Use @defer (on viewport) to lazy-load the Card component",
+      "sec7Item4": "Paste your solution into Claude for review"
+    }
   }
 }

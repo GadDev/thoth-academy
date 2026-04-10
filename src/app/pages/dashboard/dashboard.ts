@@ -25,6 +25,7 @@ export class Dashboard {
   readonly overallStrokeDashoffset = computed(
     () => CIRCUMFERENCE * (1 - this.overallProgress() / 100),
   );
+  readonly streak = computed(() => this.progress.streakDays());
 
   readonly nextLesson = computed(() => {
     for (const week of COURSE_WEEKS) {

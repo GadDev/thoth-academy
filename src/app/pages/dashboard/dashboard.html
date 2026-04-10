@@ -104,6 +104,37 @@
             </p>
           </div>
         </div>
+
+        <!-- Streak -->
+        <div
+          class="flex items-center gap-4 shrink-0 bg-surface-light border border-white/10 rounded-2xl px-6 py-4"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            width="56"
+            height="56"
+            class="text-amber-400 shrink-0"
+            [class.opacity-30]="streak() === 0"
+            aria-hidden="true"
+          >
+            <path
+              d="M6.75 2A.75.75 0 0 0 6 2.75v14.5c0 .414.336.75.75.75h10.5a.75.75 0 0 0 .75-.75V2.75A.75.75 0 0 0 17.25 2H6.75zM9 5a1 1 0 1 0 2 0 1 1 0 0 0-2 0zm3 1a1 1 0 1 0 2 0 1 1 0 0 0-2 0zm-3 3a1 1 0 1 0 2 0 1 1 0 0 0-2 0zm3 0a1 1 0 1 0 2 0 1 1 0 0 0-2 0zm-3 3a1 1 0 1 0 2 0 1 1 0 0 0-2 0zm3 0a1 1 0 1 0 2 0 1 1 0 0 0-2 0z"
+            />
+          </svg>
+          <div>
+            <p class="text-2xl font-bold">{{ streak() }}</p>
+            <p class="text-xs text-white/50">
+              @if (streak() === 0) {
+                streak inactive
+              } @else if (streak() === 1) {
+                day streak
+              } @else {
+                day streak
+              }
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </section>

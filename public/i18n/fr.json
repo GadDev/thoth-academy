@@ -617,5 +617,35 @@
     "subtitle": "Suivi des cours externes en parallèle du parcours Angular. Cette page sera supprimée une fois terminé.",
     "progress": "Progression",
     "openCourse": "Ouvrir le cours"
+  },
+  "lessons": {
+    "w1d1": {
+      "sec1Title": "Qu'est-ce qu'un composant Angular ?",
+      "sec1Body": "En React, une fonction est le composant. En Angular, un composant est une classe TypeScript décorée avec @Component, avec toujours trois parties distinctes : la classe (logique), le template (HTML) et une feuille de style optionnelle. Le décorateur les relie entre eux.",
+      "sec1CodeCaption": "Composant standalone minimal — l'anatomie en un coup d'œil",
+      "sec2Title": "Syntaxe de liaison de template",
+      "sec3Title": "Flux de contrôle moderne (@if · @for · @switch · @defer)",
+      "sec3CodeCaption": "Les trois blocs de flux de contrôle dans un seul template",
+      "sec4Title": "Inputs & Outputs (basés sur les signaux, Angular 17.1+)",
+      "sec4CodeCaption": "input() et output() — l'API moderne natif-signal",
+      "sec5Title": "Règles clés à retenir",
+      "sec5Item1": "track est OBLIGATOIRE dans @for — comme key en React, mais le compilateur l'impose",
+      "sec5Item2": "standalone: true signifie pas de NgModule — importez les dépendances directement dans @Component",
+      "sec5Item3": "Lisez un signal input avec title() — en l'appelant comme une fonction, pas une propriété",
+      "sec5Item4": "Déclencheurs @defer : on viewport | on idle | on interaction | on hover | when condition",
+      "sec5Item5": "La liaison bidirectionnelle [(ngModel)] nécessite FormsModule dans le tableau imports",
+      "sec6Title": "Questions pièges d'examen",
+      "sec6Q1": "Que se passe-t-il si vous oubliez track dans @for ?",
+      "sec6A1": "Angular avertira en mode développement et reviendra au suivi par identité — chaque élément se re-rendra à chaque changement, nuisant aux performances. Trackez toujours par un ID unique.",
+      "sec6Q2": "Peut-on utiliser @defer sur n'importe quel composant, ou seulement les standalone ?",
+      "sec6A2": "En pratique, @defer fonctionne mieux avec les composants standalone car leur bundle peut être séparé proprement. Les composants non-standalone dans un NgModule ne peuvent pas être différés individuellement.",
+      "sec6Q3": "Quelle est la différence entre [class] et [ngClass] ?",
+      "sec6A3": "[class.active] bascule une seule classe. ngClass avec une map d'objets {active: bool, disabled: !bool} g\u00e8re plusieurs classes à la fois. Préférez [class.x] pour une seule classe.",
+      "sec7Title": "Mini Challenge : Conversion de template",
+      "sec7Item1": "Convertissez ce JSX React en template de composant Angular standalone : {isLoading ? <Spinner/> : items.map(item => <Card key={item.id} data={item}/>)}",
+      "sec7Item2": "Ajoutez un bloc @empty pour quand le tableau items est vide",
+      "sec7Item3": "Utilisez @defer (on viewport) pour charger le composant Card en différé",
+      "sec7Item4": "Collez votre solution dans Claude pour révision"
+    }
   }
 }

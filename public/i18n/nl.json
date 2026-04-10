@@ -617,5 +617,35 @@
     "subtitle": "Bijhouden van externe cursussen naast het Angular leertraject. Deze pagina wordt verwijderd zodra het klaar is.",
     "progress": "Voortgang",
     "openCourse": "Cursus openen"
+  },
+  "lessons": {
+    "w1d1": {
+      "sec1Title": "Wat is een Angular Component?",
+      "sec1Body": "In React is een functie het component. In Angular is een component een TypeScript-klasse gedecoreerd met @Component, altijd met drie afzonderlijke delen: klasse (logica), template (HTML) en een optioneel stylesheet. De decorator verbindt ze met elkaar.",
+      "sec1CodeCaption": "Minimaal standalone component \u2014 de anatomie in \u00e9\u00e9n oogopslag",
+      "sec2Title": "Template binding-syntaxis",
+      "sec3Title": "Moderne control flow (@if \u00b7 @for \u00b7 @switch \u00b7 @defer)",
+      "sec3CodeCaption": "Alle drie controlestroomblokken in \u00e9\u00e9n template",
+      "sec4Title": "Inputs & Outputs (signaalgebaseerd, Angular 17.1+)",
+      "sec4CodeCaption": "input() en output() \u2014 de moderne, signaal-native API",
+      "sec5Title": "Belangrijke regels om te onthouden",
+      "sec5Item1": "track is VERPLICHT in @for \u2014 zoals key in React, maar de compiler handhaaft het",
+      "sec5Item2": "standalone: true betekent geen NgModule \u2014 importeer afhankelijkheden rechtstreeks in @Component",
+      "sec5Item3": "Lees een input-signaal met title() \u2014 roep het aan als een functie, niet als een eigenschap",
+      "sec5Item4": "@defer triggers: on viewport | on idle | on interaction | on hover | when condition",
+      "sec5Item5": "Tweerichtingsbinding [(ngModel)] vereist FormsModule in de imports-array",
+      "sec6Title": "Examenvalkuilen",
+      "sec6Q1": "Wat gebeurt er als je track vergeet in @for?",
+      "sec6A1": "Angular zal waarschuwen in dev-modus en terugvallen op identiteitsTracering \u2014 elk item wordt opnieuw gerenderd bij elke wijziging, wat de prestaties verslechtert. Track altijd op een uniek ID.",
+      "sec6Q2": "Kun je @defer gebruiken op elk component, of alleen standalone?",
+      "sec6A2": "In de praktijk werkt @defer het beste met standalone componenten omdat hun bundle schoon kan worden gesplitst. Niet-standalone componenten in een NgModule kunnen niet individueel worden uitgesteld.",
+      "sec6Q3": "Wat is het verschil tussen [class] en [ngClass]?",
+      "sec6A3": "[class.active]=\"bool\" schakelt \u00e9\u00e9n klasse in/uit. [ngClass]=\"{active: bool, disabled: !bool}\" beheert meerdere klassen via een objectmap. Geef de voorkeur aan [class.x] voor \u00e9\u00e9n klasse.",
+      "sec7Title": "Mini Challenge: Template Conversie",
+      "sec7Item1": "Converteer deze React JSX naar een Angular standalone component template: {isLoading ? <Spinner/> : items.map(item => <Card key={item.id} data={item}/>)}",
+      "sec7Item2": "Voeg een @empty blok toe voor wanneer de items-array leeg is",
+      "sec7Item3": "Gebruik @defer (on viewport) om het Card-component lui te laden",
+      "sec7Item4": "Plak je oplossing in Claude voor beoordeling"
+    }
   }
 }

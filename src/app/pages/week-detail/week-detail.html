@@ -89,7 +89,7 @@
         @if (activeTab() === 'lesson') {
           <div class="space-y-6">
             <div class="bg-white/[0.03] border border-white/10 rounded-2xl p-6">
-              <h2 class="text-xl font-semibold mb-2">{{ day.title }}</h2>
+              <h2 #dayHeading tabindex="-1" class="text-xl font-semibold mb-2">{{ day.title }}</h2>
               <p class="text-white/60 mb-6">{{ day.summary }}</p>
               <div class="flex flex-wrap items-center justify-between gap-3 mt-2">
                 <div class="flex gap-3">
@@ -163,6 +163,11 @@
                 </button>
               </div>
             </div>
+            @if (day.blocks?.length) {
+              <div class="bg-white/[0.03] border border-white/10 rounded-2xl p-6">
+                <app-lesson-content [blocks]="day.blocks!" />
+              </div>
+            }
           </div>
         }
 
@@ -220,4 +225,7 @@
       </div>
     </div>
   </div>
+
+  <!-- Toast Notification -->
+  <app-toast [message]="toastMessage()" [visible]="showToast()" />
 </div>
